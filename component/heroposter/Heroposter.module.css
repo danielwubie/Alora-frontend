@@ -1,0 +1,51 @@
+.box{
+    display: flex;
+
+    justify-content:space-around;
+    margin: 0px;
+    padding: 0;
+  background-image: url("src/assets/pexels-n-voitkevich-6214365.jpg");
+  background-size: cover; /* or contain */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.title{
+    margin: 5px;
+ font-size: 80px;
+ font-family:system-ui,  'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-style: normal;
+ font-weight: 500;
+
+}
+.contentbox{ 
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    width: 772px;
+    height: 212px;
+}
+.description{
+    margin: 5px;
+    font-size: 25px;
+ font-family:system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-style: normal;
+ font-weight: 500;
+ color: #e1e1e2;
+}
+.buttonbox{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-between;
+    margin-left: 225px;
+}
+.button{
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    font-family: system-ui,  'Segoe UI',  'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+.button:hover{
+    background-color: rgb(236, 191, 136);
+     box-shadow: 0 10px 25px rgba(81, 80, 80, 0.5);
+}

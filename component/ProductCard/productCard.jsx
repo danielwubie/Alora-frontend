@@ -5,16 +5,20 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import styles from "../ProductCard/ProductCard.module.css"
 
-function MyCard({ id, name, Price, description, subcategory_id, image }) {
+function MyCard({  name, Price, description, image }) {
   return (
-    <Card sx={{ width: 300, borderRadius: 2, boxShadow: 3 }}>
+    <Card sx={{ width: 300, borderRadius: 4, boxShadow: 0, border:"1px solid #e1e1e1ff" }} className={styles.cardbox}>
+      <div className={styles.imagewrapper}>
       <CardMedia
         component="img"
-        height="200"
+        height="240"
         image={image}
         alt={name}
+        className={styles.imagebox}
       />
+      </div>
       <CardContent>
         <Typography variant="h6">{name}</Typography>
 
@@ -32,8 +36,8 @@ function MyCard({ id, name, Price, description, subcategory_id, image }) {
 
       
 
-        <Button variant="outlined" sx={{ mt: 2 }}>
-          Add to Cart
+        <Button variant="outlined" sx={{ mt: 2,color: "black", height:"45px",width:"115px"} } className={styles.cardbutton}>
+          Quick Add
         </Button>
       </CardContent>
     </Card>

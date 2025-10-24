@@ -1,0 +1,35 @@
+
+.cardbox{
+    background-color: antiquewhite;
+    height:240;
+    width: 130px;
+    overflow: hidden; 
+}
+.cardbox:hover{
+  
+  box-shadow: 0 5px 12px rgba(147, 147, 147, 0.5);
+}
+.imagebox{
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagewrapper{
+    overflow: hidden; 
+  height: 240px;  
+}
+.cardbox:hover .imagebox {
+  transform: scale(1.1);
+}
+.cardbox:hover .cardbutton {
+  background-color: #8b4513 !important;
+}
+.cardbutton{
+  background-color: #f5f1eb !important;
+  border:1px solid rgb(161, 144, 125) !important;
+  border-radius: 10px !important;
+  
+}
+.cardbox:hover .cardbutton:hover{
+  background-color: #f5f1eb !important;
+}
