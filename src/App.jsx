@@ -4,18 +4,15 @@ import Typography from "@mui/material/Typography";
 import  MyCard  from '../component/ProductCard/productCard'
 import './App.css'
 import ProductList from '../component/ProductCard/ProductList'
+import Sidebar from "../component/sidebar/sidebar";
+import Footer from "../component/FooterCard/Footer";
 
 function App() {
 
 
   return (
     <>
-      <div>
-       
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+  <Footer/>
     </>
   )
 }
