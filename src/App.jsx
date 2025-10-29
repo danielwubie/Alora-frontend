@@ -8,13 +8,18 @@ import Sidebar from "../component/sidebar/sidebar";
 import Footer from "../component/FooterCard/Footer";
 import Login from "../component/login/login";
 import Heroposter from "../component/heroposter/heroposter"
-
+import PrimarySearchAppBar from "../component/Navbar/navbar"
+import Home from "../pages/home page/home"
+import { Toolbar } from '@mui/material';
 function App() {
 
 
   return (
     <>
-     
+       
+       <PrimarySearchAppBar/>
+        <Toolbar />
+       <Home/>
        
      
     </>
