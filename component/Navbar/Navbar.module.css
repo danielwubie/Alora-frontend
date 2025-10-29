@@ -1,0 +1,14 @@
+.image{
+    width: 100px;
+    height: 60px;
+}
+.searchbox{
+    margin-left: 330px !important;
+    margin-right: 320px !important;
+    color: black;
+    border-radius: 10px !important;
+}
+:global(.MuiBadge-badge) {
+  background-color: #8a3d1f !important;
+  color: white !important;
+}

@@ -30,11 +30,13 @@ html, body {
 }
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
   min-width: 320px;
   min-height: 100vh;
   max-width: 100vw;
+
+  display: block; /* change from flex */
+  place-items: unset; /* remove centering */
 }
 
 h1 {
@@ -73,4 +75,9 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
