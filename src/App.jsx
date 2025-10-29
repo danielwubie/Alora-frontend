@@ -8,14 +8,15 @@ import Sidebar from "../component/sidebar/sidebar";
 import Footer from "../component/FooterCard/Footer";
 import Login from "../component/login/login";
 import Heroposter from "../component/heroposter/heroposter"
+import Cart from "../component/CartCard/Cart"
+import SignUp from "../component/signup/SignUp";
 
 function App() {
 
 
   return (
     <>
-     
-       
+     <SignUp/>
      
     </>
   )
