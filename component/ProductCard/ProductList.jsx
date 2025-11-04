@@ -26,14 +26,14 @@ function ProductList({ transform, title, info,mode="all",config }) {
     }
     else if (mode=="sub"){
             axios
-        .get("http://127.0.0.1:5000/product")
+        .get(`http://127.0.0.1:5000/product/by_subcategory/${config}`)
         .then((res) => {
           console.log("Fetched products:", res.data.products);
            setProducts(res.data.products);
         })
         .catch((err) => console.error("Error fetching products:", err));
     }
-  }, []);
+  }, [mode, config]);
 
   
  const finalList = transform ? transform(products) : products;
