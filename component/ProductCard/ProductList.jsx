@@ -33,7 +33,7 @@ function ProductList({ transform, title, info,mode="all",config }) {
         })
         .catch((err) => console.error("Error fetching products:", err));
     }
-  }, [mode, config]);
+  }, [mode, configmode,config]);
 
   
  const finalList = transform ? transform(products) : products;
@@ -51,7 +51,7 @@ function ProductList({ transform, title, info,mode="all",config }) {
 
       <Grid container spacing={3}>
           {finalList.map((item) => {
-            console.log("😀",item)
+            
             return<MyCard key={item.id} {...item} />
           })}
       </Grid>
