@@ -21,7 +21,7 @@ function App() {
        
        <PrimarySearchAppBar/>
         <Toolbar />
-       <Mens/>
+       <Home/>
        
      
     </>
