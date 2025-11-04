@@ -13,6 +13,7 @@ import Home from "../pages/home page/home"
 import { Toolbar } from '@mui/material';
 import CatCard from "../component/catagory/categorycard";
 import Mens from '../pages/mens clothes/mens'
+import Womens from '../pages/Womens Fashion/womens'
 function App() {
 
 
@@ -21,7 +22,7 @@ function App() {
        
        <PrimarySearchAppBar/>
         <Toolbar />
-       <Home/>
+       <Mens/>
        
      
     </>
