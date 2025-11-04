@@ -1,28 +1,38 @@
 import React from "react";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import  MyCard  from '../component/ProductCard/productCard'
-import './App.css'
-import ProductList from '../component/ProductCard/ProductList'
-import Sidebar from "../component/sidebar/sidebar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+
+import Navbar from "../component/Navbar/navbar";
 import Footer from "../component/FooterCard/Footer";
-import Login from "../component/login/login";
-import Heroposter from "../component/heroposter/heroposter"
-import PrimarySearchAppBar from "../component/Navbar/navbar"
-import Home from "../pages/home page/home"
-import { Toolbar } from '@mui/material';import Cart from "../component/CartCard/Cart"
+import Home from "../pages/home page/home";
+import CartPage from "../pages/CartPage/CartPage";
+import Login from "../component/login/login"
+
 import SignUp from "../component/signup/SignUp";
+import ProfilePage from "../pages/ProfilePage/ProfileP"
+import Dresses from "../pages/WomenF-page/Dresses";
 
 function App() {
-
-
+  
   return (
-    <>
-     
-       
-     
-    </>
-  )
+    <Router>
+      
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/profile" element={<ProfilePage/>}/>
+        <Route path="/subcategory/13" element={<Dresses/>}/>
+      </Routes>
+
+      <Footer />
+    </Router>
+
+    // <Dresses/>
+
+  );
 }
 
 export default App;

@@ -3,12 +3,14 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
 import styles from "../signup/SignUp.module.css"
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function SignUp(){
     const[Name,setName]=useState("")
     const [Email, setEmail]=useState("")
     const [Password, setPassword]=useState("")
+     const navigate = useNavigate(); 
 
     const handelSignUp= async () => {
         try {
@@ -20,14 +22,36 @@ function SignUp(){
                         const token = response.data.result.token;
                         localStorage.setItem("token", token);
                         console.log("SignUp successful:", response.data);
+                         navigate("/");
         } catch (error) {
             console.error("SignUp failed:", error);
       alert("Invalid email or password");
         }
-    }
+    }  
+    
+    const handleClose = () => {
+    navigate(-1); // go back when clicking outside
+  };
      return (
-    <>
-    <div className={styles.contianer}>
+    <div 
+    style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0,0,0,0.3)",
+        backdropFilter: "blur(5px)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 9999,
+      }}
+      onClick={handleClose}
+    >
+    <div className={styles.contianer}
+    onClick={(e) => e.stopPropagation()}
+    >
         <div className={styles.logobox}> 
             <img src="src/assets/alora_Brand_Logo.png" className={styles.logo}></img>
         </div>
@@ -37,7 +61,7 @@ function SignUp(){
             <p className={styles.text}>Name</p>
             <div className={styles.inputbox}>
                 <Box sx={{ width: 381}}>
-                    <TextField fullWidth label="Name" id="Name" type="Name"  value={Name} sx={{color:"white"}} onChange={(e)=>setName(e.target.value)} />
+                    <TextField fullWidth label="Name" id="Name" type="text"  value={Name} sx={{color:"white"}} onChange={(e)=>setName(e.target.value)} />
                 </Box>
             </div>
         </div>
@@ -59,14 +83,15 @@ function SignUp(){
             </div>
         </div>
         <div className={styles.button_and_link}>
-            <a className={styles.link_to_signup}>Already have an  account? Login here</a>
+            <a onClick={() => navigate("/login", { replace: true })}
+             style={{ cursor: "pointer" }}>Already have an  account? Login here</a>
             <Button  sx={{ mt: 2,color: "white", height:"62px",width:"183px",backgroundColor:"#C15A18"} } onClick={handelSignUp}>
                 Sign Up
             </Button>
         </div>
     </div>
 
-    </>
+    </div>
     
 )
 }

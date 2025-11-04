@@ -28,7 +28,7 @@ export default function Sidebar() {
 
   const [open, setOpen] = useState(false);
   const [categories, setCategories] = useState([]);
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const toggleDrawer = (state) => () => setOpen(state);
 
