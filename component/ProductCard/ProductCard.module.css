@@ -1,10 +1,65 @@
 
 .cardbox{
     background-color: antiquewhite;
-    height:240;
-    width: 130px;
+    height:460px;
+    width: 300px;
     overflow: hidden; 
+}@media (max-width: 1024px) {
+  .cardbox {
+    width: 280px;
+    height:460px;
+  }
 }
+
+@media (max-width: 768px) {
+  .cardbox {
+    width: 260px;
+    height: 460px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardbox {
+    width: 230px;
+    height: 460px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .cardbox:hover{
   
   box-shadow: 0 5px 12px rgba(147, 147, 147, 0.5);

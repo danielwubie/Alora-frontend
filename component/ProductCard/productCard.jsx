@@ -8,8 +8,9 @@ import Button from "@mui/material/Button";
 import styles from "../ProductCard/ProductCard.module.css"
 
 function MyCard({  name, Price, description, image }) {
+  console.log(image)
   return (
-    <Card sx={{ width: 300, borderRadius: 4, boxShadow: 0, border:"1px solid #e1e1e1ff" }} className={styles.cardbox}>
+    <Card sx={{  borderRadius: 4, boxShadow: 0, border:"1px solid #e1e1e1ff" }} className={styles.cardbox}>
       <div className={styles.imagewrapper}>
       <CardMedia
         component="img"

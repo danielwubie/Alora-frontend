@@ -15,24 +15,12 @@ import Dresses from "../pages/WomenF-page/Dresses";
 function App() {
   
   return (
-    <Router>
-      
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/profile" element={<ProfilePage/>}/>
-        <Route path="/subcategory/13" element={<Dresses/>}/>
-      </Routes>
-
-      <Footer />
-    </Router>
-
-    // <Dresses/>
-
-  );
+    <>
+     
+       
+     
+    </>
+  )
 }
 
 export default App;
