@@ -1,0 +1,57 @@
+.cardbox {
+  position: relative;
+  background-color: antiquewhite;
+  height: 460px;
+  width: 400px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.cardbox:hover {
+  box-shadow: 0 5px 12px rgba(147, 147, 147, 0.5);
+}
+
+.imagewrapper {
+  overflow: hidden;
+  height: 240px;
+  width: 100%;
+  position: relative;
+}
+
+.imagebox {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cardbox:hover .imagebox {
+  transform: scale(1.1);
+}
+
+/* === Overlay Button === */
+.cardbutton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
+  border-radius: 10px !important;
+ 
+}
+
+/* Show the button on hover of the entire card */
+.cardbox:hover .cardbutton {
+  opacity: 1;
+  visibility: visible;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}

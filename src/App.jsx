@@ -11,6 +11,8 @@ import Heroposter from "../component/heroposter/heroposter"
 import PrimarySearchAppBar from "../component/Navbar/navbar"
 import Home from "../pages/home page/home"
 import { Toolbar } from '@mui/material';
+import CatCard from "../component/catagory/categorycard";
+import Mens from '../pages/mens clothes/mens'
 function App() {
 
 
@@ -19,7 +21,7 @@ function App() {
        
        <PrimarySearchAppBar/>
         <Toolbar />
-       <Home/>
+       <Mens/>
        
      
     </>
