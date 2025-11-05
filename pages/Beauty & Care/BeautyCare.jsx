@@ -1,63 +1,80 @@
-import Styles from '../page.module.css'
-import React, { useState } from "react";
+import Styles from '../page.module.css';
+import React, { useState, useEffect } from "react";
 import ProductList from "../../component/ProductCard/ProductList";
 import { Button, Box } from "@mui/material";
+import { useSearchParams, useNavigate } from 'react-router-dom';
 
 export default function BeautyCare() {
   const [selectedSub, setSelectedSub] = useState(null);
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  const subMap = {
+    "27": "Skin care",
+    "28": "Hair care",
+    "29": "Body care",
+    "30": "Fragrance",
+    "31": "Makeup",
+  };
+
+  
+  useEffect(() => {
+    const subId = searchParams.get('sub');
+    if (subId && subMap[subId]) {
+      setSelectedSub({ id: subId, name: subMap[subId] });
+    } else {
+      setSelectedSub(null);
+    }
+  }, [searchParams]);
 
   return (
     <>
-        <div className={Styles.titlebox}> 
-      <h2 className={Styles.title}>Men’s Collection</h2>
+      <div className={Styles.titlebox}> 
+        <h2 className={Styles.title}>Beauty & Care Collection</h2>
 
-      <Box sx={{ mb: 3 }}>
-            <Button
-                onClick={() => setSelectedSub(null)}
-                className={`${Styles.filterbutton} ${selectedSub === null ? Styles.activeBtn : ""}`}>
+        <Box sx={{ mb: 3 }}>
+         
+          <Button
+            onClick={() => {
+              setSelectedSub(null);
+              navigate("");
+            }}
+            className={`${Styles.filterbutton} ${selectedSub === null ? Styles.activeBtn : ""}`}
+          >
             All
-            </Button>
+          </Button>
 
+          
+          {Object.entries(subMap).map(([id, name]) => (
             <Button
-                onClick={() => setSelectedSub({id: "27", name: "Skin care"})}
-                className={`${Styles.filterbutton} ${selectedSub?.id === "27" ? Styles.activeBtn : ""}`}>
-            Skin care
-            </Button>
-
-            <Button
-                onClick={() => setSelectedSub({id: "28", name: "Hair care"})}
-                className={`${Styles.filterbutton} ${selectedSub?.id === "28" ? Styles.activeBtn : ""}`}>
-            Hair care
-            </Button>
-
-            <Button
-                onClick={() => setSelectedSub({id: "29", name: "Body care"})}
-                className={`${Styles.filterbutton} ${selectedSub?.id === "29" ? Styles.activeBtn : ""}`}>
-            Body care
-            </Button>
-
-            <Button
-                onClick={() => setSelectedSub({id: "30", name: "Fragrance"})}
-                className={`${Styles.filterbutton} ${selectedSub?.id === "30" ? Styles.activeBtn : ""}`}>
-            Fragrance
-            </Button>
-
-            <Button
-            onClick={() => setSelectedSub({id: "31", name: "Makeup"})}
-            className={`${Styles.filterbutton} ${selectedSub?.id === "31" ? Styles.activeBtn : ""}`}
+              key={id}
+              onClick={() => {
+                setSelectedSub({ id, name });
+                navigate(`?sub=${id}`);
+              }}
+              className={`${Styles.filterbutton} ${selectedSub?.id === id ? Styles.activeBtn : ""}`}
             >
-            Makeup
+              {name}
             </Button>
-        
-      </Box >
+          ))}
+        </Box>
       </div>
+
       <div className={Styles.contianer}>
-      {selectedSub ? (
-        <ProductList mode="sub" config={selectedSub.id} title={`Men’s ${selectedSub.name}`} />
-      ) : (
-        <ProductList mode="catag" title="All Men's Products" config="38" />
-      )}
+        {selectedSub ? (
+          <ProductList
+            mode="sub"
+            config={selectedSub.id}
+            title={`Beauty & Care: ${selectedSub.name}`}
+          />
+        ) : (
+          <ProductList
+            mode="catag"
+            title="All Beauty & Care Products"
+            config="38"
+          />
+        )}
       </div>
- </>
+    </>
   );
 }

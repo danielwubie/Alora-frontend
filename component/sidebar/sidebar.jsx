@@ -59,17 +59,24 @@ export default function Sidebar() {
     fetchCategories();
   }, []);
 
-  const handleSubcategoryClick = (subId) => {
-    // Navigate to subcategory page
-    navigate(`/subcategory/${subId}`);
-    setOpen(false); // Close sidebar after click
-  };    
-  const handleCategoryClick = (catId) => {
-    // Navigate to subcategory page
-    navigate(`/category/${catId}`);
-    setOpen(false); // Close sidebar after click
-  };    
+  const handleSubcategoryClick = (subId,catId) => {
+  const currentPath = window.location.pathname;
 
+  // Only update query param if we're already on a category page
+  if (currentPath.startsWith("/category/")) {
+    navigate(`/category/${catId}?sub=${subId}`);
+  } else {
+    // If not on a category page, go to one (optional fallback)
+    navigate(`/category/1?sub=${subId}`); // replace 1 with your default category ID if needed
+  }
+
+  setOpen(false);
+};
+
+  const handleCategoryClick=(catId)=>{
+    navigate(`/category/${catId}`);
+    setOpen(false);
+  }
 
   return (
     <div>
@@ -93,13 +100,14 @@ export default function Sidebar() {
               <div key={cat.id}>
                 <ListItem
                   className={styles.Categorys}
+                  onClick={() => handleCategoryClick(cat.id)}
                   sx={{
                     display: "flex",
                     justifyContent: "flex-start",
                     gap: 0,
                     p: 0,
                   }}
-                  onClick={()=>handleCategoryClick(cat.id)}
+                  
                 >
                   <Box sx={{ p: "12px" }}>
                     {categoryIcons[cat.name] || (
@@ -129,7 +137,7 @@ export default function Sidebar() {
                     button
                     key={sub.id}
                     sx={{ ml: 4 }}
-                    onClick={() => handleSubcategoryClick(sub.id)}
+                    onClick={() => handleSubcategoryClick(sub.id,cat.id)}
                     className={styles.SubCategorys}
                   >
                     <ListItemText

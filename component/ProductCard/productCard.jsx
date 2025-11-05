@@ -1,43 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import styles from "../ProductCard/ProductCard.module.css"
+import axios from "axios";
+import styles from "../ProductCard/ProductCard.module.css";
 
-function MyCard({  name, Price, description, image }) {
-  console.log(image)
+function MyCard({ id, name, Price, description, image }) {
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = async () => {
+    try {
+      const newItem = { id, name, Price, description, image };
+
+      const response = await axios.post(
+        "http://127.0.0.1:5000/cart/add",
+        newItem
+      );
+
+      // add to local state
+      setCart((prev) => [...prev, response.data]);
+
+      console.log("✅ Added to cart:", response.data);
+
+    } catch (error) {
+      console.error("❌ Failed to add to cart", error);
+    }
+  };
+
   return (
-    <Card sx={{  borderRadius: 4, boxShadow: 0, border:"1px solid #e1e1e1ff" }} className={styles.cardbox}>
+    <Card
+      sx={{ borderRadius: 4, boxShadow: 0, border: "1px solid #e1e1e1ff" }}
+      className={styles.cardbox}
+    >
       <div className={styles.imagewrapper}>
-      <CardMedia
-        component="img"
-        height="240"
-        image={image}
-        alt={name}
-        className={styles.imagebox}
-      />
+        <CardMedia
+          component="img"
+          height="240"
+          image={image}
+          alt={name}
+          className={styles.imagebox}
+        />
       </div>
+
       <CardContent>
         <Typography variant="h6">{name}</Typography>
 
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          sx={{ mb: 1 }}
-        >
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
           {description}
         </Typography>
 
         <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
-        ${Price.toLocaleString()}
+          ${Price.toLocaleString()}
         </Typography>
 
-      
-
-        <Button variant="outlined" sx={{ mt: 2,color: "black", height:"45px",width:"115px"} } className={styles.cardbutton}>
+        <Button
+          variant="outlined"
+          sx={{ mt: 2, color: "black", height: "45px", width: "115px" }}
+          className={styles.cardbutton}
+          onClick={handleAddToCart}
+        >
           Quick Add
         </Button>
       </CardContent>
@@ -48,9 +72,8 @@ function MyCard({  name, Price, description, image }) {
 MyCard.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  Price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   description: PropTypes.string.isRequired,
-  subcategory_id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
 };
 
