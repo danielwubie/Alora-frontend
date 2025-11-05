@@ -12,6 +12,9 @@ import SignUp from "../component/signup/SignUp";
 import ProfilePage from "../pages/ProfilePage/ProfileP"
 import Womens from "../pages/Women's Fashtion/wemens";
 import Mens from '../pages/mens clothes/mens'
+import KidsAndBaby from '../pages/Kids and baby/Kids-Baby'
+import HomeEssentials from "../pages/Home Essentials/HomeEssential"
+import Furniture from "../pages/Furniture/Furniture"
 
 function App() {
   
@@ -19,7 +22,7 @@ function App() {
     <Router>
      
       <Navbar />
-      <Womens />
+      <Furniture />
 
       {/* <Routes>
         <Route path="/" element={<Home />} />
