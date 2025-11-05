@@ -1,63 +1,80 @@
-import Styles from '../page.module.css'
-import React, { useState } from "react";
+import Styles from '../page.module.css';
+import React, { useState, useEffect } from "react";
 import ProductList from "../../component/ProductCard/ProductList";
 import { Button, Box } from "@mui/material";
+import { useSearchParams, useNavigate } from 'react-router-dom';
 
 export default function ToynGames() {
   const [selectedSub, setSelectedSub] = useState(null);
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  const subMap = {
+    "42": "Educational",
+    "43": "Action figures",
+    "44": "Bored games",
+    "45": "Electronics",
+    "46": "Outdoor",
+  };
+
+  
+  useEffect(() => {
+    const subId = searchParams.get('sub');
+    if (subId && subMap[subId]) {
+      setSelectedSub({ id: subId, name: subMap[subId] });
+    } else {
+      setSelectedSub(null);
+    }
+  }, [searchParams]);
 
   return (
     <>
-        <div className={Styles.titlebox}> 
-      <h2 className={Styles.title}>Men’s Collection</h2>
+      <div className={Styles.titlebox}> 
+        <h2 className={Styles.title}>Toys & Games Collection</h2>
 
-      <Box sx={{ mb: 3 }}>
-            <Button
-                onClick={() => setSelectedSub(null)}
-                className={`${Styles.filterbutton} ${selectedSub === null ? Styles.activeBtn : ""}`}>
+        <Box sx={{ mb: 3 }}>
+         
+          <Button
+            onClick={() => {
+              setSelectedSub(null);
+              navigate(location.pathname, { replace: true });
+            }}
+            className={`${Styles.filterbutton} ${selectedSub === null ? Styles.activeBtn : ""}`}
+          >
             All
-            </Button>
+          </Button>
 
+          
+          {Object.entries(subMap).map(([id, name]) => (
             <Button
-                onClick={() => setSelectedSub({id: "42", name: "Educational"})}
-                className={`${Styles.filterbutton} ${selectedSub?.id === "42" ? Styles.activeBtn : ""}`}>
-            Educational
-            </Button>
-
-            <Button
-                onClick={() => setSelectedSub({id: "43", name: "Action Figures"})}
-                className={`${Styles.filterbutton} ${selectedSub?.id === "43" ? Styles.activeBtn : ""}`}>
-            Action Figures
-            </Button>
-
-            <Button
-                onClick={() => setSelectedSub({id: "44", name: "Board games"})}
-                className={`${Styles.filterbutton} ${selectedSub?.id === "44" ? Styles.activeBtn : ""}`}>
-            Board games
-            </Button>
-
-            <Button
-                onClick={() => setSelectedSub({id: "45", name: "Electronics"})}
-                className={`${Styles.filterbutton} ${selectedSub?.id === "45" ? Styles.activeBtn : ""}`}>
-            Electronics
-            </Button>
-
-            <Button
-            onClick={() => setSelectedSub({id: "46", name: "Outdoors"})}
-            className={`${Styles.filterbutton} ${selectedSub?.id === "46" ? Styles.activeBtn : ""}`}
+              key={id}
+              onClick={() => {
+                setSelectedSub({ id, name });
+                navigate(`?sub=${id}`);
+              }}
+              className={`${Styles.filterbutton} ${selectedSub?.id === id ? Styles.activeBtn : ""}`}
             >
-            Outdoors
+              {name}
             </Button>
-        
-      </Box >
+          ))}
+        </Box>
       </div>
+
       <div className={Styles.contianer}>
-      {selectedSub ? (
-        <ProductList mode="sub" config={selectedSub.id} title={`Men’s ${selectedSub.name}`} />
-      ) : (
-        <ProductList mode="catag" title="All Men's Products" config="41" />
-      )}
+        {selectedSub ? (
+          <ProductList
+            mode="sub"
+            config={selectedSub.id}
+            title={`Toys & Games: ${selectedSub.name}`}
+          />
+        ) : (
+          <ProductList
+            mode="catag"
+            title="Toys & Games Fashtion"
+            config="41"
+          />
+        )}
       </div>
- </>
+    </>
   );
 }

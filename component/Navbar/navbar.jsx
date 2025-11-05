@@ -56,7 +56,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '500px',
+      width: '50px',
     },
   },
 }));
@@ -162,16 +162,18 @@ const handleProfilleClick = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar  sx={{backgroundColor:"#ffecd4ba"}}>
-        <Toolbar>
-          <Sidebar/>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{  width:"140px",height:"60px"  }}
-          >
-            <img src="src\assets\alora_Brand_Logo.png" className={styles.image}/>
-          </Typography>
+        <Toolbar sx={{display:"flex", justifyContent:"space-between"}}>
+          <Box sx={{display:"flex", flexDirection:"row"}}>
+            <Sidebar/>
+            <Box
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{  width:"140px",height:"60px"  }}
+            >
+              <img src="src/assets/alora_Brand_Logo.png" className={styles.image}/>
+            </Box>
+          </Box>
           <Search className={styles.searchbox}>
             <SearchIconWrapper>
               <SearchIcon sx={{color:"#624f39"}}/>
@@ -181,7 +183,7 @@ const handleProfilleClick = () => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Box sx={{ flexGrow: 1 }} />
+          {/* <Box sx={{ flexGrow: 1 }} /> */}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit" onClick={handleCartClick}>
               <Badge badgeContent={4} color="error">
