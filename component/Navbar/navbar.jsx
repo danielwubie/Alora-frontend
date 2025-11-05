@@ -174,7 +174,7 @@ const handleProfilleClick = () => {
             <Sidebar/>
             <Box
               variant="h6"
-              noWrap
+              
               component="div"
               sx={{  width:"140px",height:"60px"  }}
               onClick={handleClickLogo}

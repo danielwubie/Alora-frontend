@@ -18,6 +18,8 @@ export default function Login() {
             });
             const token = response.data.result.token;
             localStorage.setItem("token", token);
+            const userId = response.data.result.userId;
+            localStorage.setItem("userId", userId);
             setTimeout(() => {
             localStorage.removeItem("token");
             console.log("Token expired and removed");

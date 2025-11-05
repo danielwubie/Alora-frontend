@@ -67,7 +67,7 @@ export default function Sidebar() {
     navigate(`/category/${catId}?sub=${subId}`);
   } else {
     // If not on a category page, go to one (optional fallback)
-    navigate(`/category/1?sub=${subId}`); // replace 1 with your default category ID if needed
+    navigate(`/category/${catId}?sub=${subId}`); // replace 1 with your default category ID if needed
   }
 
   setOpen(false);

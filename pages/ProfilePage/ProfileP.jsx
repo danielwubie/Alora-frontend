@@ -1,76 +1,62 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// src/pages/ProfilePage/ProfilePage.jsx
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from "@mui/material/Button";
-// Assume you create a CSS module for styling
+import styles from "../ProfilePage/ProfileP.module.css"
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+ 
 
-export default function Profile() {
-  const [userData, setUserData] = useState(null);
+const ProfilePage = () => {
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
-  const token = localStorage.getItem("token");
 
   useEffect(() => {
-    if (!token) {
-      navigate("/login");
-      return;
-    }
-
-    const fetchProfile = async () => {
+    const fetchUser = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/users", {
+        const token = localStorage.getItem("token");
+
+        const response = await axios.get(`http://127.0.0.1:5000/users/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        setUserData(response.data);
+
+setUser(response.data.user);
+      } catch (error) {
+        setError("Failed to load user info",error);
+      } finally {
         setLoading(false);
-      } catch (err) {
-        setError("Failed to load profile");
-        setLoading(false);
-        if (err.response && err.response.status === 401) {
-          localStorage.removeItem("token");
-          navigate("/login");
-        }
       }
     };
 
-    fetchProfile();
-  }, [navigate, token]);
+    fetchUser();
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/");
+    localStorage.removeItem("userId");
+    window.location.href = "/login"; // redirect after logout
   };
 
-  if (loading) {
-    return <Typography>Loading...</Typography>;
-  }
-
-  if (error) {
-    return <Typography color="error">{error}</Typography>;
-  }
+  if (loading) return <p>Loading user info...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
-    <Box sx={{ maxWidth: 600, margin: "auto", padding: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Profile
-      </Typography>
-      <Typography variant="body1">
-        Email: {userData.email}
-      </Typography>
-      {/* Add more fields as needed, e.g., name, etc., based on your backend response */}
-      <Button
-        variant="contained"
-        color="primary"
-        sx={{ mt: 4 }}
-        onClick={handleLogout}
-      >
-        Logout
-      </Button>
-    </Box>
+    <div className={styles.container}>
+     <div className={styles.container2}>
+       <AccountCircleIcon sx={{
+        color:"black",
+        fontSize: 170
+      }}/>
+      <div>
+      <p className={styles.text}>{user.name}</p>
+      <p className={styles.text}>{user.email}</p>
+      <button className={styles.btn} onClick={handleLogout}>Logout</button>
+      </div>
+      
+     </div>
+    </div>
   );
-}
+};
+
+export default ProfilePage;

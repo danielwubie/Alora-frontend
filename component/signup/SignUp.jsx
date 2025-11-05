@@ -21,6 +21,8 @@ function SignUp(){
                         });
                         const token = response.data.result.token;
                         localStorage.setItem("token", token);
+                        const userId = response.data.result.userId;
+            localStorage.setItem("userId", userId);
                         console.log("SignUp successful:", response.data);
                          navigate("/");
         } catch (error) {
