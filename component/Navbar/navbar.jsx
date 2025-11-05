@@ -167,11 +167,11 @@ const handleProfilleClick = () => {
             <Sidebar/>
             <Box
               variant="h6"
-              noWrap
+              
               component="div"
               sx={{  width:"140px",height:"60px"  }}
             >
-              <img src="src/assets/alora_Brand_Logo.png" className={styles.image}/>
+              <img src="../../src/assets/alora_Brand_Logo.png" className={styles.image}/>
             </Box>
           </Box>
           <Search className={styles.searchbox}>
