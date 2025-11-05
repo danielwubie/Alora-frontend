@@ -21,8 +21,8 @@ function App() {
   return (
     <>
        
-       <PrimarySearchAppBar/>
-        <Toolbar />
+       <Navbar/>
+        
        <Mens/>
        
      

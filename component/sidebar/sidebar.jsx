@@ -64,6 +64,12 @@ export default function Sidebar() {
     navigate(`/subcategory/${subId}`);
     setOpen(false); // Close sidebar after click
   };    
+  const handleCategoryClick = (catId) => {
+    // Navigate to subcategory page
+    navigate(`/category/${catId}`);
+    setOpen(false); // Close sidebar after click
+  };    
+
 
   return (
     <div>
@@ -93,6 +99,7 @@ export default function Sidebar() {
                     gap: 0,
                     p: 0,
                   }}
+                  onClick={()=>handleCategoryClick(cat.id)}
                 >
                   <Box sx={{ p: "12px" }}>
                     {categoryIcons[cat.name] || (

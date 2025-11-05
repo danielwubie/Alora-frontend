@@ -24,9 +24,9 @@ import { useNavigate } from 'react-router-dom';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.black, 0.11),
+  backgroundColor: alpha(theme.palette.common.black, 0.2),
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.black, 0.25),
+    backgroundColor: alpha(theme.palette.common.black),
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
@@ -161,17 +161,17 @@ const handleProfilleClick = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar  sx={{backgroundColor:"#ffecd4ba"}}>
+      <AppBar  sx={{backgroundColor:"#ffecd4DE"}}>
         <Toolbar>
           <Sidebar/>
-          <Typography
+          <Box
             variant="h6"
             noWrap
             component="div"
             sx={{  width:"140px",height:"60px"  }}
           >
             <img src="src\assets\alora_Brand_Logo.png" className={styles.image}/>
-          </Typography>
+          </Box>
           <Search className={styles.searchbox}>
             <SearchIconWrapper>
               <SearchIcon sx={{color:"#624f39"}}/>

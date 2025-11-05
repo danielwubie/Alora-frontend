@@ -7,6 +7,14 @@
     margin-right: 320px !important;
     color: black;
     border-radius: 10px !important;
+    background-color: #f0e6d6ff !important;
+
+}
+.searchbox:hover{
+  background-color: #bdb2a4 !important;
+}
+.searchbox:active{
+  background-color: #bdb2a4 !important;
 }
 :global(.MuiBadge-badge) {
   background-color: #8a3d1f !important;
