@@ -18,6 +18,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Sidebar from '../sidebar/sidebar';
 import styles from '../Navbar/Navbar.module.css'
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import { useNavigate } from 'react-router-dom';
+
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -59,12 +62,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+  
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
+const token = localStorage.getItem("token");
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -142,6 +147,17 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
+  const handleCartClick = () => {
+  navigate('/cart'); // or whatever your cart route is
+};
+const handleProfilleClick = () => {
+  
+  if(!token){
+    navigate("/")
+  }else{
+    navigate("/profile")
+  }
+};
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -154,7 +170,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{  width:"140px",height:"60px"  }}
           >
-            <img src="src/assets/alora_Brand_Logo.png" className={styles.image}/>
+            <img src="src\assets\alora_Brand_Logo.png" className={styles.image}/>
           </Typography>
           <Search className={styles.searchbox}>
             <SearchIconWrapper>
@@ -167,9 +183,12 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            <IconButton size="large" aria-label="show 4 new mails" color="inherit" onClick={handleCartClick}>
               <Badge badgeContent={4} color="error">
-                <ShoppingCartIcon sx={{color:"#624f39"}}/>
+                <ShoppingCartIcon sx={{color:"#624f39",
+                   "&:focus": { outline: "none", boxShadow: "none" },
+            "&:focus-visible": { outline: "none", boxShadow: "none" },
+                }}/>
               </Badge>
             </IconButton>
            
@@ -179,10 +198,13 @@ export default function PrimarySearchAppBar() {
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              onClick={handleProfilleClick}
               color="inherit"
             >
-              <PersonOutlineIcon sx={{color:"#624f39"}}/>
+              <PersonOutlineIcon sx={{color:"#624f39" , 
+                 "&:focus": { outline: "none", boxShadow: "none" },
+            "&:focus-visible": { outline: "none", boxShadow: "none" },
+              }}/>
             </IconButton>
           </Box>
           

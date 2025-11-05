@@ -33,7 +33,7 @@ function ProductList({ transform, title, info,mode="all",config }) {
         })
         .catch((err) => console.error("Error fetching products:", err));
     }
-  }, [mode,config]);
+  }, [mode, config]);
 
   
  const finalList = transform ? transform(products) : products;

@@ -2,7 +2,7 @@
 .cardbox{
     background-color: antiquewhite;
     height:460px;
-    width: 300px;
+    width: 250px;
     overflow: hidden; 
 }@media (max-width: 1024px) {
   .cardbox {

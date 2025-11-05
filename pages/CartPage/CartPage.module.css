@@ -1,0 +1,14 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1e6d5;
+  color: #3e2e1f;
+  text-align: center;
+}
+.title{
+    margin-left: 200px !important;
+    margin-bottom: 50px !important;
+}

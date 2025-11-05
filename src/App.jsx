@@ -1,31 +1,29 @@
 import React from "react";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import  MyCard  from '../component/ProductCard/productCard'
-import './App.css'
-import ProductList from '../component/ProductCard/ProductList'
-import Sidebar from "../component/sidebar/sidebar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+
+import Navbar from "../component/Navbar/navbar";
 import Footer from "../component/FooterCard/Footer";
-import Login from "../component/login/login";
-import Heroposter from "../component/heroposter/heroposter"
-import PrimarySearchAppBar from "../component/Navbar/navbar"
-import Home from "../pages/home page/home"
-import { Toolbar } from '@mui/material';
-import CatCard from "../component/catagory/categorycard";
+import Home from "../pages/home page/home";
+import CartPage from "../pages/CartPage/CartPage";
+import Login from "../component/login/login"
+
+import SignUp from "../component/signup/SignUp";
+import ProfilePage from "../pages/ProfilePage/ProfileP"
+import Womens from "../pages/Women's Fashtion/wemens";
 import Mens from '../pages/mens clothes/mens'
-import Womens from '../pages/Womens Fashion/womens'
+
 import BeautyCare from '../pages/Beauty & Care/BeautyCare'
 import ArtsCrafts from '../pages/Arts & crafts/Artscrafts'
 import ToynGames from '../pages/Toys & Games/ToysGames'
 function App() {
-
-
+  
   return (
     <>
        
        <PrimarySearchAppBar/>
         <Toolbar />
-       <ArtsCrafts/>
+       <Mens/>
        
      
     </>
