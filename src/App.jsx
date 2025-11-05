@@ -14,6 +14,9 @@ import { Toolbar } from '@mui/material';
 import CatCard from "../component/catagory/categorycard";
 import Mens from '../pages/mens clothes/mens'
 import Womens from '../pages/Womens Fashion/womens'
+import BeautyCare from '../pages/Beauty & Care/BeautyCare'
+import ArtsCrafts from '../pages/Arts & crafts/Artscrafts'
+import ToynGames from '../pages/Toys & Games/ToysGames'
 function App() {
 
 
@@ -22,7 +25,7 @@ function App() {
        
        <PrimarySearchAppBar/>
         <Toolbar />
-       <Mens/>
+       <ArtsCrafts/>
        
      
     </>

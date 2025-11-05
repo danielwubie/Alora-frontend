@@ -55,7 +55,7 @@ export default function Mens() {
       {selectedSub ? (
         <ProductList mode="sub" config={selectedSub.id} title={`Men’s ${selectedSub.name}`} />
       ) : (
-        <ProductList mode="all" title="All Men's Products" />
+        <ProductList mode="catag" title="All Men's Products" config="2" />
       )}
       </div>
  </>
