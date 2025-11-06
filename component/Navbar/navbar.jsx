@@ -9,7 +9,6 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
@@ -69,7 +68,7 @@ export default function PrimarySearchAppBar() {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-const token = localStorage.getItem("token");
+
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -151,12 +150,12 @@ const token = localStorage.getItem("token");
   navigate('/cart'); // or whatever your cart route is
 };
 const handleProfilleClick = () => {
-  
-  if(!token){
-    navigate("/")
-  }else{
+  // api request 
+  // if(!token){
+  //   navigate("/login")
+  // }else{
     navigate("/profile")
-  }
+  // }
 };
 
   return (

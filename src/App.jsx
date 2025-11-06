@@ -19,6 +19,21 @@ import BeautyCare from "../pages/Beauty & Care/BeautyCare"
 import ArtsCrafts from "../pages/Arts & crafts/Artscrafts"
 
 function App() {
+//   const token = localStorage.getItem("token");
+// const expiry = localStorage.getItem("tokenExpiry");
+
+// if (token && expiry) {
+//   if (Date.now() > parseInt(expiry, 10)) {
+//     // expired
+//     localStorage.removeItem("token");
+//     localStorage.removeItem("userId");
+//     localStorage.removeItem("tokenExpiry");
+//     console.log("Token expired and removed");
+//   } else {
+//     console.log("Token is still valid");
+//   }
+// }
+
   return (
     <Router>
       <Navbar />
@@ -44,6 +59,7 @@ function App() {
 
       <Footer />
     </Router>
+    
   );
 }
 
