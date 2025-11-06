@@ -20,10 +20,7 @@ export default function Login() {
             localStorage.setItem("token", token);
             const userId = response.data.result.userId;
             localStorage.setItem("userId", userId);
-            setTimeout(() => {
-            localStorage.removeItem("token");
-            console.log("Token expired and removed");
-            }, 12 * 60 * 60 * 1000);
+            
             console.log("Login successful:", response.data);
             navigate("/");
            
