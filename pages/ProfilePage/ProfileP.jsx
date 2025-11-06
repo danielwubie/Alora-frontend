@@ -20,7 +20,7 @@ const ProfilePage = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-
+console.log(response.data.user)
 setUser(response.data.user);
       } catch (error) {
         setError("Failed to load user info",error);

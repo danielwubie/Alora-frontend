@@ -13,11 +13,20 @@ function MyCard({ id, name, Price, description, image }) {
 
   const handleAddToCart = async () => {
     try {
-      const newItem = { id, name, Price, description, image };
-
+        const payload = {
+      productId: id,   
+      quantity: 1      
+    };
+      const token = localStorage.getItem("token");
       const response = await axios.post(
         "http://127.0.0.1:5000/cart/add",
-        newItem
+        payload,
+        {
+
+          headers: {
+          Authorization: `Bearer ${token}`, // ✅ attach token
+          "Content-Type": "application/json"
+        }}
       );
 
       // add to local state
