@@ -5,11 +5,16 @@ import styles from "../login/Login.module.css"
 import Button from "@mui/material/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+;
+
 export default function Login() {
     const [Email, setEmail]=useState("")
     const [Password, setPassword]=useState("")
+    
+      
       const navigate = useNavigate();
-   
+     
+
     const handleLogin= async ()=>{
         try {
             const response= await axios.post("http://127.0.0.1:5000/users/login",{
@@ -22,15 +27,16 @@ export default function Login() {
             localStorage.setItem("userId", userId);
             
             console.log("Login successful:", response.data);
-            navigate("/");
-           
+            navigate("/", { state: { toast: true,message:"✅Loggedin succesfully" } });
+          
         } catch (error) {
             console.error("Login failed:", error);
       alert("Invalid email or password");
+
         }
     }
       const handleClose = () => {
-    navigate(-1);
+    navigate("/");
    
   };
  
@@ -49,7 +55,7 @@ export default function Login() {
         alignItems: "center",
         zIndex: 9999,
       }}
-      onClick={handleClose} // clicking outside closes the login card
+      onClick={handleClose} 
     >
     <div className={styles.contianer}
          onClick={(e) => e.stopPropagation()}
@@ -84,9 +90,12 @@ export default function Login() {
                             </a>
             <Button sx={{ mt: 2,color: "white", height:"62px",width:"183px",backgroundColor:"#C15A18"} } onClick={handleLogin}>
                 Login
+                  
             </Button>
+                
         </div>
     </div>
+    
     </div>
   );
 }

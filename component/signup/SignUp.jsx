@@ -22,11 +22,11 @@ function SignUp(){
                         const token = response.data.result.token;
                         localStorage.setItem("token", token);
                        
-                        
+                        console.log("☮✝🕎",token)
                         const userId = response.data.result.userId;
-            localStorage.setItem("userId", userId);
+                        localStorage.setItem("userId", userId);
                         console.log("SignUp successful:", response.data);
-                         navigate("/");
+                        navigate("/", { state: { toast: true,message:"✅account created succesfully" } });
         } catch (error) {
             console.error("SignUp failed:", error);
       alert("Invalid email or password");

@@ -6,10 +6,17 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import styles from "../catagory/category.module.css";
-
-function CatCard({ name, description, image }) {
+import { useNavigate } from 'react-router-dom';
+function CatCard({ name, description, image,path }) {
   const [hovered, setHovered] = useState(false);
+  const navigate=useNavigate()
+  const handleClick = () => {
+    if (path) {
+      navigate(path);
+      
+    }
 
+  };
   return (
     <Card
       sx={{ borderRadius: 4, boxShadow: 0, border: "1px solid #e1e1e1" }}
@@ -47,6 +54,7 @@ function CatCard({ name, description, image }) {
             backgroundColor: "#8b4513",  
           }}
            className={styles.cardbutton}
+           onClick={handleClick}
         >
           Quick shop
         </Button>
@@ -66,6 +74,7 @@ CatCard.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string,
+  path: PropTypes.string,
 };
 
 export default CatCard;

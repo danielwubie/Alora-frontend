@@ -10,28 +10,26 @@ const ProfilePage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
  const navigate=useNavigate()
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        const response = await axios.get(`http://127.0.0.1:5000/users/profile`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }).catch(()=>{
-          console.log("😁😁😁💕")
-          navigate("/login")
-        });
-console.log(response.data.user)
-setUser(response.data.user);
-      } catch (error) {
-        setError("Failed to load user info",error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchUser();
-  }, []);
+useEffect(() => {
+  const fetchUser = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) return navigate("/login");
+
+    try {
+      const response = await axios.get(`http://127.0.0.1:5000/users/profile`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setUser(response.data.user);
+    } catch (error) {
+      setError("Failed to load user info: " + error.message);
+      navigate("/login");
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchUser();
+}, [navigate]);
+
 
   const handleLogout = () => {
     localStorage.removeItem("token");

@@ -4,7 +4,7 @@ import { Typography, Box, Grid } from "@mui/material";
 
 // Your 3 images — from public/assets/
 const IMAGES = [
-  "/assets/mens.jpg",
+  "/assets/art.jpg",
   "/assets/sophie_chair.jpg",
   "/assets/toy.jpg",
 ];
@@ -13,21 +13,24 @@ const IMAGES = [
 const CATEGORIES = [
   {
     id: 2,
-    name: "Men's Fashion",
-    description: "white",
+    name: "Arts & crafts",
+    description: "everything about art and craft",
     image: IMAGES[0],
+    path: "/category/42",
   },
   {
     id: 40,
     name: "Furniture",
     description: "all stuff",
     image: IMAGES[1],
+    path: "/category/40",
   },
   {
     id: 41,
     name: "Toys & Games",
     description: "various",
     image: IMAGES[2],
+     path: "/category/41",
   },
 ];
 
@@ -69,6 +72,7 @@ function CatList({ title = "Featured", info = "Picked items" }) {
               name={item.name}
               description={item.description}
               image={item.image}
+              path={item.path}
             />
           </Grid>
         ))}

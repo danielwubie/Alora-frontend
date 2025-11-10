@@ -17,7 +17,7 @@ import Furniture from "../pages/Furniture/Furniture";
 import ToynGames from "../pages/Toys & Games/ToysGames"
 import BeautyCare from "../pages/Beauty & Care/BeautyCare"
 import ArtsCrafts from "../pages/Arts & crafts/Artscrafts"
-
+import ScrollToTop from '../component/sroll'
 function App() {
 //   const token = localStorage.getItem("token");
 // const expiry = localStorage.getItem("tokenExpiry");
@@ -36,6 +36,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
 
       <Routes>

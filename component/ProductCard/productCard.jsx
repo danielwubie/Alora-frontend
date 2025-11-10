@@ -7,9 +7,19 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import axios from "axios";
 import styles from "../ProductCard/ProductCard.module.css";
+import Snackbar from '@mui/material/Snackbar';
 
 function MyCard({ id, name, Price, description, image }) {
-  const [cart, setCart] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [message,setMessage]= useState("")
+  const [color,setColor]= useState("")
+    const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const handleAddToCart = async () => {
     try {
@@ -29,13 +39,18 @@ function MyCard({ id, name, Price, description, image }) {
         }}
       );
 
-      // add to local state
-      setCart((prev) => [...prev, response.data]);
-
+     setOpen(true);
+      setMessage("✅ added succesfully")
+      setColor("#5aebaaff")
       console.log("✅ Added to cart:", response.data);
+
 
     } catch (error) {
       console.error("❌ Failed to add to cart", error);
+      setOpen(true);
+      setMessage("❌ You have to login to add to cart")
+      setColor("#eb5a5aff")
+      
     }
   };
 
@@ -73,7 +88,24 @@ function MyCard({ id, name, Price, description, image }) {
         >
           Quick Add
         </Button>
+        
       </CardContent>
+      <Snackbar
+        open={open}
+        autoHideDuration={2000}
+        onClose={handleClose}
+        message={message}
+        sx={{
+    "& .MuiSnackbarContent-root": {
+      backgroundColor: `${color}`,
+      color: "#fff",
+      borderRadius: "10px",
+      fontSize: "16px",
+      fontWeight: "600",
+      padding: "10px 16px",
+    }
+  }}
+      />
     </Card>
   );
 }
