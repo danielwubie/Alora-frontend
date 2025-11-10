@@ -3,8 +3,8 @@
   flex-direction: column;
   background-color: #f1e6d5;
   color: #3e2e1f;
+  padding: 2%;
   text-align: center;
-  height: 500px;
 }
 .title{
     margin-left: 200px !important;
