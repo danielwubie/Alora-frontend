@@ -2,6 +2,7 @@
     border-radius: 10px !important;
     border: 1px solid #e2d8c8 !important;
     box-shadow: rgb(192, 183, 170) !important;
+    margin-bottom: 20px !important;
 }
 
 .cardbox{
@@ -58,3 +59,16 @@ color:rgb(212, 24, 61);
     font-weight: 500 !important;
     color: #6b5b47;
 }
+
+/* const [Cart, setCart] = useState([]); */
+ /* const handleRemove = (id) => {
+    console.log("heyyyyyyy",id)
+    const token = localStorage.getItem("token")
+    axios.delete(`http://127.0.0.1:5000/cart/delete`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      data:{ "productId": id },
+    });
+    setCart((prev) => prev.filter((item) => item.product_id !== id));
+  }; */

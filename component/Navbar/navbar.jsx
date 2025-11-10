@@ -55,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '50px',
+      width: '300px',
     },
   },
 }));
@@ -65,6 +65,17 @@ export default function PrimarySearchAppBar() {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+   const [searchQuery, setSearchQuery] = React.useState("");
+
+  const handleSearchChange = (e) => setSearchQuery(e.target.value);
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim() !== "") {
+      navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
+      setSearchQuery("");
+    }
+  };
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -181,15 +192,20 @@ const handleProfilleClick = () => {
               <img src="../../src/assets/alora_Brand_Logo.png" className={styles.image}/>
             </Box>
           </Box>
-          <Search className={styles.searchbox}>
-            <SearchIconWrapper>
-              <SearchIcon sx={{color:"#624f39"}}/>
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+          <form onSubmit={handleSearchSubmit}  className={styles.searchbox}>
+            <Search  className={styles.searchbox2}>
+              <SearchIconWrapper>
+                <SearchIcon sx={{ color: "#624f39" }} />
+              </SearchIconWrapper>
+              <StyledInputBase
+              sx={{width: '100%'}}
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+                value={searchQuery}
+                onChange={handleSearchChange}
+              />
+            </Search>
+          </form>
           {/* <Box sx={{ flexGrow: 1 }} /> */}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit" onClick={handleCartClick}>

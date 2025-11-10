@@ -17,6 +17,8 @@ import Furniture from "../pages/Furniture/Furniture";
 import ToynGames from "../pages/Toys & Games/ToysGames"
 import BeautyCare from "../pages/Beauty & Care/BeautyCare"
 import ArtsCrafts from "../pages/Arts & crafts/Artscrafts"
+
+import SearchResultsPage from "../pages/SearchResultsPage/SearchResultsPage";
 import ScrollToTop from '../component/sroll'
 function App() {
 //   const token = localStorage.getItem("token");
@@ -54,7 +56,7 @@ function App() {
         <Route path="/category/41" element={<ToynGames />} />
         <Route path="/category/42" element={<ArtsCrafts />} />
         
-        
+          <Route path="/search" element={<SearchResultsPage />} />
        
       </Routes>
 

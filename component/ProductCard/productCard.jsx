@@ -70,11 +70,35 @@ function MyCard({ id, name, Price, description, image }) {
       </div>
 
       <CardContent>
-        <Typography variant="h6">{name}</Typography>
-
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-          {description}
+        <Typography 
+        variant="h6"
+        sx={{
+                maxWidth: "200px",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                display: "block",
+              }}
+      title={name} 
+        > 
+        {name}
         </Typography>
+
+        <Typography
+        variant="body2"
+        color="text.secondary"
+        sx={{
+          maxWidth: "200px",
+          display: "-webkit-box",
+          WebkitLineClamp: 2,
+          WebkitBoxOrient: "vertical",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+        }}
+        title={description}
+      >
+        {description}
+      </Typography>
 
         <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
           ${Price.toLocaleString()}
