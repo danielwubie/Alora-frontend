@@ -131,7 +131,7 @@
 
 
 /* (Tablet Portrait)  */
-@media (max-width: 100px) and (min-width:600px){
+@media (max-width: 1000px) and (min-width:600px){
   .contianer {
     width: 600px;
     height: auto;
