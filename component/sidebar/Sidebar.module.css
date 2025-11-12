@@ -1,6 +1,6 @@
 .IconButton {
   border-radius: 10px; /* rounded corners */
-  padding: 8px;
+  /* padding: 8px; */
   transition: background-color 0.3s ease, transform 0.2s ease;
   outline: none;                   /* removes the default focus outline */
   box-shadow: none;   
@@ -16,6 +16,9 @@
   outline: none;
   box-shadow: none;
 }
+
+
+
 
 
 .Categorys{

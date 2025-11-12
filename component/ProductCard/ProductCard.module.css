@@ -4,34 +4,42 @@
     height:460px;
     width: 250px;
     overflow: hidden; 
-}@media (max-width: 1024px) {
+}
+
+
+/* 1440x900 screens */
+@media (max-width: 1440px)  {
   .cardbox {
     width: 280px;
-    height:460px;
-  }
-}
-
-@media (max-width: 768px) {
-  .cardbox {
-    width: 260px;
     height: 460px;
   }
 }
 
-@media (max-width: 480px) {
+
+
+/* 800x1280 screens (portrait tablets) */
+@media (max-width: 800px)  {
   .cardbox {
     width: 230px;
+    height: 480px;
+  }
+}
+
+/* 412x915 and 412x919 (phones like Galaxy S20, Pixel 7) */
+@media (max-width: 412px)  {
+  .cardbox {
+    width: 240px;
     height: 460px;
   }
 }
 
-
-
-
-
-
-
-
+/* 393x852 (iPhone 14 Pro, etc.) */
+@media (max-width: 393px) {
+  .cardbox {
+    width: 220px;
+    height: 460px;
+  }
+}
 
 
 
@@ -71,7 +79,7 @@
 
 .imagewrapper{
     overflow: hidden; 
-  height: 240px;  
+  height: 60%;  
 }
 .cardbox:hover .imagebox {
   transform: scale(1.1);

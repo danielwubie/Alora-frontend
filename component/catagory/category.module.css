@@ -1,28 +1,12 @@
 .cardbox {
   position: relative;
   background-color: antiquewhite;
-  height: 460px;
-  width: 400px;
+  /* width: 100%;  */
+  /* height: 460px; */
   overflow: hidden;
   transition: box-shadow 0.3s ease;
-}
-@media (min-width: 430px) {
-  .cardbox {
-    width: 320px;
-    height: 400px;
-  }
-}
-@media (min-width: 768px)  {
-  .cardbox {
-    width: 330px;
-    height: 430px;
-  }
-}
-@media (min-width: 1351px) {
-  .cardbox {
-    height: 460px;
-  width: 350px;
-  }
+  /* margin: 10px; */
+  box-sizing: border-box;
 }
 
 .cardbox:hover {
@@ -34,6 +18,7 @@
   height: 240px;
   width: 100%;
   position: relative;
+  
 }
 
 .imagebox {
@@ -47,7 +32,6 @@
   transform: scale(1.1);
 }
 
-/* === Overlay Button === */
 .cardbutton {
   position: absolute;
   top: 50%;
@@ -57,19 +41,60 @@
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 10;
-  border-radius: 10px !important;
- 
+  border-radius: 10px;
+  font-size: 12px;
 }
 
-/* Show the button on hover of the entire card */
 .cardbox:hover .cardbutton {
   opacity: 1;
   visibility: visible;
 }
-.content{
+
+.content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+}
 
+/* === SMALL SCREENS FIXES === */
+
+/* 393 x 852 */
+/* @media (width: 393px) and (height: 852px) {
+  .cardbox {
+    width: 280px;
+    height: 400px;
+  }
+} */
+
+/* 412 x 915 */
+/* @media (width: 412px) and (height: 915px) {
+  .cardbox {
+    width: 300px;
+    height: 420px;
+  }
+} */
+
+/* 412 x 919 */
+@media (max-width: 412px)  {
+  .cardbox {
+    width: 300px;
+    height: 420px;
+   
+  }
+}
+
+/* @media (width: 1280px) and (height: 800px) {
+  .cardbox {
+    width: 300px;
+    height: 420px;
+  }
+} */
+
+@media (width: 1440px) and (height: 900px) {
+  .cardbox {
+    width: 350px;
+    height: 420px;
+  }
 }

@@ -88,7 +88,21 @@ export default function Sidebar() {
           "&:focus-visible": { outline: "none", boxShadow: "none" },
         }}
       >
-        <MenuIcon sx={{ fontSize: 30 }} className={styles.IconButton} />
+        <MenuIcon
+         sx={{ fontSize: 30
+          , '@media (max-width: 412px) and (max-height: 919px)': {
+      fontSize: 25, // for smaller mobile screens
+    },
+    '@media (max-width: 393px) and (max-height: 852px)': {
+      fontSize: 20,
+    },'@media (max-width: 1440px) ': {
+      fontSize: 25,
+    
+    },
+          }}
+        
+        className={styles.IconButton} 
+        />
       </IconButton>
 
       <Drawer anchor="left" open={open} onClose={toggleDrawer(false)}>

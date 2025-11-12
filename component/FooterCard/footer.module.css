@@ -1,17 +1,18 @@
 .footer {
   width: 100%;
   min-width: 100%;
-  height: 673px;
+  height: auto; /* allow height to adjust to content */
   background-color: #8b4513;
   color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden; /* prevents any scroll */
+  overflow: hidden; /* prevents scroll overflow */
   box-sizing: border-box;
+  padding-top: 20px;
 }
 
-
+/* Main container */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -31,16 +32,7 @@
   box-sizing: border-box;
 }
 
-.title {
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 27px;
-  color: rgb(250, 248, 244);
-  margin-bottom: 12px;
-}
-
+.title,
 .subtitle {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -107,33 +99,199 @@
   margin: 0;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .container {
-    padding: 40px;
-    justify-content: center;
-  }
+/* ========== RESPONSIVE BREAKPOINTS ========== */
 
+/* ===== 1440 × 900 (Desktop large) ===== */
+@media (width: 1440px) and (height: 900px) {
+  .container {
+    padding: 60px 80px; /* increased side padding for breathing room */
+    max-width: 1300px;  /* slightly wider but centered */
+    justify-content: space-between;
+    gap: 60px; /* add clear space between sections */
+  }
   .section {
-    flex: 1 1 45%;
-    min-width: 200px;
+    flex: 1 1 22%; /* about 4 per row with spacing */
+    min-width: 250px;
+  }
+  .title, .subtitle {
+    font-size: 18px;
+  }
+  .text {
+    font-size: 16px;
   }
 }
 
-@media (max-width: 600px) {
+/* ===== 1280 × 800 (Tablet landscape) ===== */
+@media (width: 1280px) and (height: 800px) {
   .container {
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
+    padding: 50px 100px; /* more side space for balance */
+    justify-content: center; /* center them nicely */
+    gap: 60px 100px; /* horizontal and vertical gap */
+    flex-wrap: wrap;
   }
-
   .section {
-    width: 100%;
-    max-width: 400px;
+    flex: 1 1 40%; /* exactly 2 per line */
+    max-width: 420px;
     text-align: center;
   }
+  .title, .subtitle {
+    font-size: 17px;
+  }
+  .text {
+    font-size: 15px;
+  }
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+    width: 100%; /* ensures icons stay centered horizontally */
+  }
 
+  .icon {
+    font-size: 22px;
+    color: #fff;
+  }
+}
+
+/* ===== 800 × 1280 (Tablet portrait) ===== */
+@media (width: 800px) and (height: 1280px) {
+  .container {
+    flex-wrap: wrap;
+    padding: 40px 60px;
+    justify-content: center;
+  }
+  .section {
+    flex: 1 1 35%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
   .icons {
     justify-content: center;
+  }
+  
+}
+
+/* ===== 412 × 919 (Mobile large) ===== */
+@media (width: 412px) and (height: 919px) {
+  .footer {
+    padding-top: 10px;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3px 2px;
+    gap: 20px;
+  }
+  .section {
+    flex: 1 1 30%; /* ~3 per row */
+    max-width: 180px;
+    min-width: 130px; /* prevent sections from collapsing */
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .title, .subtitle {
+    font-size: 16px;
+  }
+  .text {
+    font-size: 14px;
+  }
+  .icons {
+    justify-content: center;
+    gap: 8px;
+  }
+  .icon {
+    font-size: 22px;
+  }
+  .bottomLinks {
+    gap: 20px;
+  }
+  .copy {
+    font-size: 14px;
+  }
+}
+
+/* ===== 412 × 915 (Mobile medium) ===== */
+@media (width: 412px) and (height: 915px) {
+  .footer {
+    padding-top: 10px;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px 1px;
+    gap: 18px;
+  }
+  .section {
+    flex: 1 1 30%; /* ~3 per row */
+    max-width: 170px;
+    min-width: 130px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .title, .subtitle {
+    font-size: 15px;
+  }
+  .text {
+    font-size: 13.5px;
+  }
+  .icons {
+    justify-content: center;
+    gap: 8px;
+  }
+  .icon {
+    font-size: 21px;
+  }
+  .bottomLinks {
+    gap: 18px;
+  }
+  .copy {
+    font-size: 13.5px;
+  }
+}
+
+/* ===== 393 × 852 (Mobile small) ===== */
+@media (width: 393px) and (height: 852px) {
+  .footer {
+    padding-top: 8px;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2px 1px;
+    gap: 16px;
+  }
+  .section {
+    flex: 1 1 45%; /* ~2 per row for smaller screens */
+    max-width: 160px;
+    min-width: 130px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .title, .subtitle {
+    font-size: 15px;
+  }
+  .text {
+    font-size: 13px;
+  }
+  .icons {
+    justify-content: center;
+    gap: 6px;
+  }
+  .icon {
+    font-size: 20px;
+  }
+  .bottomLinks {
+    gap: 16px;
+  }
+  .copy {
+    font-size: 13px;
   }
 }
