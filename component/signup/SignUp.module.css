@@ -206,7 +206,7 @@
 
 
 /* (Small Desktop / Laptop) */
-@media (max-width: 1440px) {
+@media (max-width: 1940px) {
   .contianer {
     width: 720px;
     height: auto;
