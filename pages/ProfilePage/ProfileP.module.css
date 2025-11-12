@@ -13,8 +13,8 @@
     border: solid 1px rgb(139, 139, 139);
      box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.1),  /* soft near shadow */
-    0 8px 16px rgba(0, 0, 0, 0.2), /* medium deeper shadow */
-    0 16px 32px rgba(0, 0, 0, 0.3); /* strongest far shadow */
+    0 8px 16px rgba(0, 0, 0, 0.2); /* medium deeper shadow */
+  
   
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -37,4 +37,15 @@
     width: 100px;
     margin-left: 50px;
     background-color: #3d2914;
+}
+.btn:hover{
+    border: none !important;
+    outline: none !important;
+    
+}
+.btn:active{
+    outline: none !important;
+}
+.btn:focus-visible{
+    outline: none !important;
 }

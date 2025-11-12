@@ -63,12 +63,14 @@ export default function Furniture() {
       <div className={Styles.contianer}>
         {selectedSub ? (
           <ProductList
+            key="sub"
             mode="sub"
             config={selectedSub.id}
             title={`Furniture: ${selectedSub.name}`}
           />
         ) : (
           <ProductList
+            key="catag"
             mode="catag"
             title="All Furniture Products"
             config="40"

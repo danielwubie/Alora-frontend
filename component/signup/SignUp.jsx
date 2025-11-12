@@ -19,10 +19,10 @@ function SignUp(){
                             email: Email,
                             password: Password,
                         });
-                        const token = response.data.result.token;
+                        const token = response.data.result.token.token;
                         localStorage.setItem("token", token);
                        
-                        console.log("☮✝🕎",token)
+                  
                         const userId = response.data.result.userId;
                         localStorage.setItem("userId", userId);
                         console.log("SignUp successful:", response.data);

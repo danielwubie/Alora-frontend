@@ -49,3 +49,12 @@
     display: flex;
     justify-content: flex-start;
 }
+.btn:hover{
+    outline: none;
+}
+.btn:active{
+    outline: none !important;
+}
+.btn:focus-visible{
+    outline: none !important;
+}

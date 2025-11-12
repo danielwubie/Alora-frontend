@@ -6,24 +6,7 @@
   overflow: hidden;
   transition: box-shadow 0.3s ease;
 }
-@media (min-width: 430px) {
-  .cardbox {
-    width: 320px;
-    height: 400px;
-  }
-}
-@media (min-width: 768px)  {
-  .cardbox {
-    width: 330px;
-    height: 430px;
-  }
-}
-@media (min-width: 1351px) {
-  .cardbox {
-    height: 460px;
-  width: 350px;
-  }
-}
+
 
 .cardbox:hover {
   box-shadow: 0 5px 12px rgba(147, 147, 147, 0.5);
@@ -49,6 +32,9 @@
 
 /* === Overlay Button === */
 .cardbutton {
+ 
+
+  color: white !important;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -72,4 +58,7 @@
   justify-content: center;
   align-items: center;
 
+}
+.cardbutton:hover{
+  border: none !important;
 }

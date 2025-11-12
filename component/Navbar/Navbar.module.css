@@ -4,7 +4,7 @@
 }
 .image:hover{
   cursor: pointer;
-  box-shadow: 0 5px 12px rgba(147, 147, 147, 0.5);
+  
 }
 .searchbox {
     width: 40% !important;
@@ -13,6 +13,9 @@
      background-color: rgba(255,236,212,1.5) !important;
     backdrop-filter: blur(12px) !important;        /* no quotes */
     -webkit-backdrop-filter: blur(12px) !important; /* no quotes */
+}
+.searchbox2:active{
+   background-color: #bdb2a4 !important;
 }
 
 .searchbox2{

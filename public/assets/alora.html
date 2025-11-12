@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://localhost:5173/category/42 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="emotion-insertion-point" content="">
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="./alora_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alora</title>
+  <style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/src/index.css">:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #f5f1eb;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  max-width: 100vw;
+
+  display: block; /* change from flex */
+  place-items: unset; /* remove centering */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+    padding: 0;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/src/App.css">#root {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  padding-top: 64px;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/component/sidebar/Sidebar.module.css">._IconButton_1i7v2_1 {
+  border-radius: 10px; /* rounded corners */
+  padding: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  outline: none;                   /* removes the default focus outline */
+  box-shadow: none;   
+}
+
+/* Hover effect */
+._IconButton_1i7v2_1:hover {
+  background-color: #d4c4a8; /* light gray on hover */
+  box-shadow: none;
+}
+
+._IconButton_1i7v2_1:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+._Categorys_1i7v2_41{
+    border-radius: 10px;
+     height: 44px !important; 
+    padding-right: 5px !important;
+    display: flex;
+    justify-content: flex-start;
+    /* margin-left: 10px; */
+}
+
+._Categorys_1i7v2_41:hover{
+background-color: #d4c4a8 !important; /* light gray on hover */
+width: 257px !important; 
+transform: scale(1.05) !important; 
+}
+
+._SubCategorys_1i7v2_71{
+    border-radius: 10px;
+    width: 225px !important;
+    height: 32px !important;
+    padding-right: 0px !important;
+    color: #6B5B47;
+    font-size: 14px;
+}
+._SubCategorys_1i7v2_71:hover{
+background-color: #d4c4a8 !important; 
+  transform: scale(1.05) !important; 
+    color: rgb(61, 41, 20);
+}
+
+._continer_1i7v2_99{
+    padding: 24px;
+    
+}
+
+._text_1i7v2_109{
+    font-family:"system-ui";
+    font-size: 16px;
+    color: rgb(61, 41, 20);
+    font-weight: 400;
+    line-height: 24px;
+
+}</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/component/Navbar/Navbar.module.css">._image_1oxrg_1{
+    width: 100px;
+    height: 60px;
+}
+._image_1oxrg_1:hover{
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(147, 147, 147, 0.5);
+}
+._searchbox_1oxrg_17 {
+    width: 40% !important;
+    color: black;
+    border-radius: 10px !important;
+     background-color: rgba(255,236,212,1.5) !important;
+    backdrop-filter: blur(12px) !important;        /* no quotes */
+    -webkit-backdrop-filter: blur(12px) !important; /* no quotes */
+}
+
+._searchbox2_1oxrg_35{
+    /* margin-left: 330px !important;
+    margin-right: 320px !important; */
+    width:100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: black;
+    border-radius: 10px !important;
+    background-color: #f0e6d6ff !important;
+
+}
+
+._searchbox2_1oxrg_35:hover{
+  background-color: #bdb2a4 !important;
+}
+._searchbox2_1oxrg_35:focus{
+  background-color: #bdb2a4 !important;
+}
+.MuiBadge-badge {
+  background-color: #8a3d1f !important;
+  color: white !important;
+}
+/* 
+<Search className={styles.searchbox}>
+            <SearchIconWrapper>
+              <SearchIcon sx={{color:"#624f39"}}/>
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </Search> */</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/component/FooterCard/footer.module.css">._footer_1f62z_1 {
+  width: 100%;
+  min-width: 100%;
+  height: 673px;
+  background-color: #8b4513;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; /* prevents any scroll */
+  box-sizing: border-box;
+}
+
+
+._container_1f62z_29 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 80px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+._section_1f62z_53 {
+  flex: 1 1 220px;
+  min-width: 200px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+._title_1f62z_67 {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: rgb(250, 248, 244);
+  margin-bottom: 12px;
+}
+
+._subtitle_1f62z_87 {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: rgb(250, 248, 244);
+  margin-bottom: 12px;
+}
+
+._text_1f62z_107,
+._list_1f62z_109 li,
+._bottomLinks_1f62z_111 li,
+._copy_1f62z_113 {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(255, 255, 255);
+  list-style: none;
+  margin-bottom: 6px;
+}
+
+._list_1f62z_109 {
+  padding: 0;
+  margin: 0;
+}
+
+._icons_1f62z_145 {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+._icon_1f62z_145 {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+._icon_1f62z_145:hover {
+  transform: scale(1.1);
+}
+
+._bottom_1f62z_111 {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+._bottomLinks_1f62z_111 {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+._copy_1f62z_113 {
+  margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  ._container_1f62z_29 {
+    padding: 40px;
+    justify-content: center;
+  }
+
+  ._section_1f62z_53 {
+    flex: 1 1 45%;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  ._container_1f62z_29 {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
+  ._section_1f62z_53 {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  ._icons_1f62z_145 {
+    justify-content: center;
+  }
+}
+</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/pages/home page/home.module.css">._container_90n38_1{
+    margin: 0;
+    padding-top: 1px;
+   width: 100%;
+   min-height: 200vh;
+    background-color: blanchedalmond;
+     box-sizing: border-box; 
+  
+}
+
+
+._productcontainer_90n38_23{
+    background-color: #f1f5eb;
+    display: flex;
+   justify-content: center;
+    padding-bottom: 40px;
+    
+}
+._productcontainer2_90n38_37{
+    
+    display: flex;
+    justify-content: center;
+    
+}</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/component/heroposter/Heroposter.module.css">._box_1afzi_1{
+    display: flex;
+
+    justify-content:space-around;
+    margin: 0px;
+    padding: 0;
+  background-image: url("src/assets/pexels-n-voitkevich-6214365.jpg");
+  background-size: cover; /* or contain */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+._title_1afzi_23{
+    margin: 5px;
+ font-size: 80px;
+ font-family:system-ui,  'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-style: normal;
+ font-weight: 500;
+
+}
+._contentbox_1afzi_39{ 
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    width: 772px;
+    height: 212px;
+}
+._description_1afzi_55{
+    margin: 5px;
+    font-size: 25px;
+ font-family:system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-style: normal;
+ font-weight: 500;
+ color: #e1e1e2;
+}
+._buttonbox_1afzi_71{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-between;
+    margin-left: 225px;
+}
+._button_1afzi_71{
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    font-family: system-ui,  'Segoe UI',  'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+._button_1afzi_71:hover{
+    background-color: rgb(236, 191, 136);
+     box-shadow: 0 10px 25px rgba(81, 80, 80, 0.5);
+}</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/component/ProductCard/ProductCard.module.css">
+._cardbox_1iy2k_3{
+    background-color: antiquewhite;
+    height:460px;
+    width: 290px;
+    overflow: hidden; 
+}@media (max-width: 1024px) {
+  ._cardbox_1iy2k_3 {
+    width: 280px;
+    height:460px;
+  }
+}
+
+@media (max-width: 768px) {
+  ._cardbox_1iy2k_3 {
+    width: 260px;
+    height: 460px;
+  }
+}
+
+@media (max-width: 480px) {
+  ._cardbox_1iy2k_3 {
+    width: 230px;
+    height: 460px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+._cardbox_1iy2k_3:hover{
+  
+  box-shadow: 0 5px 12px rgba(147, 147, 147, 0.5);
+}
+._imagebox_1iy2k_133{
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+._imagewrapper_1iy2k_143{
+    overflow: hidden; 
+  height: 240px;  
+}
+._cardbox_1iy2k_3:hover ._imagebox_1iy2k_133 {
+  transform: scale(1.1);
+}
+._cardbox_1iy2k_3:hover ._cardbutton_1iy2k_157 {
+  background-color: #8b4513 !important;
+}
+._cardbutton_1iy2k_157{
+  background-color: #f5f1eb !important;
+  border:1px solid rgb(161, 144, 125) !important;
+  border-radius: 10px !important;
+  
+}
+._cardbox_1iy2k_3:hover ._cardbutton_1iy2k_157:hover{
+  background-color: #f5f1eb !important;
+}</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/component/catagory/category.module.css">._cardbox_16yvt_1 {
+  position: relative;
+  background-color: antiquewhite;
+  height: 460px;
+  width: 400px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+@media (min-width: 430px) {
+  ._cardbox_16yvt_1 {
+    width: 320px;
+    height: 400px;
+  }
+}
+@media (min-width: 768px)  {
+  ._cardbox_16yvt_1 {
+    width: 330px;
+    height: 430px;
+  }
+}
+@media (min-width: 1351px) {
+  ._cardbox_16yvt_1 {
+    height: 460px;
+  width: 350px;
+  }
+}
+
+._cardbox_16yvt_1:hover {
+  box-shadow: 0 5px 12px rgba(147, 147, 147, 0.5);
+}
+
+._imagewrapper_16yvt_63 {
+  overflow: hidden;
+  height: 240px;
+  width: 100%;
+  position: relative;
+}
+
+._imagebox_16yvt_77 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+._cardbox_16yvt_1:hover ._imagebox_16yvt_77 {
+  transform: scale(1.1);
+}
+
+/* === Overlay Button === */
+._cardbutton_16yvt_101 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
+  border-radius: 10px !important;
+ 
+}
+
+/* Show the button on hover of the entire card */
+._cardbox_16yvt_1:hover ._cardbutton_16yvt_101 {
+  opacity: 1;
+  visibility: visible;
+}
+._content_16yvt_137{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/pages/CartPage/CartPage.module.css">._container_1pv63_1 {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1e6d5;
+  color: #3e2e1f;
+  padding: 2%;
+  text-align: center;
+}
+._title_1pv63_17{
+    margin-left: 200px !important;
+    margin-bottom: 50px !important;
+}</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/component/CartCard/card.module.css">._card_10p8z_1{
+    border-radius: 10px !important;
+    border: 1px solid #e2d8c8 !important;
+    box-shadow: rgb(192, 183, 170) !important;
+    margin-bottom: 20px !important;
+}
+
+._cardbox_10p8z_15{
+    justify-content: start;
+
+
+}
+._cardbox2_10p8z_25{
+    justify-content: start;
+    padding-left: 10px !important;
+}
+._contentbox_10p8z_33{
+    margin: 0 !important;
+    padding: 10px;
+    justify-content: left;
+}
+
+._IconButton_10p8z_45{
+border-radius: 10px; /* rounded corners */
+  padding: 8px;
+  outline: none;                   /* removes the default focus outline */
+  box-shadow: none;   
+  width: 30px;
+  height: 24px;
+  background-color: #f1f5eb ;
+  border: 1px solid rgb(209, 196, 196) ;
+}
+._IconButton_10p8z_45:hover {
+  background-color: #d4c4a8; /* light gray on hover */
+  box-shadow: none;
+}
+._IconButtonDelete_10p8z_73{
+    border-radius: 10px; /* rounded corners */
+  padding: 8px;
+  outline: none;                   /* removes the default focus outline */
+  box-shadow: none;   
+  width: 30px;
+  height: 24px;
+}
+._IconButtonDelete_10p8z_73:hover{
+background-color: #d4c4a8; /* light gray on hover */
+box-shadow: none;
+color:rgb(212, 24, 61);
+}
+._PriceTotal_10p8z_99{
+    margin-top: 40px !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700 !important;
+    color:rgb(61, 41, 20);
+    font-size: 16px !important;
+}
+._PriceEach_10p8z_113{
+    font-size: 15px !important; 
+    font-weight: 500 !important;
+    color: #6b5b47;
+}
+
+/* const [Cart, setCart] = useState([]); */
+ /* const handleRemove = (id) => {
+    console.log("heyyyyyyy",id)
+    const token = localStorage.getItem("token")
+    axios.delete(`http://127.0.0.1:5000/cart/delete`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      data:{ "productId": id },
+    });
+    setCart((prev) => prev.filter((item) => item.product_id !== id));
+  }; */</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/component/login/Login.module.css">._contianer_c3z1w_1{
+    background-color: #FFECD4;
+    width: 568px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+   
+   z-index: 9999; ;
+}
+._inputbox_c3z1w_27{
+  
+    background-color: white;
+    width: fit-content;
+    
+}
+._inputandtextbox_c3z1w_39{
+   display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+} 
+._text_c3z1w_51{
+    width: 80px;
+    color: black;
+}
+._link_to_signup_c3z1w_59{
+    width: 246px;
+    padding-top: 25px;
+    height: 33px;
+    font-size: 24px;
+    margin-right: 20px;
+    gap: 20px;
+}
+._button_and_link_c3z1w_75{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+._logo_c3z1w_85{
+    height: 120px;
+    width: 160px;
+     background-color: #FFECD4;
+}
+._logobox_c3z1w_95{
+    display: flex;
+    justify-content: flex-start;
+}</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/component/signup/SignUp.module.css">._contianer_12ezb_1{
+    background-color: #FFECD4;
+    width: 568px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+._inputbox_12ezb_23{
+  
+    background-color: white;
+    width: fit-content;
+    
+}
+._inputandtextbox_12ezb_35{
+   display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+} 
+._text_12ezb_47{
+    width: 80px;
+    color: black;
+}
+._link_to_signup_12ezb_55{
+    width: 246px;
+    padding-top: 25px;
+    height: 33px;
+    font-size: 24px;
+    margin-right: 20px;
+    gap: 20px;
+}
+._button_and_link_12ezb_71{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+._logo_12ezb_81{
+    height: 120px;
+    width: 160px;
+     background-color: #FFECD4;
+}
+._logobox_12ezb_91{
+    display: flex;
+    justify-content: flex-start;
+}</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/pages/ProfilePage/ProfileP.module.css">._container_4hcbx_1{
+    padding-top: 5%;
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+._container2_4hcbx_15{
+    height: 20%;
+    padding: 20px;
+    display: flex;
+    border-radius: 10px;
+    border: solid 1px rgb(139, 139, 139);
+     box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),  /* soft near shadow */
+    0 8px 16px rgba(0, 0, 0, 0.2), /* medium deeper shadow */
+    0 16px 32px rgba(0, 0, 0, 0.3); /* strongest far shadow */
+  
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+._container3_4hcbx_41{
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+._text_4hcbx_55{
+    color: #3d2914;
+    font-size: 20px;
+    padding-left: 50px;
+    font-family: system-ui,  'Segoe UI',  'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+._btn_4hcbx_71{
+    width: 100px;
+    margin-left: 50px;
+    background-color: #3d2914;
+}</style><style type="text/css" data-vite-dev-id="C:/Users/grandson/Documents/GitHub/Alora-frontend/pages/page.module.css">._contianer_12t51_1{
+     margin: 0;
+    padding-top: 1px;
+     width: 100%;
+    background-color: #f1f5eb;
+     box-sizing: border-box;
+     padding-left: 7.8%; 
+}
+._titlebox_12t51_17{
+   background-color: #f1eadf;
+   height: 150px;
+   padding-top: 30px;
+   padding-left: 25px;
+   margin-bottom: 10px;
+}
+._title_12t51_17{
+    color: #3d2914;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: system-ui,  'Segoe UI',  'Open Sans', 'Helvetica Neue', sans-serif;
+}
+._info_12t51_43{
+    color: #6b5b47;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: system-ui,  'Segoe UI',  'Open Sans', 'Helvetica Neue', sans-serif;
+}
+._filterbutton_12t51_55{
+    border: solid 1px rgb(228, 213, 189) !important;
+    margin: 3px !important;
+    color:#6b5b47 !important;
+}
+._filterbutton_12t51_55:focus{
+     outline: 2px solid #3d2914 !important;
+  box-shadow: 0 0 5px #3d2914 !important;
+}
+._activeBtn_12t51_73 {
+  outline: 2px solid #3d2914;
+  box-shadow: 0 0 5px #3d2914;
+ 
+}</style><style data-emotion="css-global" data-s="">@-webkit-keyframes mui-auto-fill{from{display:block;}}</style><style data-emotion="css-global" data-s="">@keyframes mui-auto-fill{from{display:block;}}</style><style data-emotion="css-global" data-s="">@-webkit-keyframes mui-auto-fill-cancel{from{display:block;}}</style><style data-emotion="css-global" data-s="">@keyframes mui-auto-fill-cancel{from{display:block;}}</style><style data-emotion="css" data-s="">.css-i9gxme{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;}</style><style data-emotion="css" data-s="">.css-flb2yu-MuiAppBar-root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;box-sizing:border-box;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;position:fixed;z-index:1100;top:0;left:auto;right:0;--AppBar-background:#1976d2;--AppBar-color:#fff;background-color:var(--AppBar-background);color:var(--AppBar-color);background-color:#ffecd480;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}</style><style data-emotion="css" data-s="">@media print{.css-flb2yu-MuiAppBar-root{position:absolute;}}</style><style data-emotion="css" data-s="">.css-1mf9yyy-MuiPaper-root-MuiAppBar-root{background-color:#fff;color:rgba(0, 0, 0, 0.87);-webkit-transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;box-shadow:var(--Paper-shadow);background-image:var(--Paper-overlay);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;box-sizing:border-box;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;position:fixed;z-index:1100;top:0;left:auto;right:0;--AppBar-background:#1976d2;--AppBar-color:#fff;background-color:var(--AppBar-background);color:var(--AppBar-color);background-color:#ffecd480;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}</style><style data-emotion="css" data-s="">@media print{.css-1mf9yyy-MuiPaper-root-MuiAppBar-root{position:absolute;}}</style><style data-emotion="css" data-s="">.css-27y8xl-MuiToolbar-root{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:16px;padding-right:16px;min-height:56px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}</style><style data-emotion="css" data-s="">@media (min-width:600px){.css-27y8xl-MuiToolbar-root{padding-left:24px;padding-right:24px;}}</style><style data-emotion="css" data-s="">@media (min-width:0px){@media (orientation: landscape){.css-27y8xl-MuiToolbar-root{min-height:48px;}}}</style><style data-emotion="css" data-s="">@media (min-width:600px){.css-27y8xl-MuiToolbar-root{min-height:64px;}}</style><style data-emotion="css" data-s="">.css-1xhj18k{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}</style><style data-emotion="css" data-s="">.css-2w6fae-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-2w6fae-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css" data-s="">.css-2w6fae-MuiIconButton-root.MuiIconButton-loading{color:transparent;}</style><style data-emotion="css" data-s="">.css-2w6fae-MuiIconButton-root:focus{outline:none;box-shadow:none;}</style><style data-emotion="css" data-s="">.css-2w6fae-MuiIconButton-root:focus-visible{outline:none;box-shadow:none;}</style><style data-emotion="css" data-s="">.css-1vgx5h2-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-1vgx5h2-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}</style><style data-emotion="css" data-s="">.css-1vgx5h2-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}</style><style data-emotion="css" data-s="">@media print{.css-1vgx5h2-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}</style><style data-emotion="css" data-s="">.css-1vgx5h2-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css" data-s="">.css-1vgx5h2-MuiButtonBase-root-MuiIconButton-root.MuiIconButton-loading{color:transparent;}</style><style data-emotion="css" data-s="">.css-1vgx5h2-MuiButtonBase-root-MuiIconButton-root:focus{outline:none;box-shadow:none;}</style><style data-emotion="css" data-s="">.css-1vgx5h2-MuiButtonBase-root-MuiIconButton-root:focus-visible{outline:none;box-shadow:none;}</style><style data-emotion="css" data-s="">.css-1sdz7zf-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;fill:currentColor;font-size:1.5rem;font-size:30px;}</style><style data-emotion="css" data-s="">.css-m24e0b-MuiDrawer-root{z-index:1200;}</style><style data-emotion="css" data-s="">.css-10yxiou{width:140px;height:60px;}</style><style data-emotion="css" data-s="">.css-mypqou{position:relative;border-radius:4px;background-color:rgba(0, 0, 0, 0.2);margin-right:16px;margin-left:0;width:100%;}</style><style data-emotion="css" data-s="">.css-mypqou:hover{background-color:rgba(0, 0, 0, NaN);}</style><style data-emotion="css" data-s="">@media (min-width:600px){.css-mypqou{margin-left:24px;width:900px;}}</style><style data-emotion="css" data-s="">.css-1iz4iln{padding:0px 16px;height:100%;position:absolute;pointer-events:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}</style><style data-emotion="css" data-s="">.css-1d3k4cm-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;fill:currentColor;font-size:1.5rem;color:#624f39;}</style><style data-emotion="css" data-s="">.css-1g8saui{color:inherit;width:100%;}</style><style data-emotion="css" data-s="">.css-1g8saui .MuiInputBase-input{padding:8px 8px 8px 0px;padding-left:calc(1em + 32px);-webkit-transition:width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;width:100%;}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-1g8saui .MuiInputBase-input{width:300px;}}</style><style data-emotion="css" data-s="">.css-erihy4-MuiInputBase-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.4375em;letter-spacing:0.00938em;color:rgba(0, 0, 0, 0.87);box-sizing:border-box;position:relative;cursor:text;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:inherit;width:100%;}</style><style data-emotion="css" data-s="">.css-erihy4-MuiInputBase-root.Mui-disabled{color:rgba(0, 0, 0, 0.38);cursor:default;}</style><style data-emotion="css" data-s="">.css-erihy4-MuiInputBase-root .MuiInputBase-input{padding:8px 8px 8px 0px;padding-left:calc(1em + 32px);-webkit-transition:width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;width:100%;}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-erihy4-MuiInputBase-root .MuiInputBase-input{width:300px;}}</style><style data-emotion="css" data-s="">.css-yimnyd-MuiInputBase-input{font:inherit;letter-spacing:inherit;color:currentColor;padding:4px 0 5px;border:0;box-sizing:content-box;background:none;height:1.4375em;margin:0;-webkit-tap-highlight-color:transparent;display:block;min-width:0;width:100%;-webkit-animation-name:mui-auto-fill-cancel;animation-name:mui-auto-fill-cancel;-webkit-animation-duration:10ms;animation-duration:10ms;}</style><style data-emotion="css" data-s="">.css-yimnyd-MuiInputBase-input::-webkit-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-yimnyd-MuiInputBase-input::-moz-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-yimnyd-MuiInputBase-input::-ms-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-yimnyd-MuiInputBase-input:focus{outline:0;}</style><style data-emotion="css" data-s="">.css-yimnyd-MuiInputBase-input:invalid{box-shadow:none;}</style><style data-emotion="css" data-s="">.css-yimnyd-MuiInputBase-input::-webkit-search-decoration{-webkit-appearance:none;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-yimnyd-MuiInputBase-input{}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-yimnyd-MuiInputBase-input::-webkit-input-placeholder{opacity:0!important;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-yimnyd-MuiInputBase-input::-moz-placeholder{opacity:0!important;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-yimnyd-MuiInputBase-input::-ms-input-placeholder{opacity:0!important;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-yimnyd-MuiInputBase-input:focus::-webkit-input-placeholder{opacity:0.42;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-yimnyd-MuiInputBase-input:focus::-moz-placeholder{opacity:0.42;}</style><style data-emotion="css" data-s="">label[data-shrink=false]+.MuiInputBase-formControl .css-yimnyd-MuiInputBase-input:focus::-ms-input-placeholder{opacity:0.42;}</style><style data-emotion="css" data-s="">.css-yimnyd-MuiInputBase-input.Mui-disabled{opacity:1;-webkit-text-fill-color:rgba(0, 0, 0, 0.38);}</style><style data-emotion="css" data-s="">.css-yimnyd-MuiInputBase-input:-webkit-autofill{-webkit-animation-duration:5000s;animation-duration:5000s;-webkit-animation-name:mui-auto-fill;animation-name:mui-auto-fill;}</style><style data-emotion="css" data-s="">.css-1guk29{}</style><style data-emotion="css" data-s="">@media (min-width:0px){.css-1guk29{display:none;}}</style><style data-emotion="css" data-s="">@media (min-width:900px){.css-1guk29{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><style data-emotion="css" data-s="">.css-1v12c38-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;--IconButton-hoverBg:rgba(0, 0, 0, 0.04);color:inherit;padding:12px;font-size:1.75rem;}</style><style data-emotion="css" data-s="">.css-1v12c38-MuiIconButton-root:hover{background-color:var(--IconButton-hoverBg);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-1v12c38-MuiIconButton-root:hover{background-color:transparent;}}</style><style data-emotion="css" data-s="">.css-1v12c38-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css" data-s="">.css-1v12c38-MuiIconButton-root.MuiIconButton-loading{color:transparent;}</style><style data-emotion="css" data-s="">.css-z77o6z-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;--IconButton-hoverBg:rgba(0, 0, 0, 0.04);color:inherit;padding:12px;font-size:1.75rem;}</style><style data-emotion="css" data-s="">.css-z77o6z-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}</style><style data-emotion="css" data-s="">.css-z77o6z-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}</style><style data-emotion="css" data-s="">@media print{.css-z77o6z-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}</style><style data-emotion="css" data-s="">.css-z77o6z-MuiButtonBase-root-MuiIconButton-root:hover{background-color:var(--IconButton-hoverBg);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-z77o6z-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}</style><style data-emotion="css" data-s="">.css-z77o6z-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css" data-s="">.css-z77o6z-MuiButtonBase-root-MuiIconButton-root.MuiIconButton-loading{color:transparent;}</style><style data-emotion="css" data-s="">.css-63ezxx-MuiBadge-root{position:relative;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;vertical-align:middle;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}</style><style data-emotion="css" data-s="">.css-1vh1p3a-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;fill:currentColor;font-size:1.5rem;color:#624f39;}</style><style data-emotion="css" data-s="">.css-1vh1p3a-MuiSvgIcon-root:focus{outline:none;box-shadow:none;}</style><style data-emotion="css" data-s="">.css-1vh1p3a-MuiSvgIcon-root:focus-visible{outline:none;box-shadow:none;}</style><style data-emotion="css" data-s="">.css-1enwswh-MuiBadge-badge{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:absolute;box-sizing:border-box;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.75rem;min-width:20px;line-height:1;padding:0 6px;height:20px;border-radius:10px;z-index:1;-webkit-transition:-webkit-transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;background-color:#d32f2f;color:#fff;top:0;right:0;-webkit-transform:scale(1) translate(50%, -50%);-moz-transform:scale(1) translate(50%, -50%);-ms-transform:scale(1) translate(50%, -50%);transform:scale(1) translate(50%, -50%);transform-origin:100% 0%;}</style><style data-emotion="css" data-s="">.css-1enwswh-MuiBadge-badge.MuiBadge-invisible{-webkit-transform:scale(0) translate(50%, -50%);-moz-transform:scale(0) translate(50%, -50%);-ms-transform:scale(0) translate(50%, -50%);transform:scale(0) translate(50%, -50%);}</style><style data-emotion="css" data-s="">.css-7l8r85-MuiIconButton-root{text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;--IconButton-hoverBg:rgba(0, 0, 0, 0.04);margin-right:-12px;color:inherit;padding:12px;font-size:1.75rem;}</style><style data-emotion="css" data-s="">.css-7l8r85-MuiIconButton-root:hover{background-color:var(--IconButton-hoverBg);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-7l8r85-MuiIconButton-root:hover{background-color:transparent;}}</style><style data-emotion="css" data-s="">.css-7l8r85-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css" data-s="">.css-7l8r85-MuiIconButton-root.MuiIconButton-loading{color:transparent;}</style><style data-emotion="css" data-s="">.css-q9qvak-MuiButtonBase-root-MuiIconButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;--IconButton-hoverBg:rgba(0, 0, 0, 0.04);margin-right:-12px;color:inherit;padding:12px;font-size:1.75rem;}</style><style data-emotion="css" data-s="">.css-q9qvak-MuiButtonBase-root-MuiIconButton-root::-moz-focus-inner{border-style:none;}</style><style data-emotion="css" data-s="">.css-q9qvak-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{pointer-events:none;cursor:default;}</style><style data-emotion="css" data-s="">@media print{.css-q9qvak-MuiButtonBase-root-MuiIconButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}</style><style data-emotion="css" data-s="">.css-q9qvak-MuiButtonBase-root-MuiIconButton-root:hover{background-color:var(--IconButton-hoverBg);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-q9qvak-MuiButtonBase-root-MuiIconButton-root:hover{background-color:transparent;}}</style><style data-emotion="css" data-s="">.css-q9qvak-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css" data-s="">.css-q9qvak-MuiButtonBase-root-MuiIconButton-root.MuiIconButton-loading{color:transparent;}</style><style data-emotion="css" data-s="">.css-s4soc1-MuiMenu-root{}</style><style data-emotion="css" data-s="">.css-1cft1g0-MuiPopover-root-MuiMenu-root{}</style><style data-emotion="css" data-s="">.css-i3pbo{margin-bottom:24px;}</style><style data-emotion="css" data-s="">.css-r07xsc-MuiButton-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:6px 16px;border:0;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;padding:6px 8px;color:var(--variant-textColor);background-color:var(--variant-textBg);--variant-textColor:#1976d2;--variant-outlinedColor:#1976d2;--variant-outlinedBorder:rgba(25, 118, 210, 0.5);--variant-containedColor:#fff;--variant-containedBg:#1976d2;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-r07xsc-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;}</style><style data-emotion="css" data-s="">.css-r07xsc-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css" data-s="">@media (hover: hover){.css-r07xsc-MuiButton-root:hover{--variant-containedBg:#1565c0;--variant-textBg:rgba(25, 118, 210, 0.04);--variant-outlinedBorder:#1976d2;--variant-outlinedBg:rgba(25, 118, 210, 0.04);}}</style><style data-emotion="css" data-s="">.css-r07xsc-MuiButton-root.MuiButton-loading{color:transparent;}</style><style data-emotion="css" data-s="">.css-1uent87-MuiButtonBase-root-MuiButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:6px 16px;border:0;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;padding:6px 8px;color:var(--variant-textColor);background-color:var(--variant-textBg);--variant-textColor:#1976d2;--variant-outlinedColor:#1976d2;--variant-outlinedBorder:rgba(25, 118, 210, 0.5);--variant-containedColor:#fff;--variant-containedBg:#1976d2;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}</style><style data-emotion="css" data-s="">.css-1uent87-MuiButtonBase-root-MuiButton-root::-moz-focus-inner{border-style:none;}</style><style data-emotion="css" data-s="">.css-1uent87-MuiButtonBase-root-MuiButton-root.Mui-disabled{pointer-events:none;cursor:default;}</style><style data-emotion="css" data-s="">@media print{.css-1uent87-MuiButtonBase-root-MuiButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}</style><style data-emotion="css" data-s="">.css-1uent87-MuiButtonBase-root-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;}</style><style data-emotion="css" data-s="">.css-1uent87-MuiButtonBase-root-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css" data-s="">@media (hover: hover){.css-1uent87-MuiButtonBase-root-MuiButton-root:hover{--variant-containedBg:#1565c0;--variant-textBg:rgba(25, 118, 210, 0.04);--variant-outlinedBorder:#1976d2;--variant-outlinedBg:rgba(25, 118, 210, 0.04);}}</style><style data-emotion="css" data-s="">.css-1uent87-MuiButtonBase-root-MuiButton-root.MuiButton-loading{color:transparent;}</style><style data-emotion="css" data-s="">.css-19kzrtu{padding:24px;}</style><style data-emotion="css" data-s="">.css-1jvpbaa-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:2.125rem;line-height:1.235;letter-spacing:0.00735em;color:#3d2914;margin-bottom:16px;font-weight:500;font-size:20px;font-family:system-ui;}</style><style data-emotion="css" data-s="">.css-y6tqh1-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:2.125rem;line-height:1.235;letter-spacing:0.00735em;color:#6b5b47;margin-bottom:16px;font-size:16px;font-family:system-ui;font-weight:400;}</style><style data-emotion="css" data-s="">.css-1u8xl8z-MuiGrid-root{--Grid-columns:12;--Grid-columnSpacing:24px;--Grid-rowSpacing:24px;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;min-width:0;box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;gap:var(--Grid-rowSpacing) var(--Grid-columnSpacing);}</style><style data-emotion="css" data-s="">.css-1u8xl8z-MuiGrid-root >*{--Grid-parent-columns:12;}</style><style data-emotion="css" data-s="">.css-1u8xl8z-MuiGrid-root >*{--Grid-parent-columnSpacing:24px;}</style><style data-emotion="css" data-s="">.css-1u8xl8z-MuiGrid-root >*{--Grid-parent-rowSpacing:24px;}</style><style data-emotion="css" data-s="">.css-1umw9bq-MuiSvgIcon-root{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;fill:currentColor;font-size:1.5rem;}</style><style data-emotion="css" data-s="">.css-2ky8jr-MuiModal-root-MuiPopover-root-MuiMenu-root{position:fixed;z-index:1300;right:0;bottom:0;top:0;left:0;visibility:hidden;}</style><style data-emotion="css" data-s="">.css-8qhd7l-MuiModal-backdrop{z-index:-1;}</style><style data-emotion="css" data-s="">.css-vl6bb4-MuiBackdrop-root-MuiModal-backdrop{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;right:0;bottom:0;top:0;left:0;background-color:rgba(0, 0, 0, 0.5);-webkit-tap-highlight-color:transparent;background-color:transparent;z-index:-1;}</style><style data-emotion="css" data-s="">.css-1ts5lmk-MuiPopover-paper-MuiMenu-paper{position:absolute;overflow-y:auto;overflow-x:hidden;min-width:16px;min-height:16px;max-width:calc(100% - 32px);max-height:calc(100% - 32px);outline:0;max-height:calc(100% - 96px);-webkit-overflow-scrolling:touch;}</style><style data-emotion="css" data-s="">.css-1tktgsa-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{background-color:#fff;color:rgba(0, 0, 0, 0.87);-webkit-transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border-radius:4px;box-shadow:var(--Paper-shadow);background-image:var(--Paper-overlay);position:absolute;overflow-y:auto;overflow-x:hidden;min-width:16px;min-height:16px;max-width:calc(100% - 32px);max-height:calc(100% - 32px);outline:0;max-height:calc(100% - 96px);-webkit-overflow-scrolling:touch;}</style><style data-emotion="css" data-s="">.css-7drlel-MuiMenu-list{outline:0;}</style><style data-emotion="css" data-s="">.css-1toxriw-MuiList-root-MuiMenu-list{list-style:none;margin:0;padding:0;position:relative;padding-top:8px;padding-bottom:8px;outline:0;}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;-webkit-text-decoration:none;text-decoration:none;min-height:48px;padding-top:6px;padding-bottom:6px;box-sizing:border-box;white-space:nowrap;padding-left:16px;padding-right:16px;}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(0, 0, 0, 0.04);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-141rg2m-MuiMenuItem-root:hover{background-color:transparent;}}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root.Mui-selected{background-color:rgba(25, 118, 210, 0.08);}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root.Mui-selected.Mui-focusVisible{background-color:rgba(25, 118, 210, 0.2);}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root.Mui-selected:hover{background-color:rgba(25, 118, 210, 0.12);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-141rg2m-MuiMenuItem-root.Mui-selected:hover{background-color:rgba(25, 118, 210, 0.08);}}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root.Mui-disabled{opacity:0.38;}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root+.MuiDivider-root{margin-top:8px;margin-bottom:8px;}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root+.MuiDivider-inset{margin-left:52px;}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root .MuiListItemText-root{margin-top:0;margin-bottom:0;}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root .MuiListItemText-inset{padding-left:36px;}</style><style data-emotion="css" data-s="">.css-141rg2m-MuiMenuItem-root .MuiListItemIcon-root{min-width:36px;}</style><style data-emotion="css" data-s="">@media (min-width:600px){.css-141rg2m-MuiMenuItem-root{min-height:auto;}}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;-webkit-text-decoration:none;text-decoration:none;min-height:48px;padding-top:6px;padding-bottom:6px;box-sizing:border-box;white-space:nowrap;padding-left:16px;padding-right:16px;}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root::-moz-focus-inner{border-style:none;}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root.Mui-disabled{pointer-events:none;cursor:default;}</style><style data-emotion="css" data-s="">@media print{.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root:hover{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(0, 0, 0, 0.04);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root:hover{background-color:transparent;}}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root.Mui-selected{background-color:rgba(25, 118, 210, 0.08);}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root.Mui-selected.Mui-focusVisible{background-color:rgba(25, 118, 210, 0.2);}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover{background-color:rgba(25, 118, 210, 0.12);}</style><style data-emotion="css" data-s="">@media (hover: none){.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover{background-color:rgba(25, 118, 210, 0.08);}}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root.Mui-focusVisible{background-color:rgba(0, 0, 0, 0.12);}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root.Mui-disabled{opacity:0.38;}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root+.MuiDivider-root{margin-top:8px;margin-bottom:8px;}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root+.MuiDivider-inset{margin-left:52px;}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root .MuiListItemText-root{margin-top:0;margin-bottom:0;}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root .MuiListItemText-inset{padding-left:36px;}</style><style data-emotion="css" data-s="">.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root .MuiListItemIcon-root{min-width:36px;}</style><style data-emotion="css" data-s="">@media (min-width:600px){.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root{min-height:auto;}}</style><style data-emotion="css" data-s="">.css-2ao5rv-MuiBadge-badge{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:absolute;box-sizing:border-box;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.75rem;min-width:20px;line-height:1;padding:0 6px;height:20px;border-radius:10px;z-index:1;-webkit-transition:-webkit-transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;top:0;right:0;-webkit-transform:scale(1) translate(50%, -50%);-moz-transform:scale(1) translate(50%, -50%);-ms-transform:scale(1) translate(50%, -50%);transform:scale(1) translate(50%, -50%);transform-origin:100% 0%;}</style><style data-emotion="css" data-s="">.css-2ao5rv-MuiBadge-badge.MuiBadge-invisible{-webkit-transform:scale(0) translate(50%, -50%);-moz-transform:scale(0) translate(50%, -50%);-ms-transform:scale(0) translate(50%, -50%);transform:scale(0) translate(50%, -50%);}</style><style data-emotion="css" data-s="">.css-17vuej4-MuiCard-root{overflow:hidden;border-radius:16px;box-shadow:none;border:1px solid #e1e1e1ff;}</style><style data-emotion="css" data-s="">.css-9ndtx9-MuiPaper-root-MuiCard-root{background-color:#fff;color:rgba(0, 0, 0, 0.87);-webkit-transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border-radius:4px;box-shadow:var(--Paper-shadow);background-image:var(--Paper-overlay);overflow:hidden;border-radius:16px;box-shadow:none;border:1px solid #e1e1e1ff;}</style><style data-emotion="css" data-s="">.css-1kuwa16-MuiCardMedia-root{display:block;-webkit-background-size:cover;background-size:cover;background-repeat:no-repeat;-webkit-background-position:center;background-position:center;width:100%;object-fit:cover;}</style><style data-emotion="css" data-s="">.css-1lt5qva-MuiCardContent-root{padding:16px;}</style><style data-emotion="css" data-s="">.css-1lt5qva-MuiCardContent-root:last-child{padding-bottom:24px;}</style><style data-emotion="css" data-s="">.css-vgw0he-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:1.25rem;line-height:1.6;letter-spacing:0.0075em;max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;}</style><style data-emotion="css" data-s="">.css-azympd-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;color:rgba(0, 0, 0, 0.6);max-width:200px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;}</style><style data-emotion="css" data-s="">.css-or3kzz-MuiTypography-root{margin:0;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.75;letter-spacing:0.00938em;font-weight:700;}</style><style data-emotion="css" data-s="">.css-nvn62-MuiButton-root{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:6px 16px;border:0;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;padding:5px 15px;border:1px solid currentColor;border-color:var(--variant-outlinedBorder, currentColor);background-color:var(--variant-outlinedBg);color:var(--variant-outlinedColor);--variant-textColor:#1976d2;--variant-outlinedColor:#1976d2;--variant-outlinedBorder:rgba(25, 118, 210, 0.5);--variant-containedColor:#fff;--variant-containedBg:#1976d2;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;margin-top:16px;color:black;height:45px;width:115px;}</style><style data-emotion="css" data-s="">.css-nvn62-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;}</style><style data-emotion="css" data-s="">.css-nvn62-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css" data-s="">.css-nvn62-MuiButton-root.Mui-disabled{border:1px solid rgba(0, 0, 0, 0.12);}</style><style data-emotion="css" data-s="">@media (hover: hover){.css-nvn62-MuiButton-root:hover{--variant-containedBg:#1565c0;--variant-textBg:rgba(25, 118, 210, 0.04);--variant-outlinedBorder:#1976d2;--variant-outlinedBg:rgba(25, 118, 210, 0.04);}}</style><style data-emotion="css" data-s="">.css-nvn62-MuiButton-root.MuiButton-loading{color:transparent;}</style><style data-emotion="css" data-s="">.css-1x1zia0-MuiButtonBase-root-MuiButton-root{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.75;letter-spacing:0.02857em;text-transform:uppercase;min-width:64px;padding:6px 16px;border:0;border-radius:4px;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;padding:5px 15px;border:1px solid currentColor;border-color:var(--variant-outlinedBorder, currentColor);background-color:var(--variant-outlinedBg);color:var(--variant-outlinedColor);--variant-textColor:#1976d2;--variant-outlinedColor:#1976d2;--variant-outlinedBorder:rgba(25, 118, 210, 0.5);--variant-containedColor:#fff;--variant-containedBg:#1976d2;-webkit-transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;margin-top:16px;color:black;height:45px;width:115px;}</style><style data-emotion="css" data-s="">.css-1x1zia0-MuiButtonBase-root-MuiButton-root::-moz-focus-inner{border-style:none;}</style><style data-emotion="css" data-s="">.css-1x1zia0-MuiButtonBase-root-MuiButton-root.Mui-disabled{pointer-events:none;cursor:default;}</style><style data-emotion="css" data-s="">@media print{.css-1x1zia0-MuiButtonBase-root-MuiButton-root{-webkit-print-color-adjust:exact;color-adjust:exact;}}</style><style data-emotion="css" data-s="">.css-1x1zia0-MuiButtonBase-root-MuiButton-root:hover{-webkit-text-decoration:none;text-decoration:none;}</style><style data-emotion="css" data-s="">.css-1x1zia0-MuiButtonBase-root-MuiButton-root.Mui-disabled{color:rgba(0, 0, 0, 0.26);}</style><style data-emotion="css" data-s="">.css-1x1zia0-MuiButtonBase-root-MuiButton-root.Mui-disabled{border:1px solid rgba(0, 0, 0, 0.12);}</style><style data-emotion="css" data-s="">@media (hover: hover){.css-1x1zia0-MuiButtonBase-root-MuiButton-root:hover{--variant-containedBg:#1565c0;--variant-textBg:rgba(25, 118, 210, 0.04);--variant-outlinedBorder:#1976d2;--variant-outlinedBg:rgba(25, 118, 210, 0.04);}}</style><style data-emotion="css" data-s="">.css-1x1zia0-MuiButtonBase-root-MuiButton-root.MuiButton-loading{color:transparent;}</style></head>
+  <body>
+    <div id="root"><div class="MuiBox-root css-i9gxme"><header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-1mf9yyy-MuiPaper-root-MuiAppBar-root" style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"><div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-27y8xl-MuiToolbar-root"><div class="MuiBox-root css-1xhj18k"><div><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1vgx5h2-MuiButtonBase-root-MuiIconButton-root" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium _IconButton_1i7v2_1 css-1sdz7zf-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MenuIcon"><path d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"></path></svg></button></div><div class="MuiBox-root css-10yxiou" variant="h6"><img class="_image_1oxrg_1" src="./alora_files/alora_Brand_Logo.png"></div></div><form class="_searchbox_1oxrg_17"><div class="_searchbox2_1oxrg_35 css-mypqou"><div class="css-1iz4iln"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1d3k4cm-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="SearchIcon"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></div><div class="MuiInputBase-root MuiInputBase-colorPrimary css-erihy4-MuiInputBase-root"><input placeholder="Search…" aria-label="search" class="MuiInputBase-input css-yimnyd-MuiInputBase-input" type="text" value=""></div></div></form><div class="MuiBox-root css-1guk29"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeLarge css-z77o6z-MuiButtonBase-root-MuiIconButton-root" tabindex="0" type="button" aria-label="show 4 new mails"><span class="MuiBadge-root css-63ezxx-MuiBadge-root"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1vh1p3a-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ShoppingCartIcon"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2M1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2"></path></svg><span class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorError css-1enwswh-MuiBadge-badge">4</span></span></button><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeEnd MuiIconButton-sizeLarge css-q9qvak-MuiButtonBase-root-MuiIconButton-root" tabindex="0" type="button" aria-label="account of current user" aria-controls="primary-search-account-menu" aria-haspopup="true"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1vh1p3a-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="PersonOutlineIcon"><path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4m0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4"></path></svg></button></div></div></header></div><div class="_titlebox_12t51_17"><h2 class="_title_12t51_17">Arts and Craft Collection</h2><div class="MuiBox-root css-i3pbo"><button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary _filterbutton_12t51_55 _activeBtn_12t51_73 css-1uent87-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">All</button><button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary _filterbutton_12t51_55 css-1uent87-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Supllies</button><button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary _filterbutton_12t51_55 css-1uent87-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">DIY kits</button><button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary _filterbutton_12t51_55 css-1uent87-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">painting</button><button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary _filterbutton_12t51_55 css-1uent87-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Scrapbooking</button></div></div><div class="_contianer_12t51_1">null<div class="MuiBox-root css-19kzrtu"><h4 class="MuiTypography-root MuiTypography-h4 css-1jvpbaa-MuiTypography-root">Arts and Craft Fashtion<h4 class="MuiTypography-root MuiTypography-h4 css-y6tqh1-MuiTypography-root"></h4></h4><div class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row MuiGrid-spacing-xs-3 css-1u8xl8z-MuiGrid-root"><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="colors" src="./alora_files/1762335952141.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="colors">colors</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="colors for drawing ">colors for drawing </p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$20</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="Book" src="./alora_files/1762336013251.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="Book">Book</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="Books for sketching pack">Books for sketching pack</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$35</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="Color bored" src="./alora_files/1762336073009.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="Color bored">Color bored</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="to hold and mix color with your brush">to hold and mix color with your brush</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$31</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="Canvas" src="./alora_files/1762336127170.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="Canvas">Canvas</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="for painting white canvas">for painting white canvas</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$23</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="brush and colors" src="./alora_files/1762336192243.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="brush and colors">brush and colors</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="brushs and colors full package">brushs and colors full package</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$58</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="Diy kit" src="./alora_files/1762336270688.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="Diy kit">Diy kit</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="paper making and coloring">paper making and coloring</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$28</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="tools" src="./alora_files/1762336329326.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="tools">tools</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="full pachage for diy kits">full pachage for diy kits</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$39</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="Solor stars" src="./alora_files/1762336372262.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="Solor stars">Solor stars</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="full pachage for diy kits stars">full pachage for diy kits stars</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$19</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="whale" src="./alora_files/1762336451137.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="whale">whale</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="painting whale great sea creature">painting whale great sea creature</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$120</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="Teddy" src="./alora_files/1762336509676.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="Teddy">Teddy</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="painting teddy of doom">painting teddy of doom</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$103</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="Time" src="./alora_files/1762336550961.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="Time">Time</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="painting tower clock">painting tower clock</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$160</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="yellow" src="./alora_files/1762336590696.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="yellow">yellow</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="painting yellow carton character">painting yellow carton character</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$120</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="Turtle" src="./alora_files/1762336645835.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="Turtle">Turtle</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="painting turlte greatest run for life">painting turlte greatest run for life</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$136</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="olove" src="./alora_files/1762336701895.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="olove">olove</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="painting olove from frozen">painting olove from frozen</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$141</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="summer" src="./alora_files/1762336777841.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="summer">summer</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="Scrapbooking summer vibe">Scrapbooking summer vibe</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$13</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="Ticle" src="./alora_files/1762336872448.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="Ticle">Ticle</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="Scrapbooking cut outs cool thing">Scrapbooking cut outs cool thing</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$15</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _cardbox_1iy2k_3 css-9ndtx9-MuiPaper-root-MuiCard-root" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div class="_imagewrapper_1iy2k_143"><img class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img _imagebox_1iy2k_133 css-1kuwa16-MuiCardMedia-root" height="240" alt="book" src="./alora_files/1762336904440.jpg"></div><div class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"><h6 class="MuiTypography-root MuiTypography-h6 css-vgw0he-MuiTypography-root" title="book">book</h6><p class="MuiTypography-root MuiTypography-body2 css-azympd-MuiTypography-root" title="Scrapbooking cut outs book thing">Scrapbooking cut outs book thing</p><h6 class="MuiTypography-root MuiTypography-subtitle1 css-or3kzz-MuiTypography-root">$11</h6><button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary _cardbutton_1iy2k_157 css-1x1zia0-MuiButtonBase-root-MuiButton-root" tabindex="0" type="button">Quick Add</button></div></div></div></div></div><footer class="_footer_1f62z_1"><div class="_container_1f62z_29"><div class="_section_1f62z_53"><h2 class="_title_1f62z_67">ALORA</h2><p class="_text_1f62z_107">Your one-stop destination for fashion, beauty, home, and lifestyle products.</p></div><div class="_section_1f62z_53"><h3 class="_subtitle_1f62z_87">Shop</h3><ul class="_list_1f62z_109"><li>Women's Fashion</li><li>Men's Fashion</li><li>Kids &amp; Baby</li><li>Beauty &amp; Care</li><li>Home &amp; Furniture</li><li>Toys &amp; Games</li></ul></div><div class="_section_1f62z_53"><h3 class="_subtitle_1f62z_87">Customer Service</h3><ul class="_list_1f62z_109"><li>Contact Us</li><li>FAQ</li><li>Shipping Info</li><li>Returns &amp; Exchanges</li><li>Size Guide</li><li>Track Your Order</li></ul></div><div class="_section_1f62z_53"><h3 class="_subtitle_1f62z_87">Get in Touch</h3><ul class="_list_1f62z_109"><li>+1 (555) 123-4567</li><li>hello@alora.com</li><li>123 Fashion St, NY 10001</li></ul><div class="_icons_1f62z_145"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium _icon_1f62z_145 css-1umw9bq-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="FacebookIcon"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"></path></svg><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium _icon_1f62z_145 css-1umw9bq-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="InstagramIcon"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium _icon_1f62z_145 css-1umw9bq-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="TwitterIcon"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"></path></svg></div></div></div><div class="_bottom_1f62z_111"><ul class="_bottomLinks_1f62z_111"><li>Privacy Policy</li><li>Terms of Service</li><li>Cookie Policy</li></ul><p class="_copy_1f62z_113">© 2024 Alora. All rights reserved.</p></div></footer></div>
+    <script type="module" src="./alora_files/main.jsx"></script>
+  
+
+<div role="presentation" id="primary-search-account-menu-mobile" class="MuiPopover-root MuiMenu-root MuiModal-root MuiModal-hidden css-2ky8jr-MuiModal-root-MuiPopover-root-MuiMenu-root" aria-hidden="true"><div aria-hidden="true" class="MuiBackdrop-root MuiBackdrop-invisible MuiModal-backdrop css-vl6bb4-MuiBackdrop-root-MuiModal-backdrop" style="opacity: 0; visibility: hidden;"></div><div tabindex="-1" data-testid="sentinelStart"></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper MuiMenu-paper css-1tktgsa-MuiPaper-root-MuiPopover-paper-MuiMenu-paper" tabindex="-1" style="--Paper-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12); opacity: 0; transform: scale(0.75, 0.5625); visibility: hidden;"><ul class="MuiList-root MuiList-padding MuiMenu-list css-1toxriw-MuiList-root-MuiMenu-list" role="menu" tabindex="-1"><li class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root" tabindex="0" role="menuitem"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeLarge css-z77o6z-MuiButtonBase-root-MuiIconButton-root" tabindex="0" type="button" aria-label="show 4 new mails"><span class="MuiBadge-root css-63ezxx-MuiBadge-root"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MailIcon"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4-8 5-8-5V6l8 5 8-5z"></path></svg><span class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-color#8b4513 css-2ao5rv-MuiBadge-badge">4</span></span></button><p>Carts</p></li><li class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root" tabindex="-1" role="menuitem"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeLarge css-z77o6z-MuiButtonBase-root-MuiIconButton-root" tabindex="0" type="button" aria-label="account of current user" aria-controls="primary-search-account-menu" aria-haspopup="true"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AccountCircleIcon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6m0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20"></path></svg></button><p>Profile</p></li></ul></div><div tabindex="-1" data-testid="sentinelEnd"></div></div><div role="presentation" id="primary-search-account-menu" class="MuiPopover-root MuiMenu-root MuiModal-root MuiModal-hidden css-2ky8jr-MuiModal-root-MuiPopover-root-MuiMenu-root" aria-hidden="true"><div aria-hidden="true" class="MuiBackdrop-root MuiBackdrop-invisible MuiModal-backdrop css-vl6bb4-MuiBackdrop-root-MuiModal-backdrop" style="opacity: 0; visibility: hidden;"></div><div tabindex="-1" data-testid="sentinelStart"></div><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper MuiMenu-paper css-1tktgsa-MuiPaper-root-MuiPopover-paper-MuiMenu-paper" tabindex="-1" style="--Paper-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12); opacity: 0; transform: scale(0.75, 0.5625); visibility: hidden;"><ul class="MuiList-root MuiList-padding MuiMenu-list css-1toxriw-MuiList-root-MuiMenu-list" role="menu" tabindex="-1"><li class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root" tabindex="0" role="menuitem">Profile</li><li class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root" tabindex="-1" role="menuitem">My account</li></ul></div><div tabindex="-1" data-testid="sentinelEnd"></div></div></body></html>

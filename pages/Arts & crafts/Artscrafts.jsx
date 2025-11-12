@@ -17,9 +17,12 @@ export default function ArtsCrafts() {
     
   };
 
+  console.log('mounting ❤❤❤❤❤❤❤');
   
   useEffect(() => {
     const subId = searchParams.get('sub');
+    console.log(subId,'subId');
+    
     if (subId && subMap[subId]) {
       setSelectedSub({ id: subId, name: subMap[subId] });
     } else {
@@ -63,17 +66,19 @@ export default function ArtsCrafts() {
       <div className={Styles.contianer}>
         {selectedSub ? (
           <ProductList
+          key="sub"
             mode="sub"
             config={selectedSub.id}
             title={`Arts and Craft: ${selectedSub.name}`}
           />
-        ) : (
-          <ProductList
+        ) :
+        <ProductList
+        key="catag"
             mode="catag"
             title="Arts and Craft Fashtion"
             config="42"
           />
-        )}
+        }
       </div>
     </>
   );

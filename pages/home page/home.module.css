@@ -12,13 +12,13 @@
 .productcontainer{
     background-color: #f1f5eb;
     display: flex;
-    padding-left: 100px;
+   justify-content: center;
     padding-bottom: 40px;
     
 }
 .productcontainer2{
     
     display: flex;
-    padding-left: 100px;
+    justify-content: center;
     
 }

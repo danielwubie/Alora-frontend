@@ -28,6 +28,8 @@ function MyCard({ id, name, Price, description, image }) {
       quantity: 1      
     };
       const token = localStorage.getItem("token");
+      console.log(token,'token');
+      
       const response = await axios.post(
         "http://127.0.0.1:5000/cart/add",
         payload,

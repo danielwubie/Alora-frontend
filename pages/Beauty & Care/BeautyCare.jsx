@@ -63,12 +63,14 @@ export default function BeautyCare() {
       <div className={Styles.contianer}>
         {selectedSub ? (
           <ProductList
+            key="sub"
             mode="sub"
             config={selectedSub.id}
             title={`Beauty & Care: ${selectedSub.name}`}
           />
         ) : (
           <ProductList
+            key="catag"
             mode="catag"
             title="All Beauty & Care Products"
             config="38"

@@ -137,3 +137,6 @@
     justify-content: center;
   }
 }
+.list:hover {
+  cursor: pointer;
+}

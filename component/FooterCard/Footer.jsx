@@ -1,9 +1,28 @@
 import React from "react";
 import styles from "./footer.module.css";
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
-
+import { useNavigate } from 'react-router-dom';
 function Footer() {
-  return (
+  const navigate = useNavigate()
+  const handleClickWomen=()=>{
+    navigate("/category/1")
+  }
+    const handleClickMen=()=>{
+    navigate("/category/2")
+  }
+    const handleClickKids=()=>{
+    navigate("/category/37")
+  }
+    const handleClickBeauty=()=>{
+    navigate("/category/38")
+  }
+    const handleClickHome=()=>{
+    navigate("/category/39")
+  }
+    const handleClickToys=()=>{
+    navigate("/category/41")
+  }
+    return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.section}>
@@ -16,12 +35,12 @@ function Footer() {
         <div className={styles.section}>
           <h3 className={styles.subtitle}>Shop</h3>
           <ul className={styles.list}>
-            <li>Women's Fashion</li>
-            <li>Men's Fashion</li>
-            <li>Kids & Baby</li>
-            <li>Beauty & Care</li>
-            <li>Home & Furniture</li>
-            <li>Toys & Games</li>
+            <li onClick={handleClickWomen}>Women's Fashion</li>
+            <li onClick={handleClickMen}>Men's Fashion</li>
+            <li onClick={handleClickKids}>Kids & Baby</li>
+            <li onClick={handleClickBeauty}>Beauty & Care</li>
+            <li onClick={handleClickHome}>Home & Furniture</li>
+            <li onClick={handleClickToys}>Toys & Games</li>
           </ul>
         </div>
 

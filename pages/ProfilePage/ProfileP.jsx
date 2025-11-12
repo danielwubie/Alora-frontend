@@ -4,7 +4,7 @@ import axios from "axios";
 import styles from "../ProfilePage/ProfileP.module.css"
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useNavigate } from 'react-router-dom';
-
+import CircularProgress from "@mui/material/CircularProgress";
 const ProfilePage = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -13,6 +13,8 @@ const ProfilePage = () => {
 useEffect(() => {
   const fetchUser = async () => {
     const token = localStorage.getItem("token");
+    console.log(token?.token,'token');
+    
     if (!token) return navigate("/login");
 
     try {
@@ -21,6 +23,8 @@ useEffect(() => {
       });
       setUser(response.data.user);
     } catch (error) {
+      console.log(error,'error');
+      
       setError("Failed to load user info: " + error.message);
       navigate("/login");
     } finally {
@@ -37,10 +41,12 @@ useEffect(() => {
     window.location.href = "/"; // redirect after logout
   };
 
-  if (loading) return <p>Loading user info...</p>;
+
   if (error) return <p>{error}</p>;
 
-  return (
+  return (loading ?   <div style={{display:"flex", justifyContent:"center",alignItems:"center",height:"100vh"}}>
+        <CircularProgress sx={{color:"black"}}/>
+      </div>:
     <div className={styles.container}>
      <div className={styles.container2}>
        <AccountCircleIcon sx={{

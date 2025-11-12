@@ -88,7 +88,7 @@ export default function Sidebar() {
           "&:focus-visible": { outline: "none", boxShadow: "none" },
         }}
       >
-        <MenuIcon sx={{ fontSize: 30 }} className={styles.IconButton} />
+        <MenuIcon sx={{ fontSize: 40 }} className={styles.IconButton} />
       </IconButton>
 
       <Drawer anchor="left" open={open} onClose={toggleDrawer(false)}>
