@@ -13,9 +13,10 @@ const ProfilePage = () => {
 useEffect(() => {
   const fetchUser = async () => {
     const token = localStorage.getItem("token");
-    console.log(token?.token,'token');
+    console.log('oooo');
     
     if (!token) return navigate("/login");
+    console.log('llll');
 
     try {
       const response = await axios.get(`http://127.0.0.1:5000/users/profile`, {
@@ -26,6 +27,7 @@ useEffect(() => {
       console.log(error,'error');
       
       setError("Failed to load user info: " + error.message);
+      console.log("the hhhhahahah")
       navigate("/login");
     } finally {
       setLoading(false);
@@ -52,7 +54,10 @@ useEffect(() => {
        <AccountCircleIcon sx={{
         
         fontSize: 170,
-        color: "#8e7e67"
+        color: "#8e7e67",
+         '@media (max-width: 412px) ': {
+     fontSize: 100,
+    },
       }}/>
       <div className={styles.container3}>
       <p className={styles.text}>Name: {user.name}</p>

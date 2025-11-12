@@ -46,16 +46,9 @@ function ProductList({ transform, title, info, mode = "all", config }) {
       <CircularProgress sx={{color:"black"}}/>
     </div>:
     <Box sx={{ p: 3 }}>
-      <Typography
-        variant="h4"
-        sx={{
-          mb: 2,
-          fontWeight: 500,
-          color: "#3d2914",
-          fontSize: 20,
-          fontFamily: "system-ui",
-        }}
-      >
+        
+      {/* Rugs Section */}
+      <Typography variant="h4" sx={{ mb: 2, fontWeight:500 ,color:"#3d2914",fontSize:20,fontFamily:"system-ui", textAlign:"center"}}>
         {title}
         <Typography
           variant="h4"
@@ -70,12 +63,20 @@ function ProductList({ transform, title, info, mode = "all", config }) {
           {info}
         </Typography>
       </Typography>
+      <Box sx={{ display:"flex",justifyContent:"center"}}>
 
-      <Grid container spacing={3}>
-        {finalList.map((item) => {
-          return <MyCard key={item.id} {...item} />;
-        })}
+      <Grid container spacing={3} justifyContent="center" >
+          {finalList.map((item) => {
+            
+            return  <MyCard key={item.id} {...item} /> 
+          })}
       </Grid>
+      </Box>
+
+     
+
+      
+    
     </Box>
 
   );

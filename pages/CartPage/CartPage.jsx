@@ -67,8 +67,12 @@ const CartPage = () => {
         boxShadow: 2,
         p: 4,
         textAlign: "center",
-        width: 820,
-        height: "180px",
+        width: "90%",
+        '@media (max-width: 1440px) and (min-width: 1001px) ': {
+      width: "75%",
+    
+    },
+
       }}
     >
       <Typography
@@ -125,15 +129,14 @@ const CartPage = () => {
         >
           Continue Shopping
         </Button>
-
-        <Typography
+      </Stack>
+       <Typography
           className={styles.title}
           variant="body1"
           sx={{ color: "#3e2e1f", fontSize: 24, fontWeight: 700 }}
         >
           Shopping Cart
         </Typography>
-      </Stack>
 
       {cartItems.length > 0 ? renderCartItems() : renderEmptyCart()}
     </div>

@@ -12,13 +12,17 @@
 .productcontainer{
     background-color: #f1f5eb;
     display: flex;
-   justify-content: center;
+    /* align-items: center; */
+    justify-content: center;
+    /* padding-left: 7%; */
     padding-bottom: 40px;
     
 }
 .productcontainer2{
     
     display: flex;
+    /* flex-direction: column; */
     justify-content: center;
+    /* padding-left: 7%; */
     
 }

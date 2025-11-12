@@ -44,8 +44,7 @@ export default function Cart({ item, onRemove }) {
       sx={{
         display: "flex",
         alignItems: "center",
-        height: 164,
-        width: 819,
+        
         position: "relative",
         p: 1,
         backgroundColor: "#faf8f4",
@@ -70,6 +69,10 @@ export default function Cart({ item, onRemove }) {
             gap: 1,
             width: 200,
             justifyContent: "start",
+             '@media (max-width: 599px)': {
+      width:130,
+    },
+    
           }}
           className={styles.cardbox}
         >

@@ -29,14 +29,17 @@ export default function Heroposter() {
            <p className={styles.description}>From fashion to home essentails, find everything you need in one place Quality product, exceptional style, unbeatable price</p>
            <div className={styles.buttonbox}>
             <Button 
-            sx={{ mt: 2,color: "black",backgroundColor:"#f5f1eb",width:"132px",height:"40px"} }
+            disableRipple
+            sx={{ mt: 2,color: "black",backgroundColor:"#f5f1eb",width:"132px",height:"40px","&:focus": { outline: "none", boxShadow: "none" },
+                "&:focus-visible": { outline: "none", boxShadow: "none" },} }
              className={styles.button}
              onClick={goToMens}
              >
                 shop men
             </Button>
             <Button 
-            sx={{ mt: 2,color: "black",backgroundColor:"#f5f1eb",width:"132px",height:"40px"} }
+            sx={{ mt: 2,color: "black",backgroundColor:"#f5f1eb",width:"132px",height:"40px","&:focus": { outline: "none", boxShadow: "none" },
+                "&:focus-visible": { outline: "none", boxShadow: "none" },} }
              className={styles.button}
              onClick={goToWomens}
              >

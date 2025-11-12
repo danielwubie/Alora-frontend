@@ -30,14 +30,13 @@ const CATEGORIES = [
     name: "Toys & Games",
     description: "various",
     image: IMAGES[2],
-     path: "/category/41",
+    path: "/category/41",
   },
 ];
 
 function CatList({ title = "Featured", info = "Picked items" }) {
   return (
-    <Box sx={{ p: 3 }}>
-        
+    <Box sx={{ paddingY: 3, width: "100%", display:"flex", flexDirection:"column", justifyContent:"center" }}>
       <Typography
         variant="h4"
         sx={{
@@ -46,7 +45,8 @@ function CatList({ title = "Featured", info = "Picked items" }) {
           color: "#3d2914",
           fontSize: 20,
           fontFamily: "system-ui",
-          paddingLeft:"40%",    
+          // paddingLeft: "40%",  
+          textAlign:"center"
         }}
       >
         {title}
@@ -59,15 +59,24 @@ function CatList({ title = "Featured", info = "Picked items" }) {
           fontSize: 16,
           fontFamily: "system-ui",
           fontWeight: 400,
-          paddingLeft:"40%",    
+          textAlign:"center"
+          // paddingLeft: "40%",
         }}
       >
         {info}
       </Typography>
 
-      <Grid container spacing={3}>
+      {/* <Grid container spacing={3} justifyContent="center" alignItems="center">
         {CATEGORIES.map((item) => (
-          <Grid item xs={12} sm={6} md={4} key={item.id}>
+          <Grid
+            item
+            xs={12} // full width on extra-small screens
+            sm={6} // half width on small screens
+            md={4} // one-third width on medium screens
+            lg={3} // one-quarter width on large screens
+            xl={6}
+            key={item.id}
+          >
             <CatCard
               name={item.name}
               description={item.description}
@@ -76,7 +85,29 @@ function CatList({ title = "Featured", info = "Picked items" }) {
             />
           </Grid>
         ))}
-      </Grid>
+      </Grid> */}
+      <Box sx={{display:"flex", flexDirection:"row", justifyContent:"center",gap:3,flexWrap:"wrap",}}>
+        {CATEGORIES.map((item) => (
+          <Box
+            item
+            key={item.id}
+            sx={{
+              '@media (min-width: 1100px) ': {
+     width:"25%"
+    },
+             minWidth: "220px;"
+             
+            }}
+          >
+            <CatCard
+              name={item.name}
+              description={item.description}
+              image={item.image}
+              path={item.path}
+            />
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 }

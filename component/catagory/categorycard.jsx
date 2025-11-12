@@ -47,7 +47,7 @@ function CatCard({ name, description, image,path }) {
             opacity: hovered ? 1 : 0,
             transition: "opacity 0.3s ease",
             zIndex: 10,
-            padding:"2px",
+            color: "white",
             height: "45px",
             width: "115px",
             border: "1px solid rgb(161, 144, 125)",

@@ -70,7 +70,7 @@ export default function Login() {
         <div className={styles.inputandtextbox}>
             <p className={styles.text}>Email</p>
             <div className={styles.inputbox}>
-                <Box sx={{ width: 381}}>
+                <Box >
                     <TextField fullWidth label="Email" id="email" type="email" value={Email} sx={{color:"white"}} onChange={(e)=>setEmail(e.target.value)} />
                 </Box>
             </div>
@@ -78,7 +78,7 @@ export default function Login() {
         <div className={styles.inputandtextbox}>
             <p className={styles.text}>Password</p>
             <div className={styles.inputbox}>
-                <Box sx={{ width: 381}}>
+                <Box>
                     <TextField fullWidth label="Password" id="password" type="password" value={Password} sx={{color:"white"}} onChange={(p)=>setPassword(p.target.value)} />
                 </Box>
             </div>
