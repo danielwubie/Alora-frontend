@@ -295,3 +295,6 @@
     font-size: 13px;
   }
 }
+.list:hover {
+  cursor: pointer;
+}

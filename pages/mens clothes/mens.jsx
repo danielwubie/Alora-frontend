@@ -63,12 +63,14 @@ export default function Mens() {
       <div className={Styles.contianer}>
         {selectedSub ? (
           <ProductList
+            key="sub"
             mode="sub"
             config={selectedSub.id}
             title={`Men's: ${selectedSub.name}`}
           />
         ) : (
           <ProductList
+            key="catag"
             mode="catag"
             title="All Men's Fashtion"
             config="2"

@@ -63,12 +63,14 @@ export default function KidsAndBaby() {
       <div className={Styles.contianer}>
         {selectedSub ? (
           <ProductList
+            key="sub"
             mode="sub"
             config={selectedSub.id}
             title={`Kids and Babys: ${selectedSub.name}`}
           />
         ) : (
           <ProductList
+            key="catag"
             mode="catag"
             title="All Kids and Babys Products"
             config="37"

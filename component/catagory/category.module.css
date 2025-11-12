@@ -33,6 +33,9 @@
 }
 
 .cardbutton {
+ 
+
+  color: white !important;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -55,46 +58,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+
 }
-
-/* === SMALL SCREENS FIXES === */
-
-/* 393 x 852 */
-/* @media (width: 393px) and (height: 852px) {
-  .cardbox {
-    width: 280px;
-    height: 400px;
-  }
-} */
-
-/* 412 x 915 */
-/* @media (width: 412px) and (height: 915px) {
-  .cardbox {
-    width: 300px;
-    height: 420px;
-  }
-} */
-
-/* 412 x 919 */
-@media (max-width: 412px)  {
-  .cardbox {
-    width: 300px;
-    height: 420px;
-   
-  }
-}
-
-/* @media (width: 1280px) and (height: 800px) {
-  .cardbox {
-    width: 300px;
-    height: 420px;
-  }
-} */
-
-@media (width: 1440px) and (height: 900px) {
-  .cardbox {
-    width: 350px;
-    height: 420px;
-  }
+.cardbutton:hover{
+  border: none !important;
 }

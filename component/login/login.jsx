@@ -23,6 +23,9 @@ export default function Login() {
             });
             const token = response.data.result.token;
             localStorage.setItem("token", token);
+            const temp = localStorage.getItem("token")
+            console.log(token,'token', temp );
+            
             const userId = response.data.result.userId;
             localStorage.setItem("userId", userId);
             
@@ -88,7 +91,7 @@ export default function Login() {
                             >
                              Create new account?
                             </a>
-            <Button sx={{ mt: 2,color: "white", height:"62px",width:"183px",backgroundColor:"#C15A18"} } onClick={handleLogin}>
+            <Button sx={{ mt: 2,color: "white", height:"62px",width:"183px",backgroundColor:"#C15A18"} } className={styles.btn} onClick={handleLogin}>
                 Login
                   
             </Button>

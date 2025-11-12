@@ -209,8 +209,7 @@
   .contianer {
     width: 720px;
     height: auto;
-    padding: 50px;
-    margin: 50px auto;
+    
     gap: 45px;
     border-radius: 22px;
   }
