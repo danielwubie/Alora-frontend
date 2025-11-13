@@ -2,24 +2,24 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Navbar from "../component/Navbar/navbar";
-import Footer from "../component/FooterCard/Footer";
-import Home from "../pages/home page/home";
-import CartPage from "../pages/CartPage/CartPage";
-import Login from "../component/login/login";
-import SignUp from "../component/signup/SignUp";
-import ProfilePage from "../pages/ProfilePage/ProfileP";
-import Womens from "../pages/Women's Fashtion/wemens";
-import Mens from "../pages/mens clothes/mens";
-import KidsAndBaby from "../pages/Kids and baby/Kids-Baby";
-import HomeEssentials from "../pages/Home Essentials/HomeEssential";
-import Furniture from "../pages/Furniture/Furniture";
-import ToynGames from "../pages/Toys & Games/ToysGames"
-import BeautyCare from "../pages/Beauty & Care/BeautyCare"
-import ArtsCrafts from "../pages/Arts & crafts/Artscrafts"
+import Navbar from "../src/component/Navbar/navbar";
+import Footer from "../src/component/FooterCard/Footer";
+import Home from "../src/pages/home page/home";
+import CartPage from "../src/pages/CartPage/CartPage";
+import Login from "../src/component/login/login";
+import SignUp from "../src/component/signup/SignUp";
+import ProfilePage from "../src/pages/ProfilePage/ProfileP";
+import Womens from "../src/pages/Women's Fashtion/wemens";
+import Mens from "../src/pages/mens clothes/mens";
+import KidsAndBaby from "../src/pages/Kids and baby/Kids-Baby";
+import HomeEssentials from "../src/pages/Home Essentials/HomeEssential";
+import Furniture from "../src/pages/Furniture/Furniture";
+import ToynGames from "../src/pages/Toys & Games/ToysGames"
+import BeautyCare from "../src/pages/Beauty & Care/BeautyCare"
+import ArtsCrafts from "../src/pages/Arts & crafts/Artscrafts"
 
-import SearchResultsPage from "../pages/SearchResultsPage/SearchResultsPage";
-import ScrollToTop from '../component/sroll'
+import SearchResultsPage from "../src/pages/SearchResultsPage/SearchResultsPage";
+import ScrollToTop from '../src/component/sroll'
 function App() {
 
   return (
