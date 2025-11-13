@@ -102,7 +102,7 @@
 /* ========== RESPONSIVE BREAKPOINTS ========== */
 
 /* ===== 1440 × 900 (Desktop large) ===== */
-@media (width: 1440px) and (height: 900px) {
+@media (max-width: 1440px) {
   .container {
     padding: 60px 80px; /* increased side padding for breathing room */
     max-width: 1300px;  /* slightly wider but centered */
@@ -128,6 +128,7 @@
     justify-content: center; /* center them nicely */
     gap: 60px 100px; /* horizontal and vertical gap */
     flex-wrap: wrap;
+    
   }
   .section {
     flex: 1 1 40%; /* exactly 2 per line */
@@ -156,7 +157,7 @@
 }
 
 /* ===== 800 × 1280 (Tablet portrait) ===== */
-@media (width: 800px) and (height: 1280px) {
+@media (min-width: 600px) and (max-width: 1000px) {
   .container {
     flex-wrap: wrap;
     padding: 40px 60px;
@@ -174,7 +175,7 @@
 }
 
 /* ===== 412 × 919 (Mobile large) ===== */
-@media (width: 412px) and (height: 919px) {
+@media (max-width: 599px) {
   .footer {
     padding-top: 10px;
   }
@@ -215,86 +216,10 @@
 }
 
 /* ===== 412 × 915 (Mobile medium) ===== */
-@media (width: 412px) and (height: 915px) {
-  .footer {
-    padding-top: 10px;
-  }
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 5px 1px;
-    gap: 18px;
-  }
-  .section {
-    flex: 1 1 30%; /* ~3 per row */
-    max-width: 170px;
-    min-width: 130px;
-    text-align: center;
-    margin-bottom: 0;
-  }
-  .title, .subtitle {
-    font-size: 15px;
-  }
-  .text {
-    font-size: 13.5px;
-  }
-  .icons {
-    justify-content: center;
-    gap: 8px;
-  }
-  .icon {
-    font-size: 21px;
-  }
-  .bottomLinks {
-    gap: 18px;
-  }
-  .copy {
-    font-size: 13.5px;
-  }
-}
+
 
 /* ===== 393 × 852 (Mobile small) ===== */
-@media (width: 393px) and (height: 852px) {
-  .footer {
-    padding-top: 8px;
-  }
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 2px 1px;
-    gap: 16px;
-  }
-  .section {
-    flex: 1 1 45%; /* ~2 per row for smaller screens */
-    max-width: 160px;
-    min-width: 130px;
-    text-align: center;
-    margin-bottom: 0;
-  }
-  .title, .subtitle {
-    font-size: 15px;
-  }
-  .text {
-    font-size: 13px;
-  }
-  .icons {
-    justify-content: center;
-    gap: 6px;
-  }
-  .icon {
-    font-size: 20px;
-  }
-  .bottomLinks {
-    gap: 16px;
-  }
-  .copy {
-    font-size: 13px;
-  }
-}
+
 .list:hover {
   cursor: pointer;
 }
