@@ -25,7 +25,7 @@ function SignUp(){
                   
                         const userId = response.data.result.userId;
                         localStorage.setItem("userId", userId);
-                        console.log("SignUp successful:", response.data);
+                        
                         navigate("/", { state: { toast: true,message:"✅account created succesfully" } });
         } catch (error) {
             console.error("SignUp failed:", error);
@@ -34,7 +34,7 @@ function SignUp(){
     }  
     
     const handleClose = () => {
-    navigate(-2); // go back when clicking outside
+    navigate(-2); 
   };
      return (
     <div 

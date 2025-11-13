@@ -17,11 +17,11 @@ export default function ArtsCrafts() {
     
   };
 
-  console.log('mounting ❤❤❤❤❤❤❤');
+
   
   useEffect(() => {
     const subId = searchParams.get('sub');
-    console.log(subId,'subId');
+   
     
     if (subId && subMap[subId]) {
       setSelectedSub({ id: subId, name: subMap[subId] });

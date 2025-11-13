@@ -23,13 +23,13 @@ export default function Login() {
             });
             const token = response.data.result.token;
             localStorage.setItem("token", token);
-            const temp = localStorage.getItem("token")
-            console.log(token,'token', temp );
+          
+            
             
             const userId = response.data.result.userId;
             localStorage.setItem("userId", userId);
             
-            console.log("Login successful:", response.data);
+            
             navigate("/", { state: { toast: true,message:"✅Loggedin succesfully" } });
           
         } catch (error) {

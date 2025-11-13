@@ -64,37 +64,10 @@
   box-shadow: 0 2% 5% rgba(81, 80, 80, 0.5);
 }
 
-/* ===== MEDIA QUERIES ===== */
 
-/* Small mobile screens 393x852 */
-/* Small mobile screens 393x852 */
-@media (width: 393px) and (height: 852px) {
-  .box {
-    min-height: 85vh; /* push content lower from navbar */
-  }
-  .contentbox {
-    width: 85%;
-    gap: 4%; /* more spacing between title, description, buttons */
-  }
-  .title {
-    font-size: 7vw; /* smaller title */
-  }
-  .description {
-    font-size: 3.5vw; /* smaller description */
-  }
-  .buttonbox {
-    width: 80%;
-    gap: 5%; /* increase space between buttons */
-  }
-  .button {
-    font-size: 3vw; /* smaller text */
-    padding: 3% 5%; /* more padding inside buttons */
-  }
-}
 
 /* Mobile 412x915 & 412x919 */
-@media (width: 412px) and (height: 915px),
-       (width: 412px) and (height: 919px) {
+@media (max-width: 599px){
   .box {
     min-height: 85vh;
   }
@@ -109,7 +82,7 @@
     font-size: 3.2vw;
   }
   .buttonbox {
-    width: 75%;
+    width: 77%;
     gap: 5%;
   }
   .button {
@@ -120,7 +93,7 @@
 
 
 /* Tablet portrait 800x1280 */
-@media (width: 800px) and (height: 1280px) {
+@media (max-width: 1000px) and (min-width: 600px) {
   .contentbox {
     width: 60%;
     gap: 2%;
@@ -140,29 +113,9 @@
   }
 }
 
-/* Tablet landscape 1280x800 */
-@media (width: 1280px) and (height: 800px) {
-  .contentbox {
-    width: 55%;
-    gap: 2%;
-  }
-  .title {
-    font-size: 5vw;
-  }
-  .description {
-    font-size: 2vw;
-  }
-  .buttonbox {
-    width: 40%;
-    gap: 2%;
-  }
-  .button {
-    font-size: 1.2vw;
-  }
-}
 
 /* Desktop 1440x900 */
-@media (width: 1440px) and (height: 900px) {
+@media (max-width: 1940px) and (min-width:1001px) {
   .contentbox {
     width: 50%;
     gap: 2%;
@@ -174,8 +127,8 @@
     font-size: 1.8vw;
   }
   .buttonbox {
-    width: 35%;
-    gap: 2%;
+    width: 39%;
+    gap: 5%;
   }
   .button {
     font-size: 1vw;

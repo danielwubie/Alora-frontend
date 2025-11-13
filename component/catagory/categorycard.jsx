@@ -49,7 +49,7 @@ function CatCard({ name, description, image,path }) {
             zIndex: 10,
             color: "white",
             height: "45px",
-            width: "115px",
+            width: "120px",
             border: "1px solid rgb(161, 144, 125)",
             backgroundColor: "#8b4513",  
           }}

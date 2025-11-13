@@ -4,7 +4,7 @@ import MyCard from "../ProductCard/productCard";
 import { Typography, Box, Grid } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 
-function ProductList({ transform, title, info, mode = "all", config }) {
+function ProductList({ transform, title, info, mode = "all", config, }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -13,29 +13,29 @@ function ProductList({ transform, title, info, mode = "all", config }) {
       axios
         .get("http://127.0.0.1:5000/product")
         .then((res) => {
-          console.log("Fetched products:", res.data.products);
+         
           setProducts(res.data.products);
           setLoading(false);
         })
-        .catch((err) => console.error("Error fetching products:", err));
+        
     } else if (mode == "catag") {
       axios
         .get(`http://127.0.0.1:5000/product/categories/${config}`)
         .then((res) => {
-          console.log("Fetched products:", res.data.products);
+         
           setProducts(res.data.products);
           setLoading(false);
         })
-        .catch((err) => console.error("Error fetching products:", err));
+       
     } else if (mode == "sub") {
       axios
         .get(`http://127.0.0.1:5000/product/by_subcategory/${config}`)
         .then((res) => {
-          console.log("Fetched products:", res.data.products);
+          
           setProducts(res.data.products);
           setLoading(false);
         })
-        .catch((err) => console.error("Error fetching products:", err));
+        
     }
   }, [mode, config]);
 

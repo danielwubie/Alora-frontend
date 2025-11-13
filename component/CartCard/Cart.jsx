@@ -37,7 +37,7 @@ export default function Cart({ item, onRemove }) {
       data: { "productId": item.product_id },
     }).then(() => {
       onRemove(item.product_id);
-    }).catch((err) => console.error("Error deleting item:", err));
+    })
   };
   return (
     <Card
