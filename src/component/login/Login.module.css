@@ -1,0 +1,285 @@
+.contianer{
+    background-color: #FFECD4;
+    width: 568px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+   
+   z-index: 9999; ;
+}
+.inputbox{
+   width: 80%;
+    background-color: white;
+    width: fit-content;
+    
+}
+.inputandtextbox{
+   display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+} 
+.text{
+    width: 80px;
+    color: black;
+}
+.link_to_signup{
+    width: 246px;
+    padding-top: 25px;
+    height: 33px;
+    font-size: 24px;
+    margin-right: 20px;
+    gap: 20px;
+}
+.button_and_link{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.logo{
+    height: 120px;
+    width: 160px;
+     background-color: #FFECD4;
+}
+.logobox{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+
+@media (max-width: 599px)  {
+  .contianer {
+    width: 94% !important;
+    height: auto;
+    
+   
+  
+    border-radius: 15px;
+  }
+
+  .logo {
+    height: 60px;
+    width: 90px;
+  }
+
+  .logobox {
+    width: 100% !important;
+    
+    justify-content: center !important;
+  }
+
+  
+  .inputandtextbox {
+    flex-direction: column !important; 
+    align-items: start !important;
+    margin: 0 !important;
+    width: 100% !important;
+    
+    
+  }
+
+  .text {
+    font-size: 14px;
+    width: 70px;
+    text-align: left;
+    margin-right: 6px;
+    padding-left: 10px;
+  }
+
+  .inputbox {
+    width: 100% !important;
+  }
+
+  
+  .button_and_link {
+    flex-direction: column-reverse !important;
+    width: 100% !important;
+   
+    
+    
+   
+    margin: 0 !important;
+  }
+
+  .link_to_signup {
+    
+    max-width: 100% !important;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 0;
+    margin: 0;
+    display: flex;
+    
+    line-height: 1.2;
+    flex: 1;
+    white-space: nowrap !important;
+  }
+
+  .button_and_link button {
+    height: 40px;
+    width: 100% !important;
+    
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1000px) and (min-width:600px){
+  .contianer {
+    width: 600px;
+    height: auto;
+    padding: 30px;
+    margin: 30px auto;
+    gap: 35px;
+    border-radius: 18px;
+  }
+
+  .logo {
+    height: 90px;
+    width: 130px;
+  }
+
+  .logobox {
+    justify-content: center;
+  }
+
+  
+  .inputandtextbox {
+    flex-direction: row;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+   
+    margin: 0 !important;
+  }
+
+  .text {
+    font-size: 18px;
+    width: 90px;
+    text-align: left;
+    
+  }
+
+  .inputbox {
+    width: 70%;
+  }
+
+  
+  .button_and_link {
+    flex-direction: row;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .link_to_signup {
+    width: auto;
+    max-width: 55%;
+    font-size: 16px;
+    text-align: start !important;
+    padding-top: 0;
+    margin: 0;
+    display: flex;
+    justify-content: start !important;
+    
+    line-height: 1.2;
+    flex: 1;
+    white-space: nowrap;
+  }
+
+  .button_and_link button {
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+  }
+}
+
+
+
+
+@media (max-width: 1940px) {
+  .contianer {
+    width: 720px;
+    height: auto;
+    padding: 50px;
+    margin: 50px auto;
+    gap: 45px;
+    border-radius: 22px;
+  }
+
+  .logo {
+    height: 110px;
+    width: 160px;
+  }
+
+  .logobox {
+    justify-content: flex-start;
+  }
+
+  
+  .inputandtextbox {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    gap: 15px;
+    margin: 0 auto;
+  }
+
+  .text {
+    font-size: 18px;
+    width: 110px;
+    text-align: left;
+    margin-right: 8px;
+  }
+
+  .inputbox {
+    width: 70%;
+  }
+
+  
+  .button_and_link {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    width: 80%;
+    margin: 0 auto 40px auto;
+  }
+
+  .link_to_signup {
+    width: auto;
+    max-width: 50%;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+    flex: 1;
+    white-space: nowrap;
+  }
+
+  .button_and_link button {
+    height: 55px;
+    width: 165px;
+    font-size: 16px;
+  }
+}
+

@@ -1,0 +1,65 @@
+.IconButton {
+  border-radius: 10px; /* rounded corners */
+  /* padding: 8px; */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  outline: none;                   /* removes the default focus outline */
+  box-shadow: none;   
+}
+
+/* Hover effect */
+.IconButton:hover {
+  background-color: #d4c4a8; /* light gray on hover */
+  box-shadow: none;
+}
+
+.IconButton:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
+
+.Categorys{
+    border-radius: 10px;
+     height: 44px !important; 
+    padding-right: 5px !important;
+    display: flex;
+    justify-content: flex-start;
+    /* margin-left: 10px; */
+}
+
+.Categorys:hover{
+background-color: #d4c4a8 !important; /* light gray on hover */
+width: 257px !important; 
+transform: scale(1.05) !important; 
+}
+
+.SubCategorys{
+    border-radius: 10px;
+    width: 225px !important;
+    height: 32px !important;
+    padding-right: 0px !important;
+    color: #6B5B47;
+    font-size: 14px;
+}
+.SubCategorys:hover{
+background-color: #d4c4a8 !important; 
+  transform: scale(1.05) !important; 
+    color: rgb(61, 41, 20);
+}
+
+.continer{
+    padding: 24px;
+    
+}
+
+.text{
+    font-family:"system-ui";
+    font-size: 16px;
+    color: rgb(61, 41, 20);
+    font-weight: 500;
+    line-height: 24px;
+
+}

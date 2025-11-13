@@ -1,0 +1,225 @@
+.footer {
+  width: 100%;
+  min-width: 100%;
+  height: auto; /* allow height to adjust to content */
+  background-color: #8b4513;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; /* prevents scroll overflow */
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+
+/* Main container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 80px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.section {
+  flex: 1 1 220px;
+  min-width: 200px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.title,
+.subtitle {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: rgb(250, 248, 244);
+  margin-bottom: 12px;
+}
+
+.text,
+.list li,
+.bottomLinks li,
+.copy {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(255, 255, 255);
+  list-style: none;
+  margin-bottom: 6px;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.icon {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.bottomLinks {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.copy {
+  margin: 0;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* ===== 1440 × 900 (Desktop large) ===== */
+@media (max-width: 1440px) {
+  .container {
+    padding: 60px 80px; /* increased side padding for breathing room */
+    max-width: 1300px;  /* slightly wider but centered */
+    justify-content: space-between;
+    gap: 60px; /* add clear space between sections */
+  }
+  .section {
+    flex: 1 1 22%; /* about 4 per row with spacing */
+    min-width: 250px;
+  }
+  .title, .subtitle {
+    font-size: 18px;
+  }
+  .text {
+    font-size: 16px;
+  }
+}
+
+/* ===== 1280 × 800 (Tablet landscape) ===== */
+@media (width: 1280px) and (height: 800px) {
+  .container {
+    padding: 50px 100px; /* more side space for balance */
+    justify-content: center; /* center them nicely */
+    gap: 60px 100px; /* horizontal and vertical gap */
+    flex-wrap: wrap;
+    
+  }
+  .section {
+    flex: 1 1 40%; /* exactly 2 per line */
+    max-width: 420px;
+    text-align: center;
+  }
+  .title, .subtitle {
+    font-size: 17px;
+  }
+  .text {
+    font-size: 15px;
+  }
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+    width: 100%; /* ensures icons stay centered horizontally */
+  }
+
+  .icon {
+    font-size: 22px;
+    color: #fff;
+  }
+}
+
+/* ===== 800 × 1280 (Tablet portrait) ===== */
+@media (min-width: 600px) and (max-width: 1000px) {
+  .container {
+    flex-wrap: wrap;
+    padding: 40px 60px;
+    justify-content: center;
+  }
+  .section {
+    flex: 1 1 35%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .icons {
+    justify-content: center;
+  }
+  
+}
+
+/* ===== 412 × 919 (Mobile large) ===== */
+@media (max-width: 599px) {
+  .footer {
+    padding-top: 10px;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3px 2px;
+    gap: 20px;
+  }
+  .section {
+    flex: 1 1 30%; /* ~3 per row */
+    max-width: 180px;
+    min-width: 130px; /* prevent sections from collapsing */
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .title, .subtitle {
+    font-size: 16px;
+  }
+  .text {
+    font-size: 14px;
+  }
+  .icons {
+    justify-content: center;
+    gap: 8px;
+  }
+  .icon {
+    font-size: 22px;
+  }
+  .bottomLinks {
+    gap: 20px;
+  }
+  .copy {
+    font-size: 14px;
+  }
+}
+
+/* ===== 412 × 915 (Mobile medium) ===== */
+
+
+/* ===== 393 × 852 (Mobile small) ===== */
+
+.list:hover {
+  cursor: pointer;
+}

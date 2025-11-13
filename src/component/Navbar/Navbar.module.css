@@ -1,0 +1,139 @@
+.image {
+  width: 100px;
+  height: 60px;
+  margin-top: 4px; 
+  flex-shrink: 0;
+  transition: box-shadow 0.2s ease;
+}
+.image:hover {
+  cursor: pointer;
+  
+}
+
+.searchbox {
+  width: 40% !important;
+  color: black;
+  border-radius: 10px !important;
+  background-color: rgba(255,236,212,1) !important; /* alpha fixed */
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+.searchbox2:active{
+   background-color: #bdb2a4 !important;
+}
+
+.searchbox2 {
+  width:100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: black;
+  border-radius: 10px !important;
+  background-color: #f0e6d6ff !important;
+}
+.searchbox2:hover,
+.searchbox2:focus {
+  background-color: #bdb2a4 !important;
+}
+
+:global(.MuiBadge-badge) {
+  background-color: #8a3d1f !important;
+  color: white !important;
+}
+
+
+
+
+
+
+/* ===== 412 × 919 ===== */
+@media (max-width: 599px)  {
+
+
+    :global(.MuiToolbar-root > *:nth-child(3)) {
+    display: flex !important;
+    justify-content: space-between !important;
+  
+    align-items: center;
+  }
+
+  /* Larger logo */
+  .image {
+    width: 64px;
+    height: 40px;
+    flex-shrink: 0;
+    
+    
+  }
+
+ 
+  .searchbox {
+    width: 35% !important;
+    max-width: 35% !important;
+    flex: 1 1 auto;
+    
+  }
+
+  .searchbox2 {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    
+  }
+
+  /* Larger burger */
+  .IconButton {
+    padding: 10px !important;
+    /* margin: 0 3px !important;s */
+  }
+
+}
+
+
+
+/* ========== 800 × 1280 ========== */
+@media (min-width: 600px) and (max-width: 1000px) {
+  :global(.MuiToolbar-root) {
+    padding: 0 12px !important;
+  }
+  :global(.MuiToolbar-root > *:nth-child(3)) {
+    display: flex !important;
+  }
+  .image {
+    width: 88px;
+    height: 52px;
+  }
+  .searchbox {
+    width: 50% !important;
+    padding: 0 !important;
+  }
+  .IconButton {
+    padding: 13px !important;
+    font-size: 20px;
+  }
+}
+
+
+
+/* ========== 1440 × 900 ========== */
+@media (max-width: 1440px)  {
+
+  .image {
+    width: 100px;
+    height: 60px;
+     margin-left: 15px;
+  }
+  .searchbox {
+    width: 40% !important;
+  }
+  .searchbox2 {
+   
+    padding: 0 !important;
+  }
+  .IconButton {
+    padding: 12px !important;
+    font-size: 30 !important;
+  }
+}
+.logbtn:hover{
+  background-color: none !important;
+}

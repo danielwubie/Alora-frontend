@@ -1,0 +1,97 @@
+
+.cardbox{
+    background-color: antiquewhite;
+    height:460px;
+    width: 290px;
+    overflow: hidden; 
+}
+
+
+/* 1440x900 screens */
+@media (max-width: 1440px)  {
+  .cardbox {
+    width: 280px;
+    height: 460px;
+  }
+}
+
+
+
+/* 800x1280 screens (portrait tablets) */
+@media (max-width: 800px)  {
+  .cardbox {
+    width: 230px;
+    height: 480px;
+  }
+}
+
+/* 412x915 and 412x919 (phones like Galaxy S20, Pixel 7) */
+@media (max-width: 412px)  {
+  .cardbox {
+    width: 240px;
+    height: 460px;
+  }
+}
+
+/* 393x852 (iPhone 14 Pro, etc.) */
+@media (max-width: 393px) {
+  .cardbox {
+    width: 220px;
+    height: 460px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cardbox:hover{
+  
+  box-shadow: 0 5px 12px rgba(147, 147, 147, 0.5);
+}
+.imagebox{
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagewrapper{
+    overflow: hidden; 
+  height: 60%;  
+}
+.cardbox:hover .imagebox {
+  transform: scale(1.1);
+}
+
+.cardbutton{
+  background-color: #f5f1eb !important;
+  border:1px solid rgb(161, 144, 125) !important;
+  border-radius: 10px !important;
+  
+}
+.cardbox:hover .cardbutton:hover{
+  background-color: #8b4513 !important;
+  color: white;
+}

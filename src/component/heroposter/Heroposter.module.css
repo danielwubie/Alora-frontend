@@ -1,0 +1,136 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 80vh; 
+  background-image: url("src/assets/pexels-n-voitkevich-6214365.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.contentbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  width: 60%; 
+  max-width: 90%; 
+  text-align: center;
+  gap: 2%; 
+}
+
+.title {
+  margin: 1% 0;
+  font-size: 5vw;
+  font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.description {
+  margin: 1% 0;
+  font-size: 1.6vw;
+  font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  color: #e1e1e2;
+}
+
+.buttonbox {
+  display: flex;
+  flex-direction: row;
+  gap: 2%; 
+  width: 40%;
+  max-width: 80%;
+  justify-content: center; 
+  margin: 2% auto 0;
+}
+
+.button {
+  font-size: 1vw;
+  font-weight: 500;
+  font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 1% 2%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgb(236, 191, 136);
+  box-shadow: 0 2% 5% rgba(81, 80, 80, 0.5);
+}
+
+
+
+
+@media (max-width: 599px){
+  .box {
+    min-height: 85vh;
+  }
+  .contentbox {
+    width: 80%;
+    gap: 4%;
+  }
+  .title {
+    font-size: 6.5vw;
+  }
+  .description {
+    font-size: 3.2vw;
+  }
+  .buttonbox {
+    width: 77%;
+    gap: 5%;
+  }
+  .button {
+    font-size: 2.8vw;
+    padding: 3% 5%;
+  }
+}
+
+
+
+@media (max-width: 1000px) and (min-width: 600px) {
+  .contentbox {
+    width: 60%;
+    gap: 2%;
+  }
+  .title {
+    font-size: 6vw;
+  }
+  .description {
+    font-size: 2.5vw;
+  }
+  .buttonbox {
+    width: 50%;
+    gap: 2%;
+  }
+  .button {
+    font-size: 1.5vw;
+  }
+}
+
+
+
+@media (max-width: 1940px) and (min-width:1001px) {
+  .contentbox {
+    width: 50%;
+    gap: 2%;
+  }
+  .title {
+    font-size: 4vw;
+  }
+  .description {
+    font-size: 1.8vw;
+  }
+  .buttonbox {
+    width: 39%;
+    gap: 5%;
+  }
+  .button {
+    font-size: 1vw;
+  }
+}

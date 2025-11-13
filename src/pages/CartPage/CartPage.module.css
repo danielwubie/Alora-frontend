@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1e6d5;
+  color: #3e2e1f;
+  padding: 2%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+.title{
+    
+    margin-bottom: 100px !important;
+}
+
