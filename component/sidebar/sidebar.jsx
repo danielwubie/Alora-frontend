@@ -24,7 +24,7 @@ import styles from "./Sidebar.module.css";
 import { Typography } from "@mui/material";
 
 export default function Sidebar() {
-  console.log("tesssssst");
+
 
   const [open, setOpen] = useState(false);
   const [categories, setCategories] = useState([]);
@@ -47,10 +47,10 @@ export default function Sidebar() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        console.log("test❤❤❤❤❤");
+        
 
         const res = await axios.get("http://127.0.0.1:5000/category"); // Your backend URL
-        console.log("res", res);
+      
         setCategories(res.data.categories);
       } catch (err) {
         console.error("Failed to fetch categories:", err);

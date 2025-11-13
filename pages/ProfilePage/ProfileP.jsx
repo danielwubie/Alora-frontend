@@ -13,10 +13,10 @@ const ProfilePage = () => {
 useEffect(() => {
   const fetchUser = async () => {
     const token = localStorage.getItem("token");
-    console.log('oooo');
+   
     
     if (!token) return navigate("/login");
-    console.log('llll');
+   
 
     try {
       const response = await axios.get(`http://127.0.0.1:5000/users/profile`, {
@@ -27,7 +27,7 @@ useEffect(() => {
       console.log(error,'error');
       
       setError("Failed to load user info: " + error.message);
-      console.log("the hhhhahahah")
+      
       navigate("/login");
     } finally {
       setLoading(false);

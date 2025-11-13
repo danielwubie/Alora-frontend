@@ -60,6 +60,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+  
+  
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -79,7 +81,7 @@ export default function PrimarySearchAppBar() {
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleProfileMenuOpen = (event) => {
-    console.log('💨💨💨💨💨💨');
+    
     setAnchorEl(event.currentTarget);
   };
 
@@ -136,7 +138,7 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="#8b4513" className={styles.badge}>
+          <Badge badgeContent={7} color="#8b4513" className={styles.badge}>
             <MailIcon />
           </Badge>
         </IconButton>
@@ -158,12 +160,12 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
   const handleCartClick = () => {
-    navigate("/cart"); // or whatever your cart route is
+    navigate("/cart"); 
   };
   const handleProfilleClick = () => {
-   
+ 
     navigate("/profile");
-  
+
   };
 
   return (
@@ -206,7 +208,7 @@ export default function PrimarySearchAppBar() {
               />
             </Search>
           </form>
-          {/* <Box sx={{ flexGrow: 1 }} /> */}
+          
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               disableRipple
@@ -220,7 +222,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
               onClick={handleCartClick}
             >
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={0} color="error">
                 <ShoppingCartIcon sx={{ 
 
                   '@media (max-width: 599px) ': {
@@ -233,7 +235,7 @@ export default function PrimarySearchAppBar() {
                 borderRadius:15,
                     "&:hover":{
                       backgroundColor: "#d4c4a8",
-                      // backgroundColor:"#d4c4a8",
+                      
                      
                     },
                     fontSize: 20,
