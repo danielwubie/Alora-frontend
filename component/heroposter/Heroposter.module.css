@@ -64,9 +64,7 @@
   box-shadow: 0 2% 5% rgba(81, 80, 80, 0.5);
 }
 
-/* ===== MEDIA QUERIES ===== */
 
-/* Small mobile screens 393x852 */
 /* Small mobile screens 393x852 */
 @media (width: 393px) and (height: 852px) {
   .box {

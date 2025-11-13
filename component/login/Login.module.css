@@ -129,8 +129,14 @@
 }
 
 
+
+
+
+
+
+
 /* (Tablet Portrait)  */
-@media (max-width: 100px) and (min-width:600px){
+@media (max-width: 1000px) and (min-width:600px){
   .contianer {
     width: 600px;
     height: auto;
@@ -204,12 +210,13 @@
 
 
 
-/* (Small Desktop / Laptop) */
+/* (Small Desktop / Laptop) ========== */
 @media (max-width: 1940px) {
   .contianer {
     width: 720px;
     height: auto;
-    
+    padding: 50px;
+    margin: 50px auto;
     gap: 45px;
     border-radius: 22px;
   }

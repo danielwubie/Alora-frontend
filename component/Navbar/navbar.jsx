@@ -161,12 +161,9 @@ export default function PrimarySearchAppBar() {
     navigate("/cart"); // or whatever your cart route is
   };
   const handleProfilleClick = () => {
-    // api request
-    // if(!token){
-    //   navigate("/login")
-    // }else{
+   
     navigate("/profile");
-    // }
+  
   };
 
   return (

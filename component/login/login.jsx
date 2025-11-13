@@ -91,7 +91,8 @@ export default function Login() {
                             >
                              Create new account?
                             </a>
-            <Button sx={{ mt: 2,color: "white", height:"62px",width:"183px",backgroundColor:"#C15A18"} } className={styles.btn} onClick={handleLogin}>
+            <Button  disableRipple sx={{ mt: 2,color: "white", height:"62px",width:"183px",backgroundColor:"#C15A18",  "&:focus": { outline: "none", boxShadow: "none" },
+                "&:focus-visible": { outline: "none", boxShadow: "none" },} } className={styles.btn} onClick={handleLogin}>
                 Login
                   
             </Button>
