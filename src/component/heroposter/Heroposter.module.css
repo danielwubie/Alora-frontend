@@ -1,11 +1,11 @@
 .box {
   display: flex;
   justify-content: center;
-  align-items: center; /* vertically center content */
+  align-items: center; 
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 80vh; /* occupy most of the viewport height */
+  min-height: 80vh; 
   background-image: url("src/assets/pexels-n-voitkevich-6214365.jpg");
   background-size: cover;
   background-position: center;
@@ -16,12 +16,12 @@
 .contentbox {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical spacing inside content */
-  align-items: center; /* center horizontally */
-  width: 60%; /* relative width */
-  max-width: 90%; /* prevent overflow */
+  justify-content: center; 
+  align-items: center; 
+  width: 60%; 
+  max-width: 90%; 
   text-align: center;
-  gap: 2%; /* spacing between elements inside contentbox */
+  gap: 2%; 
 }
 
 .title {
@@ -43,10 +43,10 @@
 .buttonbox {
   display: flex;
   flex-direction: row;
-  gap: 2%; /* space between buttons */
+  gap: 2%; 
   width: 40%;
   max-width: 80%;
-  justify-content: center; /* center the buttons */
+  justify-content: center; 
   margin: 2% auto 0;
 }
 
@@ -66,7 +66,7 @@
 
 
 
-/* Mobile 412x915 & 412x919 */
+
 @media (max-width: 599px){
   .box {
     min-height: 85vh;
@@ -92,7 +92,7 @@
 }
 
 
-/* Tablet portrait 800x1280 */
+
 @media (max-width: 1000px) and (min-width: 600px) {
   .contentbox {
     width: 60%;
@@ -114,7 +114,7 @@
 }
 
 
-/* Desktop 1440x900 */
+
 @media (max-width: 1940px) and (min-width:1001px) {
   .contentbox {
     width: 50%;

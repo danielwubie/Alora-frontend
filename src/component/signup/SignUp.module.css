@@ -11,7 +11,7 @@
 }
 
 .inputbox {
-    width: 80%; /* original size for large screens */
+    width: 80%; 
     background-color: white;
 }
 
@@ -74,9 +74,9 @@
     justify-content: center !important;
   }
 
-  /* ✅ text and input side-by-side */
+ 
   .inputandtextbox {
-    flex-direction: column !important; /* side-by-side */
+    flex-direction: column !important; 
     align-items: start !important;
     margin: 0 !important;
     width: 100% !important;
@@ -96,7 +96,7 @@
     width: 100% !important;
   }
 
-  /* ✅ link and button side-by-side */
+  
   .button_and_link {
     flex-direction: column-reverse !important;
     width: 100% !important;
@@ -124,13 +124,11 @@
   .button_and_link button {
     height: 40px;
     width: 100% !important;
-    /* margin-left: 0px !important; */
+    
     font-size: 12px;
   }
 }
 
-
-/* (Tablet Portrait)  */
 @media (max-width: 1000px) and (min-width:600px){
   .contianer {
     width: 600px;
@@ -150,7 +148,7 @@
     justify-content: center;
   }
 
-  /* ✅ Label + Input side-by-side */
+  
   .inputandtextbox {
     flex-direction: row;
     align-items: center !important;
@@ -171,7 +169,7 @@
     width: 70%;
   }
 
-  /* ✅ Link + Button side-by-side */
+
   .button_and_link {
     flex-direction: row;
     justify-content: center !important;
@@ -205,7 +203,7 @@
 
 
 
-/* (Small Desktop / Laptop) */
+
 @media (max-width: 1940px) {
   .contianer {
     width: 720px;
@@ -225,7 +223,7 @@
     justify-content: flex-start;
   }
 
-  /* ✅ Label + Input side-by-side */
+
   .inputandtextbox {
     flex-direction: row;
     align-items: center;
@@ -246,7 +244,7 @@
     width: 70%;
   }
 
-  /* ✅ Link + Button side-by-side */
+  
   .button_and_link {
     flex-direction: row;
     justify-content: space-between;
