@@ -44,12 +44,14 @@ export default function Sidebar() {
     "Arts & crafts": <ColorLensIcon sx={{ color: "#8e7e67" }} />,
   };
 
+const BASE_URL=import.meta.env.VITE_BASE_URL
+console.log(BASE_URL)
   useEffect(() => {
     const fetchCategories = async () => {
       try {
         
 
-        const res = await axios.get("http://127.0.0.1:5000/category"); // Your backend URL
+        const res = await axios.get(`${BASE_URL}/category`); // Your backend URL
       
         setCategories(res.data.categories);
       } catch (err) {

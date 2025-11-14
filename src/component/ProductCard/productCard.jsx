@@ -28,10 +28,10 @@ function MyCard({ id, name, Price, description, image }) {
       quantity: 1      
     };
       const token = localStorage.getItem("token");
-      
+     const BASE_URL=import.meta.env.VITE_BASE_URL
       
       await axios.post(
-        "http://127.0.0.1:5000/cart/add",
+        `${BASE_URL}/cart/add`,
         payload,
         {
 

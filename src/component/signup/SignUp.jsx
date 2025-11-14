@@ -11,10 +11,10 @@ function SignUp(){
     const [Email, setEmail]=useState("")
     const [Password, setPassword]=useState("")
      const navigate = useNavigate(); 
-
+const BASE_URL=import.meta.env.VITE_BASE_URL
     const handelSignUp= async () => {
         try {
-             const response= await axios.post("http://127.0.0.1:5000/users/signUp",{
+             const response= await axios.post(`${BASE_URL}/users/signUp`,{
                             name: Name,
                             email: Email,
                             password: Password,

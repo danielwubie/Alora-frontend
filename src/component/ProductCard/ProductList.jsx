@@ -7,11 +7,12 @@ import CircularProgress from "@mui/material/CircularProgress";
 function ProductList({ transform, title, info, mode = "all", config, }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-
+const BASE_URL=import.meta.env.VITE_BASE_URL
   useEffect(() => {
     if (mode == "all") {
+
       axios
-        .get("http://127.0.0.1:5000/product")
+        .get(`${BASE_URL}/product`)
         .then((res) => {
          
           setProducts(res.data.products);
@@ -20,7 +21,7 @@ function ProductList({ transform, title, info, mode = "all", config, }) {
         
     } else if (mode == "catag") {
       axios
-        .get(`http://127.0.0.1:5000/product/categories/${config}`)
+        .get(`${BASE_URL}/product/categories/${config}`)
         .then((res) => {
          
           setProducts(res.data.products);
@@ -29,7 +30,7 @@ function ProductList({ transform, title, info, mode = "all", config, }) {
        
     } else if (mode == "sub") {
       axios
-        .get(`http://127.0.0.1:5000/product/by_subcategory/${config}`)
+        .get(`${BASE_URL}/product/by_subcategory/${config}`)
         .then((res) => {
           
           setProducts(res.data.products);

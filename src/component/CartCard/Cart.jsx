@@ -14,12 +14,13 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import styles from "../CartCard/card.module.css";
 export default function Cart({ item, onRemove }) {
   const [quantity, setQuantity] = useState(item.quantity);
+  const BASE_URL=import.meta.env.VITE_BASE_URL
   const handleQuantityChange = (delta) => {
     const newQuantity = Math.max(1, quantity + delta);
     setQuantity(newQuantity);
     const token = localStorage.getItem("token");
     axios.put(
-      `http://127.0.0.1:5000/cart/update`,
+      `${BASE_URL}/cart/update`,
       { productId: item.product_id, quantity: newQuantity },
       {
         headers: {
@@ -30,7 +31,7 @@ export default function Cart({ item, onRemove }) {
   };
   const handleRemove = () => {
     const token = localStorage.getItem("token");
-    axios.delete(`http://127.0.0.1:5000/cart/delete`, {
+    axios.delete(`${BASE_URL}/cart/delete`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -55,7 +56,7 @@ export default function Cart({ item, onRemove }) {
       <CardMedia
         component="img"
         sx={{ width: 96, height: 96, borderRadius: 5 }}
-        image={`http://127.0.0.1:5000/uploads/${item.Product.image}`}
+        image={`${BASE_URL}/uploads/${item.Product.image}`}
         alt={item.Product.name}
       />
       <CardContent

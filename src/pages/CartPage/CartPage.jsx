@@ -17,13 +17,13 @@ const CartPage = () => {
   const handleContinueShopping = () => {
     navigate("/");
   };
-
+const BASE_URL=import.meta.env.VITE_BASE_URL
   useEffect(() => {
     async function fetchCart() {
       const token = localStorage.getItem("token");
       if (token) {
         try {
-          const res = await axios.get(`http://127.0.0.1:5000/cart`, {
+          const res = await axios.get(`${BASE_URL}/cart`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
