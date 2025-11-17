@@ -6,7 +6,7 @@
   padding: 0;
   width: 100%;
   min-height: 80vh; 
-  background-image: url("../../assets/pexels-n-voitkevich-6214365.jpg");
+  background-image: url("/public/assets/pexels-n-voitkevich-6214365.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

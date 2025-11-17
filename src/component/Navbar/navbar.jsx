@@ -189,7 +189,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleClickLogo}
             >
               <img
-                src="../../assets/alora_Brand_Logo.png"
+                src="/public/assets/alora_Brand_Logo.png"
                 className={styles.image}
               />
             </Box>
