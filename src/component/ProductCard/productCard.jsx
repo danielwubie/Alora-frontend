@@ -107,7 +107,9 @@ function MyCard({ id, name, Price, description, image }) {
 
         <Button
           variant="outlined"
-          sx={{ mt: 2, color: "black", height: "45px", width: "115px" }}
+           disableRipple
+          sx={{ mt: 2, color: "black", height: "45px", width: "115px", "&:focus": { outline: "none", boxShadow: "none" },
+                "&:focus-visible": { outline: "none", boxShadow: "none" }, }}
           className={styles.cardbutton}
           onClick={handleAddToCart}
         >

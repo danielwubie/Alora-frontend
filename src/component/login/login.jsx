@@ -64,7 +64,7 @@ export default function Login() {
          onClick={(e) => e.stopPropagation()}
     >
         <div className={styles.logobox}>
-            <img src="src/assets/alora_Brand_Logo.png" className={styles.logo}></img>
+            <img src="/assets/alora_Brand_Logo.png" className={styles.logo}></img>
         </div>
        
         <div className={styles.inputandtextbox}>

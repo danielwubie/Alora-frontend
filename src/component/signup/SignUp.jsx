@@ -57,7 +57,7 @@ const BASE_URL=import.meta.env.VITE_BASE_URL
     onClick={(e) => e.stopPropagation()}
     >
         <div className={styles.logobox}> 
-            <img src="src/assets/alora_Brand_Logo.png" className={styles.logo}></img>
+            <img src="/assets/alora_Brand_Logo.png" className={styles.logo}></img>
         </div>
         
 
