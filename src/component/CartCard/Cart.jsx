@@ -54,11 +54,11 @@ export default function Cart({ item, onRemove }) {
       className={styles.card}
     >
       <CardMedia
-  component="img"
-  sx={{ width: 96, height: 96, borderRadius: 5 }}
-  image={item.Product.image}
-  alt={item.Product.name}
-/>
+      component="img"
+      sx={{ width: 96, height: 96, borderRadius: 5 }}
+      image={item.Product.image}
+      alt={item.Product.name}
+    />
       <CardContent
         sx={{ flex: "1 0 auto", ml: 2 }}
         className={styles.contentbox}
