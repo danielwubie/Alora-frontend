@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import MyCard from "../ProductCard/productCard";
 import { Typography, Box, Grid } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
+import { getProducts } from "../../services/catalogService";
 
-function ProductList({ transform, title, info, mode = "all", config, }) {
+function ProductList({ transform, title, info, mode = "all", config }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 const BASE_URL=import.meta.env.VITE_BASE_URL
@@ -35,51 +35,69 @@ const BASE_URL=import.meta.env.VITE_BASE_URL
           
           setProducts(res.data.products);
           setLoading(false);
-        })
-        
+        }
+      }
     }
+
+    setLoading(true);
+    fetchProducts();
+
+    return () => {
+      isActive = false;
+    };
   }, [mode, config]);
 
   const finalList = transform ? transform(products) : products;
 
-  return (
-    loading ?   <div style={{display:"flex", justifyContent:"center",alignItems:"center",height:"100vh"}}>
-      <CircularProgress sx={{color:"black"}}/>
-    </div>:
+  return loading ? (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <CircularProgress sx={{ color: "black" }} />
+    </div>
+  ) : (
     <Box sx={{ p: 3 }}>
-        
-      {/* Rugs Section */}
-      <Typography variant="h4" sx={{ mb: 2, fontWeight:500 ,color:"#3d2914",fontSize:20,fontFamily:"system-ui", textAlign:"center"}}>
+      <Typography
+        variant="h4"
+        sx={{
+          mb: info ? 1 : 2,
+          fontWeight: 500,
+          color: "#3d2914",
+          fontSize: 20,
+          fontFamily: "system-ui",
+          textAlign: "center",
+        }}
+      >
         {title}
+      </Typography>
+      {info ? (
         <Typography
-          variant="h4"
+          component="p"
           sx={{
             mb: 2,
             color: "#6b5b47",
             fontSize: 16,
             fontFamily: "system-ui",
             fontWeight: 400,
+            textAlign: "center",
           }}
         >
           {info}
         </Typography>
-      </Typography>
-      <Box sx={{ display:"flex",justifyContent:"center"}}>
-
-      <Grid container spacing={3} justifyContent="center" >
+      ) : null}
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Grid container spacing={3} justifyContent="center">
           {finalList.map((item) => {
-            
-            return  <MyCard key={item.id} {...item} /> 
+            return <MyCard key={item.id} {...item} />;
           })}
-      </Grid>
+        </Grid>
       </Box>
-
-     
-
-      
-    
     </Box>
-
   );
 }
 

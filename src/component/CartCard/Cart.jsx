@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import {
   Box,
   Card,
@@ -12,6 +11,12 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import styles from "../CartCard/card.module.css";
+import {
+  removeCartItem,
+  updateCartItemQuantity,
+} from "../../services/cartService";
+import { getFallbackProductImageUrl } from "../../services/catalogService";
+
 export default function Cart({ item, onRemove }) {
   const [quantity, setQuantity] = useState(item.quantity);
   const BASE_URL=import.meta.env.VITE_BASE_URL
@@ -38,18 +43,20 @@ export default function Cart({ item, onRemove }) {
       data: { "productId": item.product_id },
     }).then(() => {
       onRemove(item.product_id);
-    })
+    } catch (error) {
+      console.error("Failed to remove cart item:", error);
+    }
   };
+
   return (
     <Card
       sx={{
         display: "flex",
         alignItems: "center",
-        
         position: "relative",
         p: 1,
         backgroundColor: "#faf8f4",
-        gap: 1
+        gap: 1,
       }}
       className={styles.card}
     >
@@ -70,20 +77,16 @@ export default function Cart({ item, onRemove }) {
             gap: 1,
             width: 200,
             justifyContent: "start",
-             '@media (max-width: 599px)': {
-      width:130,
-    },
-    
+            "@media (max-width: 599px)": {
+              width: 130,
+            },
           }}
           className={styles.cardbox}
         >
-          <Box
-            sx={{ display: "flex", gap: 1 }}
-            className={styles.cardbox2}
-          >
+          <Box sx={{ display: "flex", gap: 1 }} className={styles.cardbox2}>
             <Typography
-             variant="h6"
-             sx={{
+              variant="h6"
+              sx={{
                 maxWidth: "200px",
                 whiteSpace: "nowrap",
                 overflow: "hidden",
@@ -94,14 +97,11 @@ export default function Cart({ item, onRemove }) {
               {item.Product.name}
             </Typography>
           </Box>
-          <Box
-            sx={{ display: "flex", gap: 1 }}
-            className={styles.cardbox2}
-          >
-            <Typography 
-            variant="subtitle2" 
-            color="text.secondary"
-            sx={{
+          <Box sx={{ display: "flex", gap: 1 }} className={styles.cardbox2}>
+            <Typography
+              variant="subtitle2"
+              color="text.secondary"
+              sx={{
                 maxWidth: "200px",
                 whiteSpace: "nowrap",
                 overflow: "hidden",
@@ -148,10 +148,7 @@ export default function Cart({ item, onRemove }) {
                 },
               }}
             >
-              <AddIcon
-                sx={{ fontSize: 29 }}
-                className={styles.IconButton}
-              />
+              <AddIcon sx={{ fontSize: 29 }} className={styles.IconButton} />
             </IconButton>
           </Box>
         </Box>

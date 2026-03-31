@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import {
   Drawer,
   List,
   ListItem,
   ListItemText,
   IconButton,
-  ListItemIcon,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Divider from "@mui/material/Divider";
@@ -19,25 +17,22 @@ import ChildCareIcon from "@mui/icons-material/ChildCare";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
 import { useNavigate } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styles from "./Sidebar.module.css";
-import { Typography } from "@mui/material";
+import { getCategoriesWithSubcategories } from "../../services/catalogService";
 
 export default function Sidebar() {
-
-
   const [open, setOpen] = useState(false);
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
 
   const toggleDrawer = (state) => () => setOpen(state);
 
-  // Define icons for specific categories
   const categoryIcons = {
     "Women's Fashion": <WomanIcon sx={{ color: "#8e7e67", width: "24px" }} />,
     "Men's Fashion": <ManIcon sx={{ color: "#8e7e67" }} />,
     "Beauty & Care": <SpaIcon sx={{ color: "#8e7e67" }} />,
-    "Furniture": <WeekendIcon sx={{ color: "#8e7e67" }} />,
+    Furniture: <WeekendIcon sx={{ color: "#8e7e67" }} />,
     "Home Essentials": <HomeFilledIcon sx={{ color: "#8e7e67" }} />,
     "Kid's & Baby": <ChildCareIcon sx={{ color: "#8e7e67" }} />,
     "Toys & Games": <SportsEsportsIcon sx={{ color: "#8e7e67" }} />,
@@ -58,27 +53,19 @@ console.log(BASE_URL)
         console.error("Failed to fetch categories:", err);
       }
     };
+
     fetchCategories();
   }, []);
 
-  const handleSubcategoryClick = (subId,catId) => {
-  const currentPath = window.location.pathname;
-
-  // Only update query param if we're already on a category page
-  if (currentPath.startsWith("/category/")) {
+  const handleSubcategoryClick = (subId, catId) => {
     navigate(`/category/${catId}?sub=${subId}`);
-  } else {
-    // If not on a category page, go to one (optional fallback)
-    navigate(`/category/${catId}?sub=${subId}`); // replace 1 with your default category ID if needed
-  }
+    setOpen(false);
+  };
 
-  setOpen(false);
-};
-
-  const handleCategoryClick=(catId)=>{
+  const handleCategoryClick = (catId) => {
     navigate(`/category/${catId}`);
     setOpen(false);
-  }
+  };
 
   return (
     <div>
@@ -91,19 +78,19 @@ console.log(BASE_URL)
         }}
       >
         <MenuIcon
-         sx={{ fontSize: 30
-          , '@media (max-width: 412px) and (max-height: 919px)': {
-      fontSize: 25, // for smaller mobile screens
-    },
-    '@media (max-width: 393px) and (max-height: 852px)': {
-      fontSize: 20,
-    },'@media (max-width: 1440px) ': {
-      fontSize: 25,
-    
-    },
+          sx={{
+            fontSize: 30,
+            "@media (max-width: 412px) and (max-height: 919px)": {
+              fontSize: 25,
+            },
+            "@media (max-width: 393px) and (max-height: 852px)": {
+              fontSize: 20,
+            },
+            "@media (max-width: 1440px) ": {
+              fontSize: 25,
+            },
           }}
-        
-        className={styles.IconButton} 
+          className={styles.IconButton}
         />
       </IconButton>
 
@@ -123,7 +110,6 @@ console.log(BASE_URL)
                     gap: 0,
                     p: 0,
                   }}
-                  
                 >
                   <Box sx={{ p: "12px" }}>
                     {categoryIcons[cat.name] || (
@@ -137,7 +123,7 @@ console.log(BASE_URL)
                           fontSize: "15px",
                           color: "#3D2914",
                           fontFamily: "system-ui",
-                          fontWeight:"500"
+                          fontWeight: "500",
                         }}
                       >
                         {cat.name}
@@ -150,15 +136,20 @@ console.log(BASE_URL)
 
                 {cat.subcategories?.map((sub) => (
                   <ListItem
-                    button
                     key={sub.id}
                     sx={{ ml: 4 }}
-                    onClick={() => handleSubcategoryClick(sub.id,cat.id)}
+                    onClick={() => handleSubcategoryClick(sub.id, cat.id)}
                     className={styles.SubCategorys}
                   >
                     <ListItemText
                       primary={
-                        <Typography sx={{ fontFamily: "system-ui" , fontWeight:"500",textTransform: "capitalize" }}>
+                        <Typography
+                          sx={{
+                            fontFamily: "system-ui",
+                            fontWeight: "500",
+                            textTransform: "capitalize",
+                          }}
+                        >
                           {sub.name}
                         </Typography>
                       }

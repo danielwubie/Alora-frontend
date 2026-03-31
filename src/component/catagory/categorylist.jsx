@@ -89,7 +89,6 @@ function CatList({ title = "Featured", info = "Picked items" }) {
       <Box sx={{display:"flex", flexDirection:"row", justifyContent:"center",gap:3,flexWrap:"wrap",}}>
         {CATEGORIES.map((item) => (
           <Box
-            item
             key={item.id}
             sx={{
               '@media (min-width: 1100px) ': {

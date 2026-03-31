@@ -4,7 +4,6 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
@@ -18,6 +17,11 @@ import Sidebar from "../sidebar/sidebar";
 import styles from "../Navbar/Navbar.module.css";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import { useNavigate } from "react-router-dom";
+import { getCartCount, subscribeToCartChanges } from "../../services/cartService";
+import {
+  getSession,
+  subscribeToAuthChanges,
+} from "../../services/authService";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -49,7 +53,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -60,14 +63,52 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
-  
-  
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [searchQuery, setSearchQuery] = React.useState("");
+  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+  const [cartCount, setCartCount] = React.useState(0);
 
   const handleSearchChange = (e) => setSearchQuery(e.target.value);
+
+  React.useEffect(() => {
+    let unsubscribeCart = () => {};
+
+    const syncNavbarState = async () => {
+      unsubscribeCart();
+      unsubscribeCart = () => {};
+
+      try {
+        const session = await getSession();
+        setIsAuthenticated(Boolean(session));
+
+        if (!session) {
+          setCartCount(0);
+          return;
+        }
+
+        setCartCount(await getCartCount());
+        unsubscribeCart = await subscribeToCartChanges(async () => {
+          setCartCount(await getCartCount());
+        });
+      } catch (error) {
+        console.error("Failed to sync navbar state:", error);
+        setIsAuthenticated(false);
+        setCartCount(0);
+      }
+    };
+
+    syncNavbarState();
+    const unsubscribeAuth = subscribeToAuthChanges(() => {
+      syncNavbarState();
+    });
+
+    return () => {
+      unsubscribeCart();
+      unsubscribeAuth();
+    };
+  }, []);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -76,12 +117,11 @@ export default function PrimarySearchAppBar() {
       setSearchQuery("");
     }
   };
-  const token = localStorage.getItem("token");
+
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleProfileMenuOpen = (event) => {
-    
     setAnchorEl(event.currentTarget);
   };
 
@@ -93,6 +133,7 @@ export default function PrimarySearchAppBar() {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
+
   const handleClickLogo = () => {
     navigate("/");
   };
@@ -159,13 +200,13 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
-  const handleCartClick = () => {
-    navigate("/cart"); 
-  };
-  const handleProfilleClick = () => {
- 
-    navigate("/profile");
 
+  const handleCartClick = () => {
+    navigate("/cart");
+  };
+
+  const handleProfilleClick = () => {
+    navigate(isAuthenticated ? "/profile" : "/login");
   };
 
   return (
@@ -201,14 +242,14 @@ export default function PrimarySearchAppBar() {
               </SearchIconWrapper>
               <StyledInputBase
                 sx={{ width: "100%" }}
-                placeholder="Search…"
+                placeholder="Search..."
                 inputProps={{ "aria-label": "search" }}
                 value={searchQuery}
                 onChange={handleSearchChange}
               />
             </Search>
           </form>
-          
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               disableRipple
@@ -216,93 +257,91 @@ export default function PrimarySearchAppBar() {
                 "&:focus": { outline: "none", boxShadow: "none" },
                 "&:focus-visible": { outline: "none", boxShadow: "none" },
               }}
-              
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
               onClick={handleCartClick}
             >
-              <Badge badgeContent={0} color="error">
-                <ShoppingCartIcon sx={{ 
-
-                  '@media (max-width: 599px) ': {
-                    height: "30px",
-                      width:"20px"
-                  
-                  },
-                  
-                  color: "#624f39" ,
-                borderRadius:15,
-                    "&:hover":{
+              <Badge badgeContent={cartCount} color="error">
+                <ShoppingCartIcon
+                  sx={{
+                    "@media (max-width: 599px) ": {
+                      height: "30px",
+                      width: "20px",
+                    },
+                    color: "#624f39",
+                    borderRadius: 15,
+                    "&:hover": {
                       backgroundColor: "#d4c4a8",
-                      
-                     
                     },
                     fontSize: 20,
-                     height: "40px",
-                      width:"30px"
-                      
-                }} />
+                    height: "40px",
+                    width: "30px",
+                  }}
+                />
               </Badge>
             </IconButton>
 
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfilleClick}
-              color="inherit"
-              disableRipple
-              sx={{
-                "&:focus": { outline: "none", boxShadow: "none" },
-                "&:focus-visible": { outline: "none", boxShadow: "none" },
-              }}
-            >
-             
-              {token ? (
+            {isAuthenticated ? (
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfilleClick}
+                color="inherit"
+                disableRipple
+                sx={{
+                  "&:focus": { outline: "none", boxShadow: "none" },
+                  "&:focus-visible": { outline: "none", boxShadow: "none" },
+                }}
+              >
                 <PersonOutlineIcon
-                  
                   sx={{
-                   '@media (max-width: 599px) ': {
-                    height: "30px",
-                      width:"20px"
-                  
-                  },
-                    fontSize:30,
-                    margin:0,
-                    padding:0,
+                    "@media (max-width: 599px) ": {
+                      height: "30px",
+                      width: "20px",
+                    },
+                    fontSize: 30,
+                    margin: 0,
+                    padding: 0,
                     color: "#624f39",
                     "&:focus": { outline: "none", boxShadow: "none" },
                     "&:focus-visible": { outline: "none", boxShadow: "none" },
-                    borderRadius:15,
-                    "&:hover":{
-                      backgroundColor:"#d4c4a8",
-                      
+                    borderRadius: 15,
+                    "&:hover": {
+                      backgroundColor: "#d4c4a8",
                     },
                     height: "40px",
-                      width:"30px"
+                    width: "30px",
                   }}
                 />
-              ) : (
-                <Button
-                  className={styles.logbtn}
-                  sx={{
-                    color: "white",
-                    backgroundColor: "#C15A18",
-                    "&:focus": { outline: "none", boxShadow: "none" },
-                    "&:focus-visible": { outline: "none", boxShadow: "none" },
-                    "&:hover": {
-                      borderRadius: "none",
-                      backgroundColor: "none",
-                    },
-                  }}
-                >
-                  Login
-                </Button>
-              )}
-            </IconButton>
+              </IconButton>
+            ) : (
+              <Button
+                className={styles.logbtn}
+                onClick={handleProfilleClick}
+                sx={{
+                  color: "white",
+                  backgroundColor: "#C15A18",
+                  minWidth: "96px",
+                  height: "48px",
+                  px: 2,
+                  py: 0.5,
+                  borderRadius: 1,
+                  alignSelf: "center",
+                  "&:focus": { outline: "none", boxShadow: "none" },
+                  "&:focus-visible": { outline: "none", boxShadow: "none" },
+                  "&:hover": {
+                    borderRadius: "none",
+                    backgroundColor: "none",
+                  },
+                }}
+              >
+                Login
+              </Button>
+            )}
           </Box>
         </Toolbar>
       </AppBar>

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import styles from "../signup/SignUp.module.css"
+import styles from "../signup/SignUp.module.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { signUpWithEmail } from "../../services/authService";
 
 function SignUp(){
     const[Name,setName]=useState("")
@@ -30,15 +30,16 @@ const BASE_URL=import.meta.env.VITE_BASE_URL
         } catch (error) {
             console.error("SignUp failed:", error);
       alert("Invalid email or password");
-        }
-    }  
-    
-    const handleClose = () => {
-    navigate(-2); 
+    }
   };
-     return (
-    <div 
-    style={{
+
+  const handleClose = () => {
+    navigate(-2);
+  };
+
+  return (
+    <div
+      style={{
         position: "fixed",
         top: 0,
         left: 0,
@@ -59,45 +60,79 @@ const BASE_URL=import.meta.env.VITE_BASE_URL
         <div className={styles.logobox}> 
             <img src="/assets/alora_Brand_Logo.png" className={styles.logo}></img>
         </div>
-        
 
-        <div className={styles.inputandtextbox}> 
-            <p className={styles.text}>Name</p>
-            <div className={styles.inputbox}>
-                <Box >
-                    <TextField fullWidth label="Name" id="Name" type="text"  value={Name} sx={{color:"white"}} onChange={(e)=>setName(e.target.value)} />
-                </Box>
-            </div>
+        <div className={styles.inputandtextbox}>
+          <p className={styles.text}>Name</p>
+          <div className={styles.inputbox}>
+            <Box>
+              <TextField
+                fullWidth
+                label="Name"
+                id="Name"
+                type="text"
+                value={Name}
+                sx={{ color: "white" }}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </Box>
+          </div>
         </div>
 
-        <div className={styles.inputandtextbox}> 
-            <p className={styles.text}>Email</p>
-            <div className={styles.inputbox}>
-                <Box>
-                    <TextField fullWidth label="Email" id="email" type="email"  value={Email} sx={{color:"white"}} onChange={(e)=>setEmail(e.target.value)} />
-                </Box>
-            </div>
+        <div className={styles.inputandtextbox}>
+          <p className={styles.text}>Email</p>
+          <div className={styles.inputbox}>
+            <Box>
+              <TextField
+                fullWidth
+                label="Email"
+                id="email"
+                type="email"
+                value={Email}
+                sx={{ color: "white" }}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Box>
+          </div>
         </div>
-        <div className={styles.inputandtextbox}> 
-            <p className={styles.text}>Password</p>
-            <div className={styles.inputbox}>
-                <Box >
-                    <TextField fullWidth label="Password" id="password" type="password" value={Password} sx={{color:"white"}} onChange={(p)=>setPassword(p.target.value)} />
-                </Box>
-            </div>
+        <div className={styles.inputandtextbox}>
+          <p className={styles.text}>Password</p>
+          <div className={styles.inputbox}>
+            <Box>
+              <TextField
+                fullWidth
+                label="Password"
+                id="password"
+                type="password"
+                value={Password}
+                sx={{ color: "white" }}
+                onChange={(p) => setPassword(p.target.value)}
+              />
+            </Box>
+          </div>
         </div>
         <div className={styles.button_and_link}>
-            <a onClick={() => navigate("/login", { replace: true })}
-             style={{ cursor: "pointer" }}>Already have an  account? Login here</a>
-            <Button  sx={{ mt: 2,color: "white", height:"62px",width:"183px",backgroundColor:"#C15A18"} } onClick={handelSignUp}>
-                Sign Up
-            </Button>
+          <a
+            onClick={() => navigate("/login", { replace: true })}
+            style={{ cursor: "pointer" }}
+          >
+            Already have an  account? Login here
+          </a>
+          <Button
+            sx={{
+              mt: 2,
+              color: "white",
+              height: "62px",
+              width: "183px",
+              backgroundColor: "#C15A18",
+            }}
+            onClick={handelSignUp}
+          >
+            Sign Up
+          </Button>
         </div>
+      </div>
     </div>
-
-    </div>
-    
-)
+  );
 }
 
 export default SignUp;
