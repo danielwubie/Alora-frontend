@@ -10,17 +10,34 @@ const ProfilePage = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
+ const navigate=useNavigate();
+ const BASE_URL=import.meta.env.VITE_BASE_URL
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const profile = await getUserProfile();
+useEffect(() => {
+  const fetchUser = async () => {
+    const token = localStorage.getItem("token");
+   
+    
+    if (!token) return navigate("/login");
+   
 
-        if (!profile) {
-          navigate("/login");
-          return;
-        }
+    try {
+      const response = await axios.get(`${BASE_URL}/users/profile`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setUser(response.data.user);
+    } catch (error) {
+      console.log(error,'error');
+      
+      setError("Failed to load user info: " + error.message);
+      
+      navigate("/login");
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchUser();
+}, [navigate]);
 
         setUser(profile);
       } catch (fetchError) {

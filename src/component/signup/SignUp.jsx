@@ -6,25 +6,29 @@ import styles from "../signup/SignUp.module.css";
 import { useNavigate } from "react-router-dom";
 import { signUpWithEmail } from "../../services/authService";
 
-function SignUp() {
-  const [Name, setName] = useState("");
-  const [Email, setEmail] = useState("");
-  const [Password, setPassword] = useState("");
-  const navigate = useNavigate();
-
-  const handelSignUp = async () => {
-    try {
-      await signUpWithEmail({
-        name: Name,
-        email: Email,
-        password: Password,
-      });
-
-      navigate("/", {
-        state: { toast: true, message: "âœ…account created succesfully" },
-      });
-    } catch (error) {
-      console.error("SignUp failed:", error);
+function SignUp(){
+    const[Name,setName]=useState("")
+    const [Email, setEmail]=useState("")
+    const [Password, setPassword]=useState("")
+     const navigate = useNavigate(); 
+const BASE_URL=import.meta.env.VITE_BASE_URL
+    const handelSignUp= async () => {
+        try {
+             const response= await axios.post(`${BASE_URL}/users/signUp`,{
+                            name: Name,
+                            email: Email,
+                            password: Password,
+                        });
+                        const token = response.data.result.token.token;
+                        localStorage.setItem("token", token);
+                       
+                  
+                        const userId = response.data.result.userId;
+                        localStorage.setItem("userId", userId);
+                        
+                        navigate("/", { state: { toast: true,message:"✅account created succesfully" } });
+        } catch (error) {
+            console.error("SignUp failed:", error);
       alert("Invalid email or password");
     }
   };
@@ -50,12 +54,11 @@ function SignUp() {
       }}
       onClick={handleClose}
     >
-      <div
-        className={styles.contianer}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className={styles.logobox}>
-          <img src="src/assets/alora_Brand_Logo.png" className={styles.logo}></img>
+    <div className={styles.contianer}
+    onClick={(e) => e.stopPropagation()}
+    >
+        <div className={styles.logobox}> 
+            <img src="/assets/alora_Brand_Logo.png" className={styles.logo}></img>
         </div>
 
         <div className={styles.inputandtextbox}>

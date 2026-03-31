@@ -26,21 +26,25 @@ const CartPage = () => {
   const handleContinueShopping = () => {
     navigate("/");
   };
-
+const BASE_URL=import.meta.env.VITE_BASE_URL
   useEffect(() => {
     let unsubscribe = () => {};
 
     async function fetchCart() {
-      try {
-        setIsLoading(true);
-        const items = await getCartItems();
-        setCartItems(items);
-        setError("");
-        unsubscribe = await subscribeToCartChanges(async () => {
-          setCartItems(await getCartItems());
-        });
-      } catch (error) {
-        console.error("Error fetching cart:", error);
+      const token = localStorage.getItem("token");
+      if (token) {
+        try {
+          const res = await axios.get(`${BASE_URL}/cart`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setCartItems(res.data || []);
+        } catch (error) {
+          console.error("Error fetching cart:", error);
+          setCartItems([]);
+        }
+      } else {
         setCartItems([]);
         setError(error.message || "Failed to load cart");
       } finally {

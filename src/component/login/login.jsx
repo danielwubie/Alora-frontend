@@ -7,16 +7,33 @@ import { useNavigate } from "react-router-dom";
 import { signInWithEmail } from "../../services/authService";
 
 export default function Login() {
-  const [Email, setEmail] = useState("");
-  const [Password, setPassword] = useState("");
-  const navigate = useNavigate();
+    const [Email, setEmail]=useState("")
+    const [Password, setPassword]=useState("")
+    
+      const BASE_URL=import.meta.env.VITE_BASE_URL
+      const navigate = useNavigate();
+     
 
-  const handleLogin = async () => {
-    try {
-      await signInWithEmail({
-        email: Email,
-        password: Password,
-      });
+    const handleLogin= async ()=>{
+        try {
+            const response= await axios.post(`${BASE_URL}/users/login`,{
+                email: Email,
+                password: Password,
+            });
+            const token = response.data.result.token;
+            localStorage.setItem("token", token);
+          
+        
+            
+            const userId = response.data.result.userId;
+            localStorage.setItem("userId", userId);
+            
+            
+            navigate("/", { state: { toast: true,message:"✅Loggedin succesfully" } });
+          
+        } catch (error) {
+            console.error("Login failed:", error);
+      alert("Invalid email or password");
 
       navigate("/", {
         state: { toast: true, message: "✅Loggedin succesfully" },
@@ -53,7 +70,7 @@ export default function Login() {
         onClick={(e) => e.stopPropagation()}
       >
         <div className={styles.logobox}>
-          <img src="src/assets/alora_Brand_Logo.png" className={styles.logo}></img>
+            <img src="/assets/alora_Brand_Logo.png" className={styles.logo}></img>
         </div>
 
         <div className={styles.inputandtextbox}>

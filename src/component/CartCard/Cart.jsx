@@ -19,22 +19,29 @@ import { getFallbackProductImageUrl } from "../../services/catalogService";
 
 export default function Cart({ item, onRemove }) {
   const [quantity, setQuantity] = useState(item.quantity);
-
-  const handleQuantityChange = async (delta) => {
+  const BASE_URL=import.meta.env.VITE_BASE_URL
+  const handleQuantityChange = (delta) => {
     const newQuantity = Math.max(1, quantity + delta);
     setQuantity(newQuantity);
-
-    try {
-      await updateCartItemQuantity(item.product_id, newQuantity);
-    } catch (error) {
-      console.error("Failed to update cart item quantity:", error);
-      setQuantity(item.quantity);
-    }
+    const token = localStorage.getItem("token");
+    axios.put(
+      `${BASE_URL}/cart/update`,
+      { productId: item.product_id, quantity: newQuantity },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
   };
-
-  const handleRemove = async () => {
-    try {
-      await removeCartItem(item.product_id);
+  const handleRemove = () => {
+    const token = localStorage.getItem("token");
+    axios.delete(`${BASE_URL}/cart/delete`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      data: { "productId": item.product_id },
+    }).then(() => {
       onRemove(item.product_id);
     } catch (error) {
       console.error("Failed to remove cart item:", error);
@@ -54,15 +61,11 @@ export default function Cart({ item, onRemove }) {
       className={styles.card}
     >
       <CardMedia
-        component="img"
-        sx={{ width: 96, height: 96, borderRadius: 5 }}
-        image={item.Product.image}
-        alt={item.Product.name}
-        onError={(event) => {
-          event.currentTarget.onerror = null;
-          event.currentTarget.src = getFallbackProductImageUrl(item.Product.name);
-        }}
-      />
+      component="img"
+      sx={{ width: 96, height: 96, borderRadius: 5 }}
+      image={item.Product.image}
+      alt={item.Product.name}
+    />
       <CardContent
         sx={{ flex: "1 0 auto", ml: 2 }}
         className={styles.contentbox}

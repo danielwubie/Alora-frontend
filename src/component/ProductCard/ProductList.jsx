@@ -7,23 +7,33 @@ import { getProducts } from "../../services/catalogService";
 function ProductList({ transform, title, info, mode = "all", config }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-
+const BASE_URL=import.meta.env.VITE_BASE_URL
   useEffect(() => {
-    let isActive = true;
+    if (mode == "all") {
 
-    async function fetchProducts() {
-      try {
-        const nextProducts = await getProducts({ mode, config });
-        if (isActive) {
-          setProducts(nextProducts);
-        }
-      } catch (error) {
-        console.error("Failed to fetch products:", error);
-        if (isActive) {
-          setProducts([]);
-        }
-      } finally {
-        if (isActive) {
+      axios
+        .get(`${BASE_URL}/product`)
+        .then((res) => {
+         
+          setProducts(res.data.products);
+          setLoading(false);
+        })
+        
+    } else if (mode == "catag") {
+      axios
+        .get(`${BASE_URL}/product/categories/${config}`)
+        .then((res) => {
+         
+          setProducts(res.data.products);
+          setLoading(false);
+        })
+       
+    } else if (mode == "sub") {
+      axios
+        .get(`${BASE_URL}/product/by_subcategory/${config}`)
+        .then((res) => {
+          
+          setProducts(res.data.products);
           setLoading(false);
         }
       }
