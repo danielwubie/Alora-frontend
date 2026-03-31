@@ -26,25 +26,21 @@ const CartPage = () => {
   const handleContinueShopping = () => {
     navigate("/");
   };
-const BASE_URL=import.meta.env.VITE_BASE_URL
+
   useEffect(() => {
     let unsubscribe = () => {};
 
     async function fetchCart() {
-      const token = localStorage.getItem("token");
-      if (token) {
-        try {
-          const res = await axios.get(`${BASE_URL}/cart`, {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
-          setCartItems(res.data || []);
-        } catch (error) {
-          console.error("Error fetching cart:", error);
-          setCartItems([]);
-        }
-      } else {
+      try {
+        setIsLoading(true);
+        const items = await getCartItems();
+        setCartItems(items);
+        setError("");
+        unsubscribe = await subscribeToCartChanges(async () => {
+          setCartItems(await getCartItems());
+        });
+      } catch (error) {
+        console.error("Error fetching cart:", error);
         setCartItems([]);
         setError(error.message || "Failed to load cart");
       } finally {
@@ -85,7 +81,9 @@ const BASE_URL=import.meta.env.VITE_BASE_URL
       }}
     >
       <Stack spacing={3}>
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+        <Box
+          sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}
+        >
           <CircularProgress size={30} sx={{ color: "#8b4513" }} />
           <Typography sx={{ color: "#3e2e1f", fontWeight: 600 }}>
             Loading your cart...
@@ -148,7 +146,7 @@ const BASE_URL=import.meta.env.VITE_BASE_URL
       </Typography>
 
       <Typography variant="body1" sx={{ color: "#3e2e1f", mb: 3 }}>
-        You havenâ€™t added any items yet. Browse the menu and add something you love!
+        You haven't added any items yet. Browse the menu and add something you love!
       </Typography>
 
       <Button

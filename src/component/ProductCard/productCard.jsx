@@ -8,9 +8,7 @@ import Button from "@mui/material/Button";
 import styles from "../ProductCard/ProductCard.module.css";
 import Snackbar from "@mui/material/Snackbar";
 import { addToCart } from "../../services/cartService";
-import {
-  getFallbackProductImageUrl,
-} from "../../services/catalogService";
+import { getFallbackProductImageUrl } from "../../services/catalogService";
 import { useNavigate } from "react-router-dom";
 
 function MyCard({ id, name, Price, description, image }) {
@@ -29,29 +27,10 @@ function MyCard({ id, name, Price, description, image }) {
 
   const handleAddToCart = async () => {
     try {
-        const payload = {
-      productId: id,   
-      quantity: 1      
-    };
-      const token = localStorage.getItem("token");
-     const BASE_URL=import.meta.env.VITE_BASE_URL
-      
-      await axios.post(
-        `${BASE_URL}/cart/add`,
-        payload,
-        {
-
-          headers: {
-          Authorization: `Bearer ${token}`, 
-          "Content-Type": "application/json"
-        }}
-      );
-
-     setOpen(true);
-      setMessage("✅ added succesfully")
-      setColor("#5aebaaff")
-
-
+      await addToCart(id, 1);
+      setOpen(true);
+      setMessage("Added successfully");
+      setColor("#5aebaaff");
     } catch (error) {
       console.error("Failed to add to cart", error);
       setOpen(true);
@@ -124,9 +103,15 @@ function MyCard({ id, name, Price, description, image }) {
 
         <Button
           variant="outlined"
-           disableRipple
-          sx={{ mt: 2, color: "black", height: "45px", width: "115px", "&:focus": { outline: "none", boxShadow: "none" },
-                "&:focus-visible": { outline: "none", boxShadow: "none" }, }}
+          disableRipple
+          sx={{
+            mt: 2,
+            color: "black",
+            height: "45px",
+            width: "115px",
+            "&:focus": { outline: "none", boxShadow: "none" },
+            "&:focus-visible": { outline: "none", boxShadow: "none" },
+          }}
           className={styles.cardbutton}
           onClick={handleAddToCart}
         >

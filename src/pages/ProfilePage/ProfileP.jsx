@@ -1,4 +1,3 @@
-// src/pages/ProfilePage/ProfilePage.jsx
 import React, { useEffect, useState } from "react";
 import styles from "../ProfilePage/ProfileP.module.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -10,34 +9,17 @@ const ProfilePage = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
- const navigate=useNavigate();
- const BASE_URL=import.meta.env.VITE_BASE_URL
+  const navigate = useNavigate();
 
-useEffect(() => {
-  const fetchUser = async () => {
-    const token = localStorage.getItem("token");
-   
-    
-    if (!token) return navigate("/login");
-   
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const profile = await getUserProfile();
 
-    try {
-      const response = await axios.get(`${BASE_URL}/users/profile`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setUser(response.data.user);
-    } catch (error) {
-      console.log(error,'error');
-      
-      setError("Failed to load user info: " + error.message);
-      
-      navigate("/login");
-    } finally {
-      setLoading(false);
-    }
-  };
-  fetchUser();
-}, [navigate]);
+        if (!profile) {
+          navigate("/login");
+          return;
+        }
 
         setUser(profile);
       } catch (fetchError) {
