@@ -5,16 +5,22 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import axios from "axios";
 import styles from "../ProductCard/ProductCard.module.css";
-import Snackbar from '@mui/material/Snackbar';
+import Snackbar from "@mui/material/Snackbar";
+import { addToCart } from "../../services/cartService";
+import {
+  getFallbackProductImageUrl,
+} from "../../services/catalogService";
+import { useNavigate } from "react-router-dom";
 
 function MyCard({ id, name, Price, description, image }) {
   const [open, setOpen] = useState(false);
-  const [message,setMessage]= useState("")
-  const [color,setColor]= useState("")
-    const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
+  const [message, setMessage] = useState("");
+  const [color, setColor] = useState("");
+  const navigate = useNavigate();
+
+  const handleClose = (_event, reason) => {
+    if (reason === "clickaway") {
       return;
     }
 
@@ -23,35 +29,23 @@ function MyCard({ id, name, Price, description, image }) {
 
   const handleAddToCart = async () => {
     try {
-        const payload = {
-      productId: id,   
-      quantity: 1      
-    };
-      const token = localStorage.getItem("token");
-      
-      
-      await axios.post(
-        "http://127.0.0.1:5000/cart/add",
-        payload,
-        {
-
-          headers: {
-          Authorization: `Bearer ${token}`, 
-          "Content-Type": "application/json"
-        }}
-      );
-
-     setOpen(true);
-      setMessage("✅ added succesfully")
-      setColor("#5aebaaff")
-
-
-    } catch (error) {
-      console.error("❌ Failed to add to cart", error);
+      await addToCart(id, 1);
       setOpen(true);
-      setMessage("❌ You have to login to add to cart")
-      setColor("#eb5a5aff")
-      
+      setMessage("Added successfully");
+      setColor("#5aebaaff");
+    } catch (error) {
+      console.error("Failed to add to cart", error);
+      setOpen(true);
+
+      if (error.message === "AUTH_REQUIRED") {
+        setMessage("You have to login to add to cart");
+        setColor("#eb5a5aff");
+        setTimeout(() => navigate("/login"), 600);
+        return;
+      }
+
+      setMessage(error.message || "Failed to add item to cart");
+      setColor("#eb5a5aff");
     }
   };
 
@@ -67,39 +61,43 @@ function MyCard({ id, name, Price, description, image }) {
           image={image}
           alt={name}
           className={styles.imagebox}
+          onError={(event) => {
+            event.currentTarget.onerror = null;
+            event.currentTarget.src = getFallbackProductImageUrl(name);
+          }}
         />
       </div>
 
       <CardContent>
-        <Typography 
-        variant="h6"
-        sx={{
-                maxWidth: "200px",
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                display: "block",
-              }}
-      title={name} 
-        > 
-        {name}
+        <Typography
+          variant="h6"
+          sx={{
+            maxWidth: "200px",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "block",
+          }}
+          title={name}
+        >
+          {name}
         </Typography>
 
         <Typography
-        variant="body2"
-        color="text.secondary"
-        sx={{
-          maxWidth: "200px",
-          display: "-webkit-box",
-          WebkitLineClamp: 2,
-          WebkitBoxOrient: "vertical",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-        }}
-        title={description}
-      >
-        {description}
-      </Typography>
+          variant="body2"
+          color="text.secondary"
+          sx={{
+            maxWidth: "200px",
+            display: "-webkit-box",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
+          title={description}
+        >
+          {description}
+        </Typography>
 
         <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
           ${Price.toLocaleString()}
@@ -113,7 +111,6 @@ function MyCard({ id, name, Price, description, image }) {
         >
           Quick Add
         </Button>
-        
       </CardContent>
       <Snackbar
         open={open}
@@ -121,15 +118,15 @@ function MyCard({ id, name, Price, description, image }) {
         onClose={handleClose}
         message={message}
         sx={{
-    "& .MuiSnackbarContent-root": {
-      backgroundColor: `${color}`,
-      color: "#fff",
-      borderRadius: "10px",
-      fontSize: "16px",
-      fontWeight: "600",
-      padding: "10px 16px",
-    }
-  }}
+          "& .MuiSnackbarContent-root": {
+            backgroundColor: `${color}`,
+            color: "#fff",
+            borderRadius: "10px",
+            fontSize: "16px",
+            fontWeight: "600",
+            padding: "10px 16px",
+          },
+        }}
       />
     </Card>
   );

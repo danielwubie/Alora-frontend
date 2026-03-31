@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, Button, Stack } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  Stack,
+  CircularProgress,
+  Skeleton,
+} from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import styles from "./CartPage.module.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import Cart from "../../component/CartCard/Cart";
+import { getCartItems, subscribeToCartChanges } from "../../services/cartService";
 
 const CartPage = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleStartShopping = () => {
     navigate("/");
@@ -19,28 +28,33 @@ const CartPage = () => {
   };
 
   useEffect(() => {
+    let unsubscribe = () => {};
+
     async function fetchCart() {
-      const token = localStorage.getItem("token");
-      if (token) {
-        try {
-          const res = await axios.get(`http://127.0.0.1:5000/cart`, {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
-          setCartItems(res.data || []);
-        } catch (error) {
-          console.error("Error fetching cart:", error);
-          setCartItems([]);
-        }
-      } else {
+      try {
+        setIsLoading(true);
+        const items = await getCartItems();
+        setCartItems(items);
+        setError("");
+        unsubscribe = await subscribeToCartChanges(async () => {
+          setCartItems(await getCartItems());
+        });
+      } catch (error) {
+        console.error("Error fetching cart:", error);
         setCartItems([]);
+        setError(error.message || "Failed to load cart");
+      } finally {
+        setIsLoading(false);
       }
     }
+
     fetchCart();
+
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
-  // ✅ Add this function
   const handleRemoveItem = (productId) => {
     setCartItems((prevItems) =>
       prevItems.filter((item) => item.product_id !== productId)
@@ -50,13 +64,61 @@ const CartPage = () => {
   const renderCartItems = () => (
     <Stack spacing={2} sx={{ width: "100%", maxWidth: 820 }}>
       {cartItems.map((item) => (
-        <Cart
-          key={item.product_id}
-          item={item}
-          onRemove={handleRemoveItem} // ✅ Pass it here
-        />
+        <Cart key={item.product_id} item={item} onRemove={handleRemoveItem} />
       ))}
     </Stack>
+  );
+
+  const renderLoadingCart = () => (
+    <Box
+      sx={{
+        backgroundColor: "#fff7f0",
+        borderRadius: 2,
+        boxShadow: 2,
+        p: 4,
+        width: "100%",
+        maxWidth: 820,
+      }}
+    >
+      <Stack spacing={3}>
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+          <CircularProgress size={30} sx={{ color: "#8b4513" }} />
+          <Typography sx={{ color: "#3e2e1f", fontWeight: 600 }}>
+            Loading your cart...
+          </Typography>
+        </Box>
+
+        {[1, 2, 3].map((item) => (
+          <Box
+            key={item}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 2,
+              p: 2,
+              borderRadius: 3,
+              backgroundColor: "#faf8f4",
+            }}
+          >
+            <Skeleton
+              variant="rounded"
+              width={96}
+              height={96}
+              sx={{ borderRadius: 3, flexShrink: 0 }}
+            />
+            <Box sx={{ flex: 1 }}>
+              <Skeleton variant="text" width="45%" height={34} />
+              <Skeleton variant="text" width="80%" height={26} />
+              <Skeleton variant="text" width="30%" height={26} />
+            </Box>
+            <Box sx={{ minWidth: 90 }}>
+              <Skeleton variant="text" width="100%" height={34} />
+              <Skeleton variant="text" width="80%" height={24} />
+            </Box>
+          </Box>
+        ))}
+      </Stack>
+    </Box>
   );
 
   const renderEmptyCart = () => (
@@ -68,11 +130,9 @@ const CartPage = () => {
         p: 4,
         textAlign: "center",
         width: "90%",
-        '@media (max-width: 1440px) and (min-width: 1001px) ': {
-      width: "75%",
-    
-    },
-
+        "@media (max-width: 1440px) and (min-width: 1001px) ": {
+          width: "75%",
+        },
       }}
     >
       <Typography
@@ -84,7 +144,7 @@ const CartPage = () => {
       </Typography>
 
       <Typography variant="body1" sx={{ color: "#3e2e1f", mb: 3 }}>
-        You haven’t added any items yet. Browse the menu and add something you love!
+        You havenâ€™t added any items yet. Browse the menu and add something you love!
       </Typography>
 
       <Button
@@ -130,15 +190,23 @@ const CartPage = () => {
           Continue Shopping
         </Button>
       </Stack>
-       <Typography
-          className={styles.title}
-          variant="body1"
-          sx={{ color: "#3e2e1f", fontSize: 24, fontWeight: 700 }}
-        >
-          Shopping Cart
-        </Typography>
+      <Typography
+        className={styles.title}
+        variant="body1"
+        sx={{ color: "#3e2e1f", fontSize: 24, fontWeight: 700 }}
+      >
+        Shopping Cart
+      </Typography>
 
-      {cartItems.length > 0 ? renderCartItems() : renderEmptyCart()}
+      {isLoading ? (
+        renderLoadingCart()
+      ) : error ? (
+        <Typography sx={{ color: "#8b4513", mt: 2 }}>{error}</Typography>
+      ) : cartItems.length > 0 ? (
+        renderCartItems()
+      ) : (
+        renderEmptyCart()
+      )}
     </div>
   );
 };
