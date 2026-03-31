@@ -1,4 +1,4 @@
-import { getSupabaseClient } from "../lib/supabase";
+import { getSupabaseClient, isSupabaseConfigured } from "../lib/supabase";
 
 let authListenerInitialized = false;
 
@@ -50,7 +50,7 @@ async function upsertProfile(user) {
 }
 
 export function initializeAuthListener() {
-  if (authListenerInitialized) {
+  if (authListenerInitialized || !isSupabaseConfigured) {
     return;
   }
 
@@ -62,6 +62,10 @@ export function initializeAuthListener() {
 }
 
 export function subscribeToAuthChanges(callback) {
+  if (!isSupabaseConfigured) {
+    return () => {};
+  }
+
   const client = getSupabaseClient();
   const {
     data: { subscription },
@@ -76,6 +80,11 @@ export function subscribeToAuthChanges(callback) {
 }
 
 export async function getSession() {
+  if (!isSupabaseConfigured) {
+    clearLegacyAuthStorage();
+    return null;
+  }
+
   const client = getSupabaseClient();
   const {
     data: { session },
@@ -96,6 +105,11 @@ export async function getSession() {
 }
 
 export async function getCurrentUser() {
+  if (!isSupabaseConfigured) {
+    clearLegacyAuthStorage();
+    return null;
+  }
+
   const client = getSupabaseClient();
   const {
     data: { user },
