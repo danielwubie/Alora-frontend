@@ -10,14 +10,25 @@ function SignUp() {
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handelSignUp = async () => {
+    const name = Name.trim();
+    const email = Email.trim().toLowerCase();
+    const password = Password.trim();
+
+    if (!name || !email || !password) {
+      setErrorMessage("Please complete your name, email, and password.");
+      return;
+    }
+
     try {
+      setErrorMessage("");
       await signUpWithEmail({
-        name: Name,
-        email: Email,
-        password: Password,
+        name,
+        email,
+        password,
       });
 
       navigate("/", {
@@ -25,7 +36,7 @@ function SignUp() {
       });
     } catch (error) {
       console.error("SignUp failed:", error);
-      alert("Invalid email or password");
+      setErrorMessage(error?.message || "Unable to create your account right now.");
     }
   };
 
@@ -104,6 +115,9 @@ function SignUp() {
             </Box>
           </div>
         </div>
+        {errorMessage ? (
+          <p style={{ color: "#b42318", margin: "8px 0 0" }}>{errorMessage}</p>
+        ) : null}
         <div className={styles.button_and_link}>
           <a
             onClick={() => navigate("/login", { replace: true })}

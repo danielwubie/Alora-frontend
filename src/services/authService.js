@@ -2,6 +2,10 @@ import { getSupabaseClient, isSupabaseConfigured } from "../lib/supabase";
 
 let authListenerInitialized = false;
 
+function normalizeEmail(email) {
+  return email?.trim().toLowerCase() ?? "";
+}
+
 function isMissingSessionError(error) {
   return (
     error?.name === "AuthSessionMissingError" ||
@@ -47,6 +51,19 @@ async function upsertProfile(user) {
   }
 
   return data;
+}
+
+async function syncProfileIfPossible(user) {
+  if (!user?.id) {
+    return null;
+  }
+
+  try {
+    return await upsertProfile(user);
+  } catch (error) {
+    console.warn("Profile sync failed:", error);
+    return null;
+  }
 }
 
 export function initializeAuthListener() {
@@ -131,7 +148,7 @@ export async function getCurrentUser() {
 export async function signInWithEmail({ email, password }) {
   const client = getSupabaseClient();
   const { data, error } = await client.auth.signInWithPassword({
-    email,
+    email: normalizeEmail(email),
     password,
   });
 
@@ -140,7 +157,7 @@ export async function signInWithEmail({ email, password }) {
   }
 
   syncLegacyAuthStorage(data.session);
-  await upsertProfile(data.user);
+  await syncProfileIfPossible(data.user);
 
   return data;
 }
@@ -148,7 +165,7 @@ export async function signInWithEmail({ email, password }) {
 export async function signUpWithEmail({ name, email, password }) {
   const client = getSupabaseClient();
   const { data, error } = await client.auth.signUp({
-    email,
+    email: normalizeEmail(email),
     password,
     options: {
       data: {
@@ -161,10 +178,10 @@ export async function signUpWithEmail({ name, email, password }) {
     throw error;
   }
 
-  if (data.user) {
-    await upsertProfile({
+  if (data.user && data.session) {
+    await syncProfileIfPossible({
       ...data.user,
-      email,
+      email: normalizeEmail(email),
       user_metadata: {
         ...data.user.user_metadata,
         name,

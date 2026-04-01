@@ -9,13 +9,23 @@ import { signInWithEmail } from "../../services/authService";
 export default function Login() {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async () => {
+    const email = Email.trim().toLowerCase();
+    const password = Password.trim();
+
+    if (!email || !password) {
+      setErrorMessage("Please enter your email and password.");
+      return;
+    }
+
     try {
+      setErrorMessage("");
       await signInWithEmail({
-        email: Email,
-        password: Password,
+        email,
+        password,
       });
 
       navigate("/", {
@@ -23,7 +33,7 @@ export default function Login() {
       });
     } catch (error) {
       console.error("Login failed:", error);
-      alert("Invalid email or password");
+      setErrorMessage(error?.message || "Unable to log in right now.");
     }
   };
 
@@ -85,6 +95,9 @@ export default function Login() {
             </Box>
           </div>
         </div>
+        {errorMessage ? (
+          <p style={{ color: "#b42318", margin: "8px 0 0" }}>{errorMessage}</p>
+        ) : null}
         <div className={styles.button_and_link}>
           <a
             className={styles.link_to_signup}
